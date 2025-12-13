@@ -1,171 +1,960 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Allah Nawaz | UI/UX & Product Designer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Allah Nawaz - UI/UX & Product Designer with 2+ years of experience. Specializing in web and mobile applications for SaaS, e-commerce, and marketing platforms.">
+    <meta name="keywords" content="UI/UX Designer, Product Designer, Figma, Web Design, Mobile App Design, Islamabad">
+    <meta name="author" content="Allah Nawaz">
+    <meta property="og:title" content="Allah Nawaz — UI/UX Designer">
+    <meta property="og:description" content="Professional UI/UX Designer with 2+ years of experience">
+    <meta property="og:image" content="https://a.lovart.ai/artifacts/user/rvfgbqzQbeafPpJE.png">
+    <meta property="og:url" content="https://allahnawaz-portfolio.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Allah Nawaz — UI/UX Designer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+        :root {
+            --bg-primary: #1A1A1A;
+            --bg-secondary: #2C2C2C;
+            --text-primary: #FFFFFF;
+            --text-secondary: #A0A0A0;
+            --accent: #00C853;
+            --accent-dark: #00A040;
+            --border: #A0A0A0;
+            --star: #FFD700;
+            --shadow: rgba(0, 0, 0, 0.4);
+            --shadow-lg: rgba(0, 0, 0, 0.6);
+        }
 
-    body {
-      line-height: 1.6;
-      color: #222;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    /* Hero */
-    .hero {
-      height: 100vh;
-      background: linear-gradient(135deg, #111, #333);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    .hero h1 {
-      font-size: 3rem;
-    }
+        /* SIDEBAR */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background-color: var(--bg-secondary);
+            border-right: 10px solid var(--bg-primary);
+            padding: 20px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    .hero p {
-      margin: 10px 0 20px;
-      font-size: 1.2rem;
-    }
+        .sidebar-profile {
+            text-align: center;
+            margin-bottom: 32px;
+        }
 
-    .btn {
-      padding: 12px 24px;
-      background: #fff;
-      color: #111;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
-    }
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 16px;
+            border: 3px solid var(--accent);
+            transition: transform 0.3s ease;
+        }
 
-    /* Sections */
-    .section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+        .profile-pic:hover {
+            transform: scale(1.05);
+        }
 
-    .section h2 {
-      margin-bottom: 20px;
-      font-size: 2rem;
-    }
+        .sidebar-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
 
-    .gray {
-      background: #f5f5f5;
-    }
+        .status-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
 
-    /* Skills */
-    .skills span {
-      display: inline-block;
-      background: #111;
-      color: #fff;
-      padding: 8px 14px;
-      margin: 6px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-    }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            animation: pulse 2s infinite;
+        }
 
-    /* Projects */
-    .project {
-      margin-bottom: 20px;
-    }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #111;
-      color: #fff;
-    }
-  </style>
+        .status-text {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* NAVIGATION */
+        .sidebar-nav {
+            list-style: none;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        .nav-item {
+            margin-bottom: 12px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--accent);
+            background-color: rgba(0, 200, 83, 0.1);
+        }
+
+        .nav-link.active {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            border-left: 3px solid var(--accent);
+            padding-left: 13px;
+        }
+
+        /* STACK SECTION */
+        .sidebar-stack {
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .stack-title {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .stack-logo {
+            width: 60px;
+            height: 60px;
+            background-color: var(--bg-primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 28px;
+        }
+
+        .stack-logo:hover {
+            background-color: var(--accent);
+            transform: scale(1.1);
+        }
+
+        /* MAIN CONTENT */
+        main {
+            margin-left: 280px;
+            padding: 0 40px;
+            max-width: 1000px;
+            margin-right: auto;
+        }
+
+        section {
+            padding: 80px 0;
+            scroll-margin-top: 80px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 100px 0 80px;
+        }
+
+        .hero-title {
+            font-size: 64px;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.1;
+            margin-bottom: 16px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            min-height: 24px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: var(--bg-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px var(--shadow-lg);
+        }
+
+        /* ABOUT SECTION */
+        .about-title,
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .about-summary {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .achievement-card {
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px var(--shadow-lg);
+        }
+
+        .achievement-number {
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .achievement-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 500px;
+            margin: 0 auto;
+            padding-top: 24px;
+            border-top: 1px solid var(--bg-secondary);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .contact-icon {
+            font-size: 18px;
+            color: var(--accent);
+        }
+
+        /* EXPERIENCE SECTION */
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-2px);
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--bg-secondary);
+        }
+
+        .timeline-item {
+            margin-bottom: 32px;
+            position: relative;
+            padding-left: 50%;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-12px);
+            top: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: var(--bg-secondary);
+            border: 3px solid var(--accent);
+            z-index: 1;
+        }
+
+        .timeline-content {
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 24px;
+            max-width: 350px;
+        }
+
+        .timeline-company {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .timeline-location {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .timeline-duration {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .timeline-role {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .timeline-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .timeline-description li {
+            margin-left: 16px;
+            margin-bottom: 8px;
+        }
+
+        /* SKILLS SECTION */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .skill-item {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .skill-label-name {
+            font-weight: 600;
+        }
+
+        .skill-label-percent {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .skill-bar {
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            height: 16px;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background-color: var(--accent);
+            border-radius: 12px;
+            animation: progressBar 2s ease-out;
+            width: 0%;
+        }
+
+        @keyframes progressBar {
+            from { width: 0%; }
+            to { width: var(--progress-width); }
+        }
+
+        /* PROJECTS SECTION */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 24px var(--shadow-lg);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-category {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .project-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .project-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* STACK SECTION (Main) */
+        .stack-grid-main {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stack-card {
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stack-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px var(--shadow-lg);
+            background-color: var(--accent);
+        }
+
+        .stack-card:hover .stack-card-name,
+        .stack-card:hover .stack-card-description {
+            color: var(--bg-primary);
+        }
+
+        .stack-card-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+
+        .stack-card:hover .stack-card-icon {
+            color: var(--bg-primary);
+        }
+
+        .stack-card-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .stack-card-description {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* TESTIMONIALS SECTION */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px var(--shadow-lg);
+        }
+
+        .testimonial-rating {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+
+        .star {
+            font-size: 18px;
+            color: var(--star);
+        }
+
+        .testimonial-quote {
+            font-size: 16px;
+            color: var(--text-primary);
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .client-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .client-role {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .form-input,
+        .form-textarea {
+            background-color: var(--bg-primary);
+            color: var(--text-secondary);
+            border: 1px solid var(--bg-secondary);
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(0, 200, 83, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 12px 0;
+            background-color: var(--accent);
+            color: var(--bg-primary);
+            border: none;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+        }
+
+        .form-submit:hover {
+            background-color: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 200, 83, 0.3);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 18px;
+        }
+
+        .social-link:hover {
+            background-color: var(--accent);
+            color: var(--bg-primary);
+            transform: translateY(-4px);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            border-top: 1px solid var(--bg-secondary);
+        }
+
+        /* SCROLL TO TOP */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent);
+            color: var(--bg-primary);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            z-index: 999;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-4px);
+        }
+
+        .scroll-to-top.show {
+            display: flex;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 70px;
+                padding: 10px;
+            }
+
+            main {
+                margin-left: 70px;
+                padding: 0 20px;
+            }
+
+            .sidebar-name {
+                display: none;
+            }
+
+            .status-badge {
+                display: none;
+            }
+
+            .nav-link span {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 48px;
+            }
+
+            .achievements-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stack-grid-main {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar {
+                width: 60px;
+            }
+
+            main {
+                margin-left: 60px;
+                padding: 0 15px;
+            }
+
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .achievements-grid,
+            .projects-grid,
+            .stack-grid-main {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-profile">
+            <img src="https://a.lovart.ai/artifacts/user/rvfgbqzQbeafPpJE.png" alt="Allah Nawaz" class="profile-pic">
+            <h1 class="sidebar-name">Allah Nawaz</h1>
+            <div class="status-badge">
+                <div class="status-dot"></div>
+                <span class="status-text">Available for Work</span>
+            </div>
+        </div>
 
-  <!-- Hero -->
-  <header class="hero">
-    <h1>Allah Nawaz</h1>
-    <p>UI/UX & Product Designer</p>
-    <a href="#projects" class="btn">View My Work</a>
-  </header>
+        <nav>
+            <ul class="sidebar-nav">
+                <li class="nav-item"><a href="#home" class="nav-link active"><span>🏠</span> <span>Home</span></a></li>
+                <li class="nav-item"><a href="#about" class="nav-link"><span>👤</span> <span>About</span></a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link"><span>📁</span> <span>Projects</span></a></li>
+                <li class="nav-item"><a href="#stack" class="nav-link"><span>🛠️</span> <span>Stack</span></a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link"><span>✉️</span> <span>Contact</span></a></li>
+            </ul>
+        </nav>
 
-  <!-- About -->
-  <section class="section">
-    <h2>About Me</h2>
-    <p>
-      UI/UX & Product Designer with 1+ year of experience designing user-centered
-      digital products for SaaS, web, and mobile platforms. Specialized in clean
-      UI, strong UX flows, and scalable design systems.
-    </p>
-  </section>
+        <div class="sidebar-stack">
+            <div class="stack-title">My Stack</div>
+            <div class="stack-grid">
+                <div class="stack-logo" title="Figma">🎨</div>
+                <div class="stack-logo" title="Framer">⚡</div>
+                <div class="stack-logo" title="Photoshop">📸</div>
+                <div class="stack-logo" title="Illustrator">✏️</div>
+                <div class="stack-logo" title="Canva">🖼️</div>
+                <div class="stack-logo" title="Miro">🗂️</div>
+                <div class="stack-logo" title="Google My Business">🌐</div>
+                <div class="stack-logo" title="Sketch">🎯</div>
+            </div>
+        </div>
+    </aside>
 
-  <!-- Skills -->
-  <section class="section gray">
-    <h2>Skills</h2>
-    <div class="skills">
-      <span>UI/UX Design</span>
-      <span>Product Design</span>
-      <span>Figma</span>
-      <span>Framer</span>
-      <span>Design Systems</span>
-      <span>User Research</span>
-      <span>Prototyping</span>
-    </div>
-  </section>
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- HERO SECTION -->
+        <section id="home" class="hero">
+            <h1 class="hero-title">Hello Everyone! I'm Allah Nawaz</h1>
+            <p class="hero-subtitle">UI/UX & Product Designer | 2+ Years Experience</p>
+            <a href="#about" class="cta-button">More about Me →</a>
+        </section>
 
-  <!-- Projects -->
-  <section class="section" id="projects">
-    <h2>Projects</h2>
+        <!-- ABOUT SECTION -->
+        <section id="about" class="fade-in-section">
+            <h2 class="about-title">About Me</h2>
+            <p class="about-summary">
+                UI/UX and Graphic Designer with 2+ years of experience in web and mobile applications for SaaS, e-commerce, and marketing platforms. Proven track record of increasing user engagement by 25% and improving online visibility by 30%. Expertise in Figma, Framer, Adobe Creative Suite, design systems, wireframing, and prototyping.
+            </p>
 
-    <div class="project">
-      <h3>GoRook – Emergency Assistance App</h3>
-      <p>Roadside help app providing first aid, ambulance, and shelter services.</p>
-    </div>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-number">25%</div>
+                    <div class="achievement-label">User Engagement ↑</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">30%</div>
+                    <div class="achievement-label">Online Visibility ↑</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">35%</div>
+                    <div class="achievement-label">Design Time ↓</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">40%</div>
+                    <div class="achievement-label">Project Delivery ↑</div>
+                </div>
+            </div>
 
-    <div class="project">
-      <h3>SaaS Dashboard Design</h3>
-      <p>Multi-tenant dashboard with analytics, reports, and user management.</p>
-    </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <span>+92 305 574 3436</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">✉️</span>
+                    <span>allahnawazmalik175@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">💼</span>
+                    <span>in/allah-nawaz-256a81286</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🎨</span>
+                    <span>behance.net/allahnawaz175</span>
+                </div>
+            </div>
+        </section>
 
-    <div class="project">
-      <h3>E-commerce Website UI</h3>
-      <p>Conversion-focused product listing and checkout experience.</p>
-    </div>
-  </section>
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience" class="fade-in-section">
+            <h2 class="section-title">My Professional Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-company">T-Tech Solutions Pvt Ltd</div>
+                        <div class="timeline-location">Islamabad, Pakistan</div>
+                        <div class="timeline-duration">May 2025 – Nov 2025</div>
+                        <div class="timeline-role">UI/UX & Graphic Designer</div>
+                        <ul class="timeline-description">
+                            <li>Designed responsive web and mobile interfaces with unified visual identity</li>
+                            <li>Built scalable design systems, reducing repetitive work by 40%</li>
+                            <li>Created Google My Business optimized visuals and social media creatives</li>
+                            <li>Collaborated with cross-functional teams on dashboards and campaigns</li>
+                        </ul>
+                    </div>
+                </div>
 
-  <!-- Contact -->
-  <section class="section gray">
-    <h2>Contact</h2>
-    <p>Email: allahnawazmalik175@email.com</p>
-    <p>LinkedIn: linkedin.com/in/allahnawaz</p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Allah Nawaz. All Rights Reserved.</p>
-  </footer>
-
-  <script>
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
-
-</body>
-</html>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-company">Profituned Marketing</div>
+                        <div class="timeline-location">Rawalpindi, Pakistan</div>
+                        <div class="timeline-duration">May 2024 – Apr 2025</div>
+                        <div class="timeline-role">UI/UX & Graphic Designer</div>
+                        <ul class="timeline-description">
+                            <li>Designed user interfaces increasing engagement and retention by 25%</li>
+                              <li>Developed high-fidelity Figma prototypes, reducing handoff delays</li>

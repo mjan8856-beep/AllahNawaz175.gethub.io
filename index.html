@@ -1,180 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Allah Nawaz — UI/UX & Product Designer</title>
-
-<meta name="description" content="Interactive UI/UX portfolio with device mockups, scroll animations & micro-interactions.">
-<meta name="author" content="Allah Nawaz">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allah Nawaz | UI/UX & Product Designer</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#0b0f14;
-  --card:#141a22;
-  --text:#f5f7fa;
-  --muted:#9aa3ad;
-  --accent:#2cff8f;
-}
-.light{
-  --bg:#f5f7fa;
-  --card:#ffffff;
-  --text:#0b0f14;
-  --muted:#4b5563;
+--bg:#0f1113;
+--card:#171a1d;
+--text:#fff;
+--muted:#9ca3af;
+--accent:#22c55e;
 }
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter}
-body{
-  background:var(--bg);
-  color:var(--text);
-  transition:.25s;
-}
-section{padding:5rem 1.5rem;max-width:1100px;margin:auto}
-h1,h2{letter-spacing:-.03em}
-h1{font-size:clamp(2.4rem,4vw,3.5rem)}
-h2{text-align:center;color:var(--accent);margin-bottom:3rem}
+body{background:var(--bg);color:var(--text);display:flex}
 
-.btn{
-  padding:.85rem 1.6rem;
-  border-radius:12px;
-  background:linear-gradient(135deg,var(--accent),#6bffcf);
-  color:#000;
-  font-weight:600;
-  display:inline-block;
-  transition:.25s;
+aside{
+width:260px;
+padding:2rem;
+background:#0b0d0f;
+position:fixed;
+height:100vh;
 }
-.btn:hover{transform:translateY(-3px) scale(1.05)}
+aside img{width:80px;border-radius:50%}
+aside h3{margin-top:1rem}
+aside p{color:var(--muted);font-size:.9rem}
+aside a{display:block;margin:1rem 0;color:var(--muted);text-decoration:none}
+aside a:hover{color:var(--accent)}
 
-.nav{
-  position:sticky;top:0;
-  backdrop-filter:blur(12px);
-  background:rgba(0,0,0,.4);
-  display:flex;justify-content:space-between;
-  padding:1.2rem 2rem;
-  z-index:10
+main{
+margin-left:260px;
+padding:3rem;
+max-width:1100px;
 }
 
-.toggle{cursor:pointer;font-size:1.2rem}
-
-.hero{text-align:center}
-.hero p{max-width:620px;margin:1rem auto 2rem;color:var(--muted)}
+section{margin-bottom:5rem}
+.card{
+background:var(--card);
+padding:1.5rem;
+border-radius:16px;
+margin-bottom:1.5rem;
+}
 
 .grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:2rem;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:1.5rem;
 }
 
-.card{
-  background:var(--card);
-  border-radius:20px;
-  padding:1.5rem;
-  transition:.35s;
-  transform:translateY(40px);
-  opacity:0;
+.btn{
+background:var(--accent);
+color:#000;
+padding:.7rem 1.4rem;
+border-radius:10px;
+font-weight:600;
+display:inline-block;
+margin-top:1rem;
 }
-.card.show{
-  transform:none;
-  opacity:1;
-}
-.card:hover{
-  transform:translateY(-6px) scale(1.03);
-  box-shadow:0 40px 80px rgba(0,0,0,.5)
-}
-
-.device{
-  background:linear-gradient(180deg,#1f2937,#020617);
-  padding:14px;border-radius:22px;
-  overflow:hidden;margin-bottom:1rem
-}
-.device img{
-  border-radius:14px;
-  width:100%;
-  transition:.4s;
-}
-.card:hover img{transform:scale(1.06)}
-
-footer{text-align:center;padding:3rem;color:var(--muted)}
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<div class="nav">
-  <strong>Allah Nawaz</strong>
-  <div class="toggle" onclick="toggleTheme()">🌗</div>
+<aside>
+<img src="https://via.placeholder.com/150">
+<h3>Allah Nawaz</h3>
+<p>UI/UX & Product Designer</p>
+
+<a href="#home">Home</a>
+<a href="#journey">Journey</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</aside>
+
+<main>
+
+<section id="home">
+<h1>I’m Allah Nawaz</h1>
+<p class="muted">UI/UX & Product Designer with 2+ years experience</p>
+</section>
+
+<section class="grid">
+<div class="card">25% <br><small>User Engagement</small></div>
+<div class="card">30% <br><small>Online Visibility</small></div>
+<div class="card">35% <br><small>Design Speed</small></div>
+<div class="card">40% <br><small>Delivery Time</small></div>
+</section>
+
+<section id="projects">
+<h2>Featured Projects</h2>
+<div class="grid">
+<div class="card">Smarter Influencer Marketing (AI)</div>
+<div class="card">ConectLab Platform</div>
+<div class="card">Pet Food E-commerce</div>
 </div>
-
-<!-- HERO -->
-<section class="hero">
-  <span style="color:var(--accent);font-weight:600">UI/UX & Product Designer</span>
-  <h1>Crafting Interaction-Driven Digital Products</h1>
-  <p>
-    Fully interactive portfolio with device mockups, scroll animations,
-    and polished micro-interactions — built for recruiters.
-  </p>
-  <a class="btn">▶ View Interactive Portfolio</a>
 </section>
 
-<!-- PROJECTS -->
-<section>
-  <h2>Selected Projects</h2>
-  <div class="grid">
-
-    <div class="card">
-      <div class="device">
-        <img src="https://via.placeholder.com/800x500" alt="">
-      </div>
-      <h3>Smarter Influencer Marketing (AI)</h3>
-      <p style="color:var(--muted)">SaaS platform UI with data-driven flows.</p>
-    </div>
-
-    <div class="card">
-      <div class="device">
-        <img src="https://via.placeholder.com/800x500" alt="">
-      </div>
-      <h3>ConectLab Platform</h3>
-      <p style="color:var(--muted)">Modern collaboration & networking UI.</p>
-    </div>
-
-    <div class="card">
-      <div class="device">
-        <img src="https://via.placeholder.com/800x500" alt="">
-      </div>
-      <h3>E-Commerce Pet Food</h3>
-      <p style="color:var(--muted)">Conversion-focused shopping experience.</p>
-    </div>
-
-  </div>
+<section id="skills">
+<h2>Skills</h2>
+<div class="card">UI/UX Design — 95%</div>
+<div class="card">Prototyping — 92%</div>
 </section>
 
-<!-- CONTACT -->
-<section style="text-align:center">
-  <h2>Let’s Work Together</h2>
-  <a class="btn" href="mailto:allahnawazmalik175@gmail.com">Contact Me</a>
+<section id="contact">
+<h2>Get in Touch</h2>
+<a class="btn" href="mailto:allahnawazmalik175@gmail.com">Email Me</a>
 </section>
 
-<footer>
-© 2025 Allah Nawaz · UI/UX & Product Designer · Open for Opportunities
-</footer>
-
-<script>
-/* Dark Light Toggle */
-function toggleTheme(){
-  document.body.classList.toggle("light")
-}
-
-/* Scroll Reveal */
-const cards=document.querySelectorAll(".card")
-const io=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting) e.target.classList.add("show")
-  })
-},{threshold:.2})
-cards.forEach(c=>io.observe(c))
-</script>
-
+</main>
 </body>
 </html>

@@ -1,383 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Allah Nawaz | UI/UX & Product Designer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #0f0f0f;
-            --text: #e0e0e0;
-            --accent: #00ff9d;
-            --card-bg: #1a1a1a;
-            --border: #333;
-        }
-        body {
-            margin: 0;
-            background: var(--bg);
-            color: var(--text);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-        }
-        h1, h2, h3 {
-            font-family: 'Poppins', sans-serif;
-            color: #fff;
-        }
-        a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-        a:hover {
-            opacity: 0.8;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-        header {
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            background: var(--bg);
-            z-index: 100;
-            backdrop-filter: blur(10px);
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 1.5em;
-            font-weight: 700;
-            color: var(--accent);
-        }
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-        .nav-links a {
-            font-weight: 500;
-        }
-        .mobile-menu {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5em;
-        }
-        .hero {
-            text-align: center;
-            padding: 100px 0;
-        }
-        .hero h1 {
-            font-size: 4em;
-            margin: 0;
-        }
-        .hero p {
-            font-size: 1.4em;
-            max-width: 800px;
-            margin: 20px auto;
-            opacity: 0.9;
-        }
-        .cta-buttons {
-            margin-top: 40px;
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-        .btn {
-            padding: 14px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-        .btn-primary {
-            background: var(--accent);
-            color: #000;
-        }
-        .btn-secondary {
-            border: 2px solid var(--accent);
-            color: var(--accent);
-        }
-        section {
-            padding: 100px 0;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 60px;
-            position: relative;
-        }
-        .section-title::after {
-            content: '';
-            width: 80px;
-            height: 4px;
-            background: var(--accent);
-            display: block;
-            margin: 20px auto;
-        }
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 60px;
-            align-items: center;
-        }
-        .profile-img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 20px;
-            background: #333;
-            aspect-ratio: 1/1;
-            object-fit: cover;
-        }
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-        }
-        .project-card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-        .project-img {
-            height: 250px;
-            background: #333;
-            background-size: cover;
-            background-position: center;
-        }
-        .project-info {
-            padding: 24px;
-        }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        .skill-item {
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 12px;
-        }
-        .skill-bar {
-            height: 8px;
-            background: var(--border);
-            border-radius: 4px;
-            margin-top: 10px;
-            overflow: hidden;
-        }
-        .skill-fill {
-            height: 100%;
-            background: var(--accent);
-            border-radius: 4px;
-        }
-        .contact {
-            text-align: center;
-        }
-        .contact-form {
-            max-width: 600px;
-            margin: 40px auto 0;
-            display: grid;
-            gap: 20px;
-        }
-        input, textarea {
-            padding: 16px;
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: #fff;
-        }
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            border-top: 1px solid var(--border);
-            font-size: 0.9em;
-        }
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .mobile-menu { display: block; }
-            .hero h1 { font-size: 2.8em; }
-            .about-grid { grid-template-columns: 1fr; text-align: center; }
-            .cta-buttons { flex-direction: column; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Allah Nawaz - UI/UX & Product Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-dark: #0b0f14;
+      --bg-card: rgba(255, 255, 255, 0.08);
+      --text-primary: #f5f7fa;
+      --text-secondary: #a0a8b3;
+      --accent: #2cff8f;
+      --glass-border: rgba(255, 255, 255, 0.18);
+      --gradient-hero: linear-gradient(90deg,#ffffff,#2cff8f);
+    }
+
+    * {margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;scroll-behavior:smooth;}
+    body {background: var(--bg-dark);color:var(--text-primary);line-height:1.6;}
+    img {max-width:100%;display:block;border-radius:14px;}
+    a {text-decoration:none;color:inherit;transition:color 0.3s;}
+
+    header{position:sticky;top:0;z-index:10;backdrop-filter:blur(12px);background:rgba(11,15,20,0.7);border-bottom:1px solid rgba(255,255,255,0.05);}
+    header>div{padding:1.5rem;max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;}
+    nav a{margin-left:1.5rem;font-size:0.95rem;color:var(--text-secondary);}
+    nav a:hover{color:var(--text-primary);}
+
+    .mobile-menu-toggle {display:none;cursor:pointer;font-size:2rem;color:var(--accent);}
+    .mobile-sidebar {
+      position: fixed; top: 0; right: -100%;
+      width: 75%; height: 100%;
+      background: var(--bg-dark);
+      backdrop-filter: blur(12px);
+      padding: 3rem 2rem;
+      transition: right 0.3s ease;
+      z-index: 20;
+      display:flex; flex-direction:column;
+    }
+    .mobile-sidebar.active {right:0;}
+    .mobile-sidebar a {margin-bottom:1.5rem; font-size:1.2rem; color:var(--text-primary);}
+    .mobile-sidebar .close-btn {font-size:2rem; align-self:flex-end; cursor:pointer; color:var(--accent); margin-bottom:2rem;}
+
+    section{padding:5rem 1.5rem;max-width:1100px;margin:auto;animation:fadeUp 0.8s ease both;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+    .hero {text-align:center;position:relative;}
+    .hero h1{font-size:clamp(2.4rem,4vw,3.8rem);margin-bottom:1rem;background:var(--gradient-hero);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .hero span{display:block;margin-bottom:1rem;color:var(--accent);font-weight:600;letter-spacing:1px;}
+    .hero p{max-width:650px;color:var(--text-secondary);margin:0 auto 2rem;font-size:1.05rem;}
+    .btn{padding:0.85rem 1.7rem;border-radius:12px;background:linear-gradient(135deg,var(--accent),#6bffcf);color:#000;font-weight:600;box-shadow:0 10px 35px rgba(44,255,143,0.35);margin:0.5rem;display:inline-block;transition:all 0.3s;}
+    .btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 20px 40px rgba(44,255,143,0.45);}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;}
+    .card{background:var(--bg-card);backdrop-filter:blur(16px);border:1px solid var(--glass-border);border-radius:20px;padding:2rem;transition:transform 0.35s ease,box-shadow 0.35s ease;position:relative;overflow:hidden;}
+    .card:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 50px 90px rgba(0,0,0,0.85);}
+
+    .device-frame{background:linear-gradient(180deg,#1f2937,#020617);border-radius:24px;padding:16px;overflow:hidden;transition:transform 0.35s ease;}
+    .device-frame img{border-radius:18px;transition:transform 0.4s ease;}
+    .card:hover .device-frame img{transform:scale(1.07);}
+
+    .skills-bar {background: rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;margin-bottom:1.2rem;}
+    .skills-bar-fill {height:12px;background:var(--accent);border-radius:14px;transition:width 1s ease;}
+
+    .timeline {position:relative;}
+    .timeline::before{content:'';position:absolute;left:20px;top:0;width:2px;height:100%;background:var(--accent);}
+    .timeline-item{margin-left:50px;margin-bottom:2.5rem;position:relative;}
+    .timeline-item::before{content:'';position:absolute;left:-32px;top:0;width:14px;height:14px;background:var(--accent);border-radius:50%;}
+
+    .testimonial-card{background:var(--bg-card);padding:2rem;border-radius:20px;backdrop-filter:blur(16px);margin-bottom:2rem;position:relative;transition:transform 0.3s;}
+    .testimonial-card:hover{transform:translateY(-4px) scale(1.02);}
+    .testimonial-card::before{content:'\f005';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;top:-15px;left:-10px;font-size:2.2rem;color:var(--accent);}
+
+    footer{text-align:center;padding:3rem 1.5rem;color:var(--text-secondary);font-size:0.85rem;}
+
+    .icon {margin-right:0.5rem;color:var(--accent);}
+
+    @media(max-width:768px){
+      nav {display:none;}
+      .mobile-menu-toggle {display:block;}
+    }
+  </style>
 </head>
 <body>
-    <header class="container">
-        <nav>
-            <div class="logo">Allah Nawaz</div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="mobile-menu">☰</div>
-        </nav>
-    </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <h1>I'm Allah Nawaz</h1>
-            <p>UI/UX & Product Designer with 2+ years of experience crafting user-centered digital experiences. Available for freelance & full-time opportunities.</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Hire Me</a>
-                <a href="#projects" class="btn btn-secondary">View Projects</a>
-            </div>
-        </div>
-    </section>
+<header>
+  <div>
+    <div>Allah Nawaz</div>
+    <div class="mobile-menu-toggle">&#9776;</div>
+    <nav>
+      <a href="#projects"><i class="fas fa-briefcase icon"></i>Projects</a>
+      <a href="#case-study"><i class="fas fa-file-alt icon"></i>Case Study</a>
+      <a href="#skills"><i class="fas fa-lightbulb icon"></i>Skills</a>
+      <a href="#experience"><i class="fas fa-briefcase icon"></i>Experience</a>
+      <a href="#testimonials"><i class="fas fa-star icon"></i>Testimonials</a>
+      <a href="#tools"><i class="fas fa-tools icon"></i>Tools</a>
+      <a href="#contact"><i class="fas fa-envelope icon"></i>Contact</a>
+      <a href="https://www.behance.net/allahnawaz175" target="_blank"><i class="fab fa-behance icon"></i>Behance</a>
+      <a href="https://www.linkedin.com/in/allah-nawaz-256a81286" target="_blank"><i class="fab fa-linkedin icon"></i>LinkedIn</a>
+    </nav>
+  </div>
+</header>
 
-    <!-- Rest of sections unchanged -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-grid">
-                <img src="your-profile-photo-url.jpg" alt="Allah Nawaz" class="profile-img">
-                <div>
-                    <p>Passionate UI/UX designer based in Islamabad, Pakistan. I specialize in creating intuitive interfaces, design systems, and high-fidelity prototypes that drive engagement and deliver results.</p>
-                    <p>From user research to responsive design, I focus on solving real problems with clean, modern aesthetics.</p>
-                    <p><strong>Experience:</strong> T-Tech Solutions, Profound e Marketing, Design Peeps Intern</p>
-                    <p><strong>Education:</strong> Associate Degree Program, Islamia University of Bahawalpur</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<nav class="mobile-sidebar">
+  <span class="close-btn">&times;</span>
+  <a href="#projects"><i class="fas fa-briefcase icon"></i>Projects</a>
+  <a href="#case-study"><i class="fas fa-file-alt icon"></i>Case Study</a>
+  <a href="#skills"><i class="fas fa-lightbulb icon"></i>Skills</a>
+  <a href="#experience"><i class="fas fa-briefcase icon"></i>Experience</a>
+  <a href="#testimonials"><i class="fas fa-star icon"></i>Testimonials</a>
+  <a href="#tools"><i class="fas fa-tools icon"></i>Tools</a>
+  <a href="#contact"><i class="fas fa-envelope icon"></i>Contact</a>
+</nav>
 
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img" style="background-image: url('project1.jpg');"></div>
-                    <div class="project-info">
-                        <h3>Influencer Marketing AI</h3>
-                        <p>AI-powered platform for smarter influencer marketing.</p>
-                        <a href="#">View Case Study →</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img" style="background-image: url('project2.jpg');"></div>
-                    <div class="project-info">
-                        <h3>Solar Energy Solutions</h3>
-                        <p>E-commerce design focused on renewable energy.</p>
-                        <a href="#">View Case Study →</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img" style="background-image: url('project3.jpg');"></div>
-                    <div class="project-info">
-                        <h3>Pet Food E-commerce</h3>
-                        <p>User-centric pet product shopping experience.</p>
-                        <a href="#">View Case Study →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<script>
+const toggle = document.querySelector('.mobile-menu-toggle');
+const sidebar = document.querySelector('.mobile-sidebar');
+const closeBtn = document.querySelector('.close-btn');
 
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Tools</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <p>UI/UX Design</p>
-                    <div class="skill-bar"><div class="skill-fill" style="width:90%;"></div></div>
-                </div>
-                <div class="skill-item">
-                    <p>Wireframing & Prototyping</p>
-                    <div class="skill-bar"><div class="skill-fill" style="width:85%;"></div></div>
-                </div>
-                <div class="skill-item">
-                    <p>Figma</p>
-                    <div class="skill-bar"><div class="skill-fill" style="width:90%;"></div></div>
-                </div>
-                <div class="skill-item">
-                    <p>Adobe Suite</p>
-                    <div class="skill-bar"><div class="skill-fill" style="width:85%;"></div></div>
-                </div>
-                <div class="skill-item">
-                    <p>User Research</p>
-                    <div class="skill-bar"><div class="skill-fill" style="width:80%;"></div></div>
-                </div>
-                <div class="skill-item">
-                    <p>Responsive Design</p>
-                    <div class="skill-bar"><div class="skill-fill" style="width:80%;"></div></div>
-                </div>
-            </div>
-        </div>
-    </section>
+toggle.addEventListener('click', () => sidebar.classList.add('active'));
+closeBtn.addEventListener('click', () => sidebar.classList.remove('active'));
+</script>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get in Touch</h2>
-            <p>Phone: +92 305 574 3436 | Email: allahnawazalikhan175@gmail.com | Location: Islamabad, Pakistan</p>
-            <div class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea rows="6" placeholder="Your Message" required></textarea>
-                <button class="btn btn-primary">Send Message</button>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2025 Allah Nawaz. All rights reserved.</p>
-    </footer>
-
-    <script>
-        // Custom smooth scroll with cubic-bezier easing
-        const easing = (t) => {
-            // cubic-bezier(0.68, -0.55, 0.32, 1.55) approximation
-            return t < 0.5 
-                ? 4 * t * t * t 
-                : 1 - Math.pow(-2 * t + 2, 3) / 2 + 0.05 * Math.sin(t * Math.PI * 4); // subtle overshoot feel
-        };
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                const target = document.querySelector(targetId);
-                if (!target) return;
-
-                const headerOffset = 100; // matches scroll-padding earlier
-                const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = elementPosition - headerOffset;
-
-                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                    window.scrollTo({ top: offsetPosition });
-                    return;
-                }
-
-                const start = window.pageYOffset;
-                const distance = offsetPosition - start;
-                const duration = 800; // ms
-                let startTime = null;
-
-                function animation(currentTime) {
-                    if (startTime === null) startTime = currentTime;
-                    const timeElapsed = currentTime - startTime;
-                    const progress = Math.min(timeElapsed / duration, 1);
-                    const easedProgress = easing(progress);
-
-                    window.scrollTo(0, start + distance * easedProgress);
-
-                    if (timeElapsed < duration) {
-                        requestAnimationFrame(animation);
-                    }
-                }
-
-                requestAnimationFrame(animation);
-            });
-        });
-    </script>
 </body>
 </html>

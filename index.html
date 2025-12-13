@@ -1,320 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Allah Nawaz - Portfolio</title>
-    <!-- Bootstrap CDN for responsive design and components -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Custom CSS for dark theme and specific styles -->
-    <style>
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: 'Arial', sans-serif;
-        }
-        .sidebar {
-            background-color: #1e1e1e;
-            height: 100vh;
-            position: fixed;
-            padding-top: 20px;
-            width: 200px;
-        }
-        .sidebar a {
-            color: #ffffff;
-            text-decoration: none;
-            display: block;
-            padding: 10px 20px;
-        }
-        .sidebar a:hover {
-            background-color: #333333;
-        }
-        .content {
-            margin-left: 200px;
-            padding: 20px;
-        }
-        .profile-pic {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        .stat-box {
-            background-color: #1e1e1e;
-            padding: 15px;
-            text-align: center;
-            border-radius: 8px;
-        }
-        .stat-icon {
-            color: #00ff00;
-            font-size: 24px;
-        }
-        .progress-bar {
-            background-color: #00ff00;
-        }
-        .project-card {
-            background-color: #1e1e1e;
-            border: none;
-        }
-        .tech-icon {
-            width: 60px;
-            height: 60px;
-            background-color: #333333;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 10px;
-            text-decoration: none;
-            color: #ffffff;
-        }
-        .tech-icon img {
-            max-width: 40px;
-            max-height: 40px;
-        }
-        .testimonial {
-            background-color: #1e1e1e;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        .btn-send {
-            background-color: #00ff00;
-            border: none;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #1e1e1e;
-        }
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            .sidebar {
-                position: relative;
-                height: auto;
-                width: 100%;
-            }
-            .content {
-                margin-left: 0;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Allah Nawaz | UI/UX & Product Designer</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Sidebar Navigation -->
-            <nav class="col-md-2 sidebar">
-                <img src="https://via.placeholder.com/80?text=Profile" alt="Profile Pic" class="profile-pic d-block mx-auto">
-                <h5 class="text-center mt-2">Allah Nawaz</h5>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </nav>
 
-            <!-- Main Content -->
-            <main class="col-md-10 content">
-                <!-- Header Section -->
-                <section id="home" class="mb-5">
-                    <h1>I'm Allah Nawaz</h1>
-                    <p>UI/UX & Product Designer • 2+ Years Experience</p>
-                    <button class="btn btn-secondary">More About Me</button>
-                </section>
+  <!-- Header -->
+  <header class="hero">
+    <h1>Allah Nawaz</h1>
+    <p>UI/UX & Product Designer</p>
+    <a href="#projects" class="btn">View My Work</a>
+  </header>
 
-                <!-- Stats Section -->
-                <section class="mb-5">
-                    <div class="row">
-                        <div class="col-md-3 col-6 mb-3">
-                            <div class="stat-box">
-                                <span class="stat-icon">↑</span>
-                                <h3>25%</h3>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-6 mb-3">
-                            <div class="stat-box">
-                                <span class="stat-icon">↑</span>
-                                <h3>30%</h3>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-6 mb-3">
-                            <div class="stat-box">
-                                <span class="stat-icon">↑</span>
-                                <h3>35%</h3>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-6 mb-3">
-                            <div class="stat-box">
-                                <span class="stat-icon">↑</span>
-                                <h3>40%</h3>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+  <!-- About -->
+  <section class="section">
+    <h2>About Me</h2>
+    <p>
+      I am a UI/UX & Product Designer with 1+ year of experience designing
+      user-centered digital products for SaaS, web, and mobile platforms.
+      I specialize in clean UI, strong UX flows, and scalable design systems.
+    </p>
+  </section>
 
-                <!-- Professional Journey -->
-                <section class="mb-5">
-                    <h2>My Professional Journey</h2>
-                    <ul class="list-group list-group-flush bg-transparent">
-                        <li class="list-group-item bg-transparent border-0 text-white">UI/UX Graphic Designer - Design on creative systems and GPI design, marking tools.</li>
-                        <li class="list-group-item bg-transparent border-0 text-white">Professional Marketing Trainer - Trainer.</li>
-                        <li class="list-group-item bg-transparent border-0 text-white">UI/UX Design Intern - Group.</li>
-                    </ul>
-                </section>
+  <!-- Skills -->
+  <section class="section gray">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>UI/UX Design</span>
+      <span>Product Design</span>
+      <span>Figma</span>
+      <span>Framer</span>
+      <span>Design Systems</span>
+      <span>User Research</span>
+      <span>Prototyping</span>
+    </div>
+  </section>
 
-                <!-- Education & Certifications -->
-                <section class="mb-5">
-                    <h2>Education & Certifications</h2>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h4>Associate Degree Program</h4>
-                            <p>Associate</p>
-                        </div>
-                        <div class="col-md-6">
-                            <h4>eCertification</h4>
-                            <p>Meta Design Technology</p>
-                        </div>
-                    </div>
-                </section>
+  <!-- Projects -->
+  <section class="section" id="projects">
+    <h2>Projects</h2>
 
-                <!-- Skills Section -->
-                <section class="mb-5">
-                    <h2>My Skills</h2>
-                    <div class="progress mb-3">
-                        <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">UI/UX Design 100%</div>
-                    </div>
-                    <div class="progress mb-3">
-                        <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">Webdesigning 80%</div>
-                    </div>
-                    <div class="progress mb-3">
-                        <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">Print Design 60%</div>
-                    </div>
-                    <div class="progress mb-3">
-                        <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">User Research 80%</div>
-                    </div>
-                </section>
-
-                <!-- Featured Projects -->
-                <section class="mb-5">
-                    <h2>Featured Projects</h2>
-                    <div class="row">
-                        <div class="col-md-4 col-sm-6 mb-3">
-                            <div class="card project-card">
-                                <img src="https://via.placeholder.com/300x200?text=Influencer+AI" class="card-img-top" alt="Influencer Marketing AI">
-                                <div class="card-body">
-                                    <h5 class="card-title">Influencer Marketing AI</h5>
-                                    <a href="https://example.com/influencer-ai" class="btn btn-secondary" target="_blank">View Project</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 mb-3">
-                            <div class="card project-card">
-                                <img src="https://via.placeholder.com/300x200?text=Solar+Energy" class="card-img-top" alt="Solar Energy Solution">
-                                <div class="card-body">
-                                    <h5 class="card-title">Solar Energy Solution</h5>
-                                    <a href="https://example.com/solar-energy" class="btn btn-secondary" target="_blank">View Project</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 mb-3">
-                            <div class="card project-card">
-                                <img src="https://via.placeholder.com/300x200?text=Pet+Food" class="card-img-top" alt="Pet Food E-Commerce">
-                                <div class="card-body">
-                                    <h5 class="card-title">Pet Food E-Commerce</h5>
-                                    <a href="https://example.com/pet-food" class="btn btn-secondary" target="_blank">View Project</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 mb-3">
-                            <div class="card project-card">
-                                <img src="https://via.placeholder.com/300x200?text=Clicky" class="card-img-top" alt="Clicky Platform">
-                                <div class="card-body">
-                                    <h5 class="card-title">Clicky Platform</h5>
-                                    <a href="https://example.com/clicky" class="btn btn-secondary" target="_blank">View Project</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 mb-3">
-                            <div class="card project-card">
-                                <img src="https://via.placeholder.com/300x200?text=Correctal" class="card-img-top" alt="Correctal Project">
-                                <div class="card-body">
-                                    <h5 class="card-title">Correctal Project</h5>
-                                    <a href="https://example.com/correctal" class="btn btn-secondary" target="_blank">View Project</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Tech Stack -->
-                <section class="mb-5">
-                    <h2>My Tech Stack</h2>
-                    <div class="d-flex flex-wrap justify-content-center justify-content-md-start">
-                        <a href="https://www.figma.com/" class="tech-icon" target="_blank"><img src="https://via.placeholder.com/40?text=F" alt="Figma"></a>
-                        <a href="https://www.adobe.com/products/xd.html" class="tech-icon" target="_blank"><img src="https://via.placeholder.com/40?text=XD" alt="Adobe XD"></a>
-                        <a href="https://www.adobe.com/products/photoshop.html" class="tech-icon" target="_blank"><img src="https://via.placeholder.com/40?text=PS" alt="Photoshop"></a>
-                        <a href="https://www.adobe.com/products/illustrator.html" class="tech-icon" target="_blank"><img src="https://via.placeholder.com/40?text=AI" alt="Illustrator"></a>
-                        <a href="https://www.canva.com/" class="tech-icon" target="_blank"><img src="https://via.placeholder.com/40?text=C" alt="Canva"></a>
-                        <a href="https://miro.com/" class="tech-icon" target="_blank"><img src="https://via.placeholder.com/40?text=M" alt="Miro"></a>
-                        <a href="https://workspace.google.com/business/" class="tech-icon" target="_blank"><img src="https://via.placeholder.com/40?text=GB" alt="Google Business"></a>
-                    </div>
-                </section>
-
-                <!-- Kind Words -->
-                <section class="mb-5">
-                    <h2>Kind Words</h2>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <div class="testimonial">
-                                <p>⭐⭐⭐⭐⭐</p>
-                                <p>"Allah always exceed expectations..."</p>
-                                <p>- John Arthur</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="testimonial">
-                                <p>⭐⭐⭐⭐⭐</p>
-                                <p>"Allah is very talented..."</p>
-                                <p>- Todd White</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Get In Touch -->
-                <section id="contact" class="mb-5">
-                    <h2>Get In Touch</h2>
-                    <form action="https://example.com/submit-form" method="POST">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control bg-dark text-white" id="name" name="name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control bg-dark text-white" id="email" name="email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Phone</label>
-                            <input type="tel" class="form-control bg-dark text-white" id="phone" name="phone">
-                        </div>
-                        <div class="mb-3">
-                            <label for="location" class="form-label">Location</label>
-                            <input type="text" class="form-control bg-dark text-white" id="location" name="location">
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control bg-dark text-white" id="message" name="message" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-send">Send</button>
-                    </form>
-                </section>
-            </main>
-        </div>
+    <div class="project">
+      <h3>GoRook – Emergency Assistance App</h3>
+      <p>Roadside help app providing first aid, ambulance, and shelter services.</p>
     </div>
 
-    <footer>
-        <p>© 2024 Allah Nawaz. All rights reserved.</p>
-    </footer>
+    <div class="project">
+      <h3>SaaS Dashboard Design</h3>
+      <p>Multi-tenant dashboard with analytics, reports, and user management.</p>
+    </div>
 
-    <!-- Bootstrap JS for interactivity -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <div class="project">
+      <h3>E-commerce Website UI</h3>
+      <p>Conversion-focused product listing and checkout experience.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section gray">
+    <h2>Contact</h2>
+    <p>Email: your@email.com</p>
+    <p>LinkedIn: linkedin.com/in/allahnawaz</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Allah Nawaz. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: #222;
+}
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #111, #333);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero p {
+  margin: 10px 0 20px;
+  font-size: 1.2rem;
+}
+
+.btn {
+  padding: 12px 24px;
+  background: #fff;
+  color: #111;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.gray {
+  background: #f5f5f5;
+}
+
+.skills span {
+  display: inline-block;
+  background: #111;
+  color: #fff;
+  padding: 8px 14px;
+  margin: 6px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.project {
+  margin-bottom: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: #fff;
+}
+// Simple smooth scroll animation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});

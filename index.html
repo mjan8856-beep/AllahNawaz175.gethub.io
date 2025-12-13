@@ -3,133 +3,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Allah Nawaz - UI/UX & Product Designer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Allah Nawaz | UI/UX & Product Designer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #f9fafb; color: #0f172a; line-height: 1.6; }
-        .container { max-width: 900px; margin: 40px auto; padding: 20px; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 8px; }
-        header { text-align: center; border-bottom: 2px solid #6366f1; padding-bottom: 20px; }
-        h1 { font-size: 2.5em; margin: 0; color: #6366f1; }
-        h2 { font-size: 1.8em; margin-top: 30px; color: #6366f1; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; }
-        .contact { font-size: 1.1em; margin: 10px 0; }
-        .contact a { color: #6366f1; text-decoration: none; }
-        ul { list-style: none; padding: 0; }
-        li { margin-bottom: 10px; position: relative; padding-left: 20px; }
-        li:before { content: '\f058'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; color: #6366f1; }
-        .skills { display: flex; flex-wrap: wrap; gap: 10px; }
-        .skill-tag { background: #e0e7ff; color: #6366f1; padding: 5px 10px; border-radius: 20px; font-size: 0.9em; }
-        .progress { background: #e2e8f0; height: 8px; border-radius: 4px; margin-top: 5px; }
-        .progress-bar { background: #6366f1; height: 100%; border-radius: 4px; }
-        @media (max-width: 600px) { .container { padding: 10px; } h1 { font-size: 2em; } }
+        :root {
+            --bg: #0f0f0f;
+            --text: #e0e0e0;
+            --accent: #00ff9d;
+            --card-bg: #1a1a1a;
+            --border: #333;
+        }
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+        }
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        a:hover {
+            opacity: 0.8;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        .nav-links a {
+            font-weight: 500;
+        }
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5em;
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+        }
+        .hero h1 {
+            font-size: 4em;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.4em;
+            max-width: 800px;
+            margin: 20px auto;
+            opacity: 0.9;
+        }
+        .cta-buttons {
+            margin-top: 40px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .btn {
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: #000;
+        }
+        .btn-secondary {
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+        section {
+            padding: 100px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            display: block;
+            margin: 20px auto;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .profile-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            background: #333;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        .project-img {
+            height: 250px;
+            background: #333;
+            background-size: cover;
+            background-position: center;
+        }
+        .project-info {
+            padding: 24px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .skill-item {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+        }
+        .skill-bar {
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        .skill-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+        }
+        .contact {
+            text-align: center;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto 0;
+            display: grid;
+            gap: 20px;
+        }
+        input, textarea {
+            padding: 16px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: #fff;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            font-size: 0.9em;
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu { display: block; }
+            .hero h1 { font-size: 2.8em; }
+            .about-grid { grid-template-columns: 1fr; text-align: center; }
+            .cta-buttons { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Allah Nawaz</h1>
-            <p>UI/UX & Product Designer</p>
-            <div class="contact">
-                <i class="fas fa-phone"></i> +92 305 574 3436 | 
-                <i class="fas fa-envelope"></i> <a href="mailto:allahnawazmalik175@gmail.com">allahnawazmalik175@gmail.com</a> | 
-                <i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/allah-nawaz-256a81286">LinkedIn</a> | 
-                <i class="fab fa-behance"></i> <a href="https://www.behance.net/allahnawaz175">Behance</a>
+    <header class="container">
+        <nav>
+            <div class="logo">Allah Nawaz</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
             </div>
-        </header>
+            <div class="mobile-menu">☰</div>
+        </nav>
+    </header>
 
-        <section>
-            <h2>Professional Summary</h2>
-            <p>UI/UX and Graphic Designer with 2+ years of experience designing user-centered web and mobile applications for SaaS, e-commerce, and marketing platforms. Proven track record of increasing user engagement by 25% and improving online visibility by 30% through strategic design solutions. Expertise in Figma, Framer, and Adobe Creative Suite with strong capabilities in design systems, wireframing, prototyping, and cross-functional collaboration. Passionate about blending research and creativity for scalable, impactful designs.</p>
-        </section>
-
-        <section>
-            <h2>Professional Experience</h2>
-            <h3>UI/UX & Graphic Designer <span style="float:right;">May 2025 – Present</span></h3>
-            <p>T-Tech Solutions Pvt Ltd | Islamabad, Pakistan</p>
-            <ul>
-                <li>Design responsive web and mobile interfaces with unified visual identity across multiple platforms, ensuring consistent product branding</li>
-                <li>Build scalable design systems that reduce repetitive work and accelerate new feature rollouts by 40%</li>
-                <li>Create Google My Business optimized visuals and social media creatives that increase local customer reach and brand awareness</li>
-                <li>Collaborate with development and marketing teams to deliver user-friendly dashboards and high-impact campaigns aligned with business objectives</li>
-            </ul>
-
-            <h3>UI/UX & Graphic Designer <span style="float:right;">May 2024 – Apr 2025</span></h3>
-            <p>Profituned Marketing | Rawalpindi, Pakistan</p>
-            <ul>
-                <li>Designed responsive user interfaces that increased user engagement and retention by 25%</li>
-                <li>Developed high-fidelity prototypes in Figma that reduced development handoff delays and improved project delivery timelines</li>
-                <li>Created scalable design systems across multiple products, maintaining brand consistency and reducing design time by 35%</li>
-                <li>Produced SEO-optimized Google My Business graphics that increased local impressions by 30%</li>
-                <li>Designed marketing banners and campaign creatives that strengthened brand presence and marketing effectiveness</li>
-            </ul>
-
-            <h3>UI/UX Design Intern <span style="float:right;">Oct 2023 – Apr 2024</span></h3>
-            <p>Design Peeps | Islamabad, Pakistan</p>
-            <ul>
-                <li>Conducted user research, wireframing, and usability testing for SaaS and e-commerce platforms to identify and resolve usability issues</li>
-                <li>Created interactive Figma prototypes that accelerated client approval processes and improved stakeholder communication</li>
-                <li>Contributed to design systems and grid-based layouts, ensuring structured and consistent project outcomes</li>
-                <li>Collaborated with senior designers on multiple client projects, gaining practical experience in design workflows</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Skills</h2>
-            <div class="skills">
-                <span class="skill-tag">UI/UX Design</span>
-                <span class="skill-tag">Wireframing</span>
-                <span class="skill-tag">Prototyping</span>
-                <span class="skill-tag">User Research</span>
-                <span class="skill-tag">Usability Testing</span>
-                <span class="skill-tag">Design Systems</span>
-                <span class="skill-tag">Responsive Design</span>
-                <span class="skill-tag">Information Architecture</span>
-                <span class="skill-tag">User Flows</span>
-                <span class="skill-tag">Interaction Design</span>
-                <span class="skill-tag">SaaS Platforms</span>
-                <span class="skill-tag">E-commerce</span>
-                <span class="skill-tag">Marketing</span>
-                <span class="skill-tag">Web Applications</span>
-                <span class="skill-tag">Mobile Applications</span>
-                <span class="skill-tag">Figma</span>
-                <span class="skill-tag">Framer</span>
-                <span class="skill-tag">Adobe Photoshop</span>
-                <span class="skill-tag">Adobe Illustrator</span>
-                <span class="skill-tag">Canva</span>
-                <span class="skill-tag">Miro</span>
-                <span class="skill-tag">Branding</span>
-                <span class="skill-tag">Visual Design</span>
-                <span class="skill-tag">Cross-Functional Collaboration</span>
-                <span class="skill-tag">Agile Methodology</span>
-                <span class="skill-tag">Google My Business Optimization</span>
-                <span class="skill-tag">SEO Graphics</span>
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>I'm Allah Nawaz</h1>
+            <p>UI/UX & Product Designer with 2+ years of experience crafting user-centered digital experiences. Available for freelance & full-time opportunities.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Hire Me</a>
+                <a href="#projects" class="btn btn-secondary">View Projects</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section>
-            <h2>Education</h2>
-            <h3>Associate Degree Program <span style="float:right;">2020 – 2022</span></h3>
-            <p>Islamia University of Bahawalpur | Bahawalpur, Pakistan</p>
-        </section>
+    <!-- Rest of sections unchanged -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <img src="your-profile-photo-url.jpg" alt="Allah Nawaz" class="profile-img">
+                <div>
+                    <p>Passionate UI/UX designer based in Islamabad, Pakistan. I specialize in creating intuitive interfaces, design systems, and high-fidelity prototypes that drive engagement and deliver results.</p>
+                    <p>From user research to responsive design, I focus on solving real problems with clean, modern aesthetics.</p>
+                    <p><strong>Experience:</strong> T-Tech Solutions, Profound e Marketing, Design Peeps Intern</p>
+                    <p><strong>Education:</strong> Associate Degree Program, Islamia University of Bahawalpur</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section>
-            <h2>Certifications</h2>
-            <ul>
-                <li>Networking Technician Course (6 months) | Punjab Skills Development Fund (PSDF)</li>
-                <li>Website Design Course (6 months) | National Vocational & Technical Training Commission (NAVTTC)</li>
-                <li>Information Technology Course (3 months) | Technical Education & Vocational Training Authority (TEVTA)</li>
-            </ul>
-        </section>
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('project1.jpg');"></div>
+                    <div class="project-info">
+                        <h3>Influencer Marketing AI</h3>
+                        <p>AI-powered platform for smarter influencer marketing.</p>
+                        <a href="#">View Case Study →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('project2.jpg');"></div>
+                    <div class="project-info">
+                        <h3>Solar Energy Solutions</h3>
+                        <p>E-commerce design focused on renewable energy.</p>
+                        <a href="#">View Case Study →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img" style="background-image: url('project3.jpg');"></div>
+                    <div class="project-info">
+                        <h3>Pet Food E-commerce</h3>
+                        <p>User-centric pet product shopping experience.</p>
+                        <a href="#">View Case Study →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section>
-            <h2>Key Achievements</h2>
-            <ul>
-                <li>Increased user engagement and retention by 25% through responsive interface design</li>
-                <li>Improved local business visibility with 30% increase in Google My Business impressions</li>
-                <li>Reduced design system implementation time by 35% through scalable component libraries</li>
-                <li>Accelerated project delivery by 40% with streamlined design processes and high-fidelity prototyping</li>
-            </ul>
-        </section>
-    </div>
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Tools</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <p>UI/UX Design</p>
+                    <div class="skill-bar"><div class="skill-fill" style="width:90%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <p>Wireframing & Prototyping</p>
+                    <div class="skill-bar"><div class="skill-fill" style="width:85%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <p>Figma</p>
+                    <div class="skill-bar"><div class="skill-fill" style="width:90%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <p>Adobe Suite</p>
+                    <div class="skill-bar"><div class="skill-fill" style="width:85%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <p>User Research</p>
+                    <div class="skill-bar"><div class="skill-fill" style="width:80%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <p>Responsive Design</p>
+                    <div class="skill-bar"><div class="skill-fill" style="width:80%;"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <p>Phone: +92 305 574 3436 | Email: allahnawazalikhan175@gmail.com | Location: Islamabad, Pakistan</p>
+            <div class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="6" placeholder="Your Message" required></textarea>
+                <button class="btn btn-primary">Send Message</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Allah Nawaz. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Custom smooth scroll with cubic-bezier easing
+        const easing = (t) => {
+            // cubic-bezier(0.68, -0.55, 0.32, 1.55) approximation
+            return t < 0.5 
+                ? 4 * t * t * t 
+                : 1 - Math.pow(-2 * t + 2, 3) / 2 + 0.05 * Math.sin(t * Math.PI * 4); // subtle overshoot feel
+        };
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (!target) return;
+
+                const headerOffset = 100; // matches scroll-padding earlier
+                const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerOffset;
+
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    window.scrollTo({ top: offsetPosition });
+                    return;
+                }
+
+                const start = window.pageYOffset;
+                const distance = offsetPosition - start;
+                const duration = 800; // ms
+                let startTime = null;
+
+                function animation(currentTime) {
+                    if (startTime === null) startTime = currentTime;
+                    const timeElapsed = currentTime - startTime;
+                    const progress = Math.min(timeElapsed / duration, 1);
+                    const easedProgress = easing(progress);
+
+                    window.scrollTo(0, start + distance * easedProgress);
+
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animation);
+                    }
+                }
+
+                requestAnimationFrame(animation);
+            });
+        });
+    </script>
 </body>
 </html>

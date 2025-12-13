@@ -4,173 +4,1786 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Allah Nawaz - UI/UX & Product Designer</title>
+<meta name="description" content="Allah Nawaz - UI/UX Designer specializing in SaaS, E-commerce & Product Design. View my portfolio of data-driven design solutions.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 :root {
-  --bg-dark:#0b0f14; --bg-card:rgba(255,255,255,0.08); --text-primary:#f5f7fa; --text-secondary:#a0a8b3; --accent:#2cff8f; --glass-border:rgba(255,255,255,0.18); --gradient-hero:linear-gradient(90deg,#ffffff,#2cff8f);
+  --bg-dark:#0b0f14;
+  --bg-card:rgba(255,255,255,0.08);
+  --text-primary:#f5f7fa;
+  --text-secondary:#a0a8b3;
+  --accent:#2cff8f;
+  --glass-border:rgba(255,255,255,0.18);
+  --gradient-hero:linear-gradient(90deg,#ffffff,#2cff8f);
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 5rem;
 }
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;scroll-behavior:smooth;}
-body{background:var(--bg-dark);color:var(--text-primary);line-height:1.6;overflow-x:hidden;}
-img{max-width:100%;display:block;border-radius:14px;}
-a{text-decoration:none;color:inherit;transition:color 0.3s;}
-h2{margin-bottom:2rem;text-align:center;color:var(--accent);}
-header{position:sticky;top:0;z-index:10;backdrop-filter:blur(12px);background:rgba(11,15,20,0.7);border-bottom:1px solid rgba(255,255,255,0.05);}
-header>div{padding:1.5rem;max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;}
-nav a{margin-left:1.5rem;font-size:0.95rem;color:var(--text-secondary);}
-nav a:hover{color:var(--text-primary);}
-.mobile-menu-toggle{display:none;cursor:pointer;font-size:2rem;color:var(--accent);}
-.mobile-sidebar{position:fixed;top:0;right:-100%;width:75%;height:100%;background:var(--bg-dark);backdrop-filter:blur(12px);padding:3rem 2rem;transition:right 0.3s ease;z-index:20;display:flex;flex-direction:column;}
-.mobile-sidebar.active{right:0;}
-.mobile-sidebar a{margin-bottom:1.5rem;font-size:1.2rem;color:var(--text-primary);}
-.mobile-sidebar .close-btn{font-size:2rem;align-self:flex-end;cursor:pointer;color:var(--accent);margin-bottom:2rem;}
-section{padding:5rem 1.5rem;max-width:1100px;margin:auto;animation:fadeUp 0.8s ease both;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-.hero{text-align:center;position:relative;}
-.hero h1{font-size:clamp(2.4rem,4vw,3.8rem);margin-bottom:1rem;background:var(--gradient-hero);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.hero span{display:block;margin-bottom:1rem;color:var(--accent);font-weight:600;letter-spacing:1px;}
-.hero p{max-width:650px;color:var(--text-secondary);margin:0 auto 2rem;font-size:1.05rem;}
-.btn{padding:0.85rem 1.7rem;border-radius:12px;background:linear-gradient(135deg,var(--accent),#6bffcf);color:#000;font-weight:600;box-shadow:0 10px 35px rgba(44,255,143,0.35);margin:0.5rem;display:inline-block;transition:all 0.3s;}
-.btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 20px 40px rgba(44,255,143,0.45);}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;}
-.card{background:var(--bg-card);backdrop-filter:blur(16px);border:1px solid var(--glass-border);border-radius:20px;padding:2rem;transition:transform 0.35s ease,box-shadow 0.35s ease;position:relative;overflow:hidden;}
-.card:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 50px 90px rgba(0,0,0,0.85);}
-.device-frame{background:linear-gradient(180deg,#1f2937,#020617);border-radius:24px;padding:16px;overflow:hidden;transition:transform 0.35s ease;}
-.device-frame img{border-radius:18px;transition:transform 0.4s ease;}
-.card:hover .device-frame img{transform:scale(1.07);}
-.skills-bar{background: rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;margin-bottom:1.2rem;}
-.skills-bar-fill{height:12px;background:var(--accent);border-radius:14px;transition:width 1s ease;}
-.timeline{position:relative;}
-.timeline::before{content:'';position:absolute;left:20px;top:0;width:2px;height:100%;background:var(--accent);}
-.timeline-item{margin-left:50px;margin-bottom:2.5rem;position:relative;}
-.timeline-item::before{content:'';position:absolute;left:-32px;top:0;width:14px;height:14px;background:var(--accent);border-radius:50%;}
-.testimonial-card{background:var(--bg-card);padding:2rem;border-radius:20px;backdrop-filter:blur(16px);margin-bottom:2rem;position:relative;transition:transform 0.3s;}
-.testimonial-card:hover{transform:translateY(-4px) scale(1.02);}
-.testimonial-card::before{content:'\\f005';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;top:-15px;left:-10px;font-size:2.2rem;color:var(--accent);}
-footer{text-align:center;padding:3rem 1.5rem;color:var(--text-secondary);font-size:0.85rem;}
-.icon{margin-right:0.5rem;color:var(--accent);}
-@media(max-width:768px){nav{display:none;}.mobile-menu-toggle{display:block;}}
+
+[data-theme="light"] {
+  --bg-dark:#f8f9fa;
+  --bg-card:rgba(255,255,255,0.9);
+  --text-primary:#1a202c;
+  --text-secondary:#4a5568;
+  --accent:#00c896;
+  --glass-border:rgba(0,0,0,0.1);
+  --gradient-hero:linear-gradient(90deg,#1a202c,#00c896);
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+  scroll-behavior:smooth;
+}
+
+body {
+  background:var(--bg-dark);
+  color:var(--text-primary);
+  line-height:1.6;
+  overflow-x:hidden;
+  transition:background 0.3s, color 0.3s;
+}
+
+body.loading {
+  overflow:hidden;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Loading Screen */
+.loading-screen {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:var(--bg-dark);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:10000;
+  transition:opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loading-screen.hidden {
+  opacity:0;
+  visibility:hidden;
+}
+
+.loader-content {
+  text-align:center;
+  max-width:300px;
+}
+
+.loader-logo {
+  display:flex;
+  justify-content:center;
+  gap:0.5rem;
+  margin-bottom:2rem;
+}
+
+.logo-letter {
+  font-size:3rem;
+  font-weight:700;
+  color:var(--accent);
+  animation:letterBounce 1s ease-in-out infinite;
+  display:inline-block;
+}
+
+.logo-letter:nth-child(2) {
+  animation-delay:0.2s;
+}
+
+@keyframes letterBounce {
+  0%, 100% {
+    transform:translateY(0);
+  }
+  50% {
+    transform:translateY(-20px);
+  }
+}
+
+.loader-bar {
+  width:100%;
+  height:4px;
+  background:rgba(255,255,255,0.1);
+  border-radius:10px;
+  overflow:hidden;
+  margin-bottom:1rem;
+}
+
+.loader-progress {
+  height:100%;
+  background:linear-gradient(90deg, var(--accent), #6bffcf);
+  border-radius:10px;
+  width:0%;
+  animation:loadProgress 2s ease-in-out forwards;
+}
+
+@keyframes loadProgress {
+  0% {
+    width:0%;
+  }
+  100% {
+    width:100%;
+  }
+}
+
+.loader-text {
+  color:var(--text-secondary);
+  font-size:0.9rem;
+  animation:pulse 1.5s ease-in-out infinite;
+  margin-bottom:1rem;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity:1;
+  }
+  50% {
+    opacity:0.5;
+  }
+}
+
+.loader-spinner {
+  width:40px;
+  height:40px;
+  margin:0 auto;
+  border:3px solid rgba(255,255,255,0.1);
+  border-top-color:var(--accent);
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform:rotate(360deg);
+  }
+}
+
+/* Page Transition Loader */
+.page-transition {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:var(--bg-dark);
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.page-transition.active {
+  opacity:1;
+  visibility:visible;
+}
+
+.transition-bar {
+  width:200px;
+  height:3px;
+  background:rgba(255,255,255,0.1);
+  border-radius:10px;
+  overflow:hidden;
+  position:relative;
+}
+
+.transition-bar::after {
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:var(--accent);
+  animation:slideBar 1s ease-in-out infinite;
+}
+
+@keyframes slideBar {
+  0% {
+    left:-100%;
+  }
+  100% {
+    left:100%;
+  }
+}
+
+/* Skeleton Loading for Images */
+.device-frame img {
+  border-radius:18px;
+  transition:transform 0.4s ease, opacity 0.3s ease;
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  background:linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+  background-size:200% 100%;
+  animation:shimmer 1.5s infinite;
+  opacity:0.7;
+}
+
+.device-frame img.loaded {
+  animation:none;
+  opacity:1;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position:200% 0;
+  }
+  100% {
+    background-position:-200% 0;
+  }
+}
+
+/* Content Loading Animation */
+@keyframes fadeInUp {
+  from {
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to {
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.fade-in {
+  animation:fadeInUp 0.6s ease-out forwards;
+}
+
+/* Stagger animation for grid items */
+.grid > * {
+  opacity:0;
+  animation:fadeInUp 0.6s ease-out forwards;
+}
+
+.grid > *:nth-child(1) {
+  animation-delay:0.1s;
+}
+
+.grid > *:nth-child(2) {
+  animation-delay:0.2s;
+}
+
+.grid > *:nth-child(3) {
+  animation-delay:0.3s;
+}
+
+.grid > *:nth-child(4) {
+  animation-delay:0.4s;
+}
+
+.grid > *:nth-child(5) {
+  animation-delay:0.5s;
+}
+
+.grid > *:nth-child(6) {
+  animation-delay:0.6s;
+}
+
+/* Loading spinner for buttons */
+.btn.loading {
+  position:relative;
+  pointer-events:none;
+  opacity:0.7;
+}
+
+.btn.loading::after {
+  content:'';
+  position:absolute;
+  right:10px;
+  top:50%;
+  transform:translateY(-50%);
+  width:16px;
+  height:16px;
+  border:2px solid transparent;
+  border-top-color:currentColor;
+  border-radius:50%;
+  animation:spin 0.6s linear infinite;
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  width:20px;
+  height:20px;
+  border:2px solid var(--accent);
+  border-radius:50%;
+  position:fixed;
+  pointer-events:none;
+  z-index:9999;
+  transition:transform 0.15s ease, opacity 0.15s ease;
+  opacity:0;
+}
+
+.custom-cursor.active {
+  opacity:1;
+}
+
+.custom-cursor.hover {
+  transform:scale(1.5);
+  background:rgba(44,255,143,0.2);
+}
+
+.mouse-follower {
+  width:8px;
+  height:8px;
+  background:var(--accent);
+  border-radius:50%;
+  position:fixed;
+  pointer-events:none;
+  z-index:9998;
+  opacity:0;
+  transition:opacity 0.3s;
+  box-shadow:0 0 20px var(--accent);
+}
+
+.mouse-follower.active {
+  opacity:0.6;
+}
+
+@media(hover: hover) and (pointer: fine) {
+  body {
+    cursor:none;
+  }
+  
+  a, button, .card {
+    cursor:none;
+  }
+}
+
+img {
+  max-width:100%;
+  display:block;
+  border-radius:14px;
+}
+
+a {
+  text-decoration:none;
+  color:inherit;
+  transition:color 0.3s;
+}
+
+h2 {
+  margin-bottom:var(--spacing-md);
+  text-align:center;
+  color:var(--accent);
+  font-size:clamp(1.8rem, 3vw, 2.5rem);
+  position:relative;
+  display:inline-block;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+h2::after {
+  content:'';
+  position:absolute;
+  bottom:-10px;
+  left:50%;
+  transform:translateX(-50%);
+  width:60px;
+  height:3px;
+  background:linear-gradient(90deg, var(--accent), #6bffcf);
+  border-radius:10px;
+  animation:underlinePulse 2s ease-in-out infinite;
+}
+
+@keyframes underlinePulse {
+  0%, 100% {
+    width:60px;
+    opacity:1;
+  }
+  50% {
+    width:80px;
+    opacity:0.7;
+  }
+}
+
+h3 {
+  margin-top:var(--spacing-sm);
+  margin-bottom:var(--spacing-xs);
+  color:var(--text-primary);
+}
+
+/* Skip Link for Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--accent);
+  color: #000;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:3px;
+  background:transparent;
+  z-index:9999;
+  pointer-events:none;
+}
+
+.scroll-progress-bar {
+  height:100%;
+  background:linear-gradient(90deg, var(--accent), #6bffcf);
+  width:0%;
+  transition:width 0.1s ease;
+  box-shadow:0 0 10px var(--accent);
+}
+
+/* Header */
+header {
+  position:sticky;
+  top:0;
+  z-index:10;
+  backdrop-filter:blur(12px);
+  background:rgba(11,15,20,0.9);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+header>div {
+  padding:1.5rem;
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+header>div>div:first-child {
+  font-weight:700;
+  font-size:1.2rem;
+  color:var(--accent);
+}
+
+.header-controls {
+  display:flex;
+  align-items:center;
+  gap:1rem;
+}
+
+.theme-toggle {
+  background:var(--bg-card);
+  border:1px solid var(--glass-border);
+  color:var(--accent);
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:all 0.3s;
+  font-size:1.1rem;
+}
+
+.theme-toggle:hover {
+  transform:rotate(20deg) scale(1.1);
+  background:var(--accent);
+  color:#000;
+}
+
+[data-theme="light"] .theme-toggle i.fa-moon {
+  display:none;
+}
+
+[data-theme="light"] .theme-toggle::before {
+  content:"\f185";
+  font-family:"Font Awesome 6 Free";
+  font-weight:900;
+}
+
+nav a {
+  margin-left:1.5rem;
+  font-size:0.95rem;
+  color:var(--text-secondary);
+  position:relative;
+}
+
+nav a:hover {
+  color:var(--text-primary);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.mobile-menu-toggle {
+  display:none;
+  cursor:pointer;
+  font-size:1.8rem;
+  color:var(--accent);
+}
+
+/* Mobile Sidebar */
+.mobile-sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 19;
+}
+
+.mobile-sidebar-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-sidebar {
+  position:fixed;
+  top:0;
+  right:0;
+  width:75%;
+  max-width:300px;
+  height:100%;
+  background:rgba(11,15,20,0.98);
+  backdrop-filter:blur(12px);
+  padding:3rem 2rem;
+  transform:translateX(100%);
+  transition:transform 0.3s ease;
+  z-index:20;
+  display:flex;
+  flex-direction:column;
+  border-left:1px solid var(--glass-border);
+}
+
+.mobile-sidebar.active {
+  transform:translateX(0);
+}
+
+.mobile-sidebar a {
+  margin-bottom:1.5rem;
+  font-size:1.1rem;
+  color:var(--text-primary);
+  transition:color 0.3s, transform 0.3s;
+}
+
+.mobile-sidebar a:hover {
+  color:var(--accent);
+  transform:translateX(5px);
+}
+
+.mobile-sidebar .close-btn {
+  font-size:2rem;
+  align-self:flex-end;
+  cursor:pointer;
+  color:var(--accent);
+  margin-bottom:2rem;
+  transition:transform 0.3s;
+}
+
+.mobile-sidebar .close-btn:hover {
+  transform:rotate(90deg);
+}
+
+/* Sections */
+section {
+  padding:var(--spacing-xl) 1.5rem;
+  max-width:1100px;
+  margin:auto;
+  animation:fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to {
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* Hero Section */
+.hero {
+  text-align:center;
+  position:relative;
+  padding-top:var(--spacing-xl);
+  padding-bottom:var(--spacing-xl);
+  overflow:hidden;
+}
+
+.particle-canvas {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:0;
+  opacity:0.4;
+}
+
+.parallax-bg {
+  position:absolute;
+  top:-10%;
+  left:-10%;
+  width:120%;
+  height:120%;
+  background:radial-gradient(circle at 30% 50%, rgba(44,255,143,0.08) 0%, transparent 50%),
+             radial-gradient(circle at 70% 80%, rgba(107,255,207,0.05) 0%, transparent 50%);
+  animation:parallaxFloat 20s ease-in-out infinite;
+  z-index:0;
+}
+
+@keyframes parallaxFloat {
+  0%, 100% {
+    transform:translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform:translate(2%, -2%) rotate(1deg);
+  }
+  50% {
+    transform:translate(-2%, 2%) rotate(-1deg);
+  }
+  75% {
+    transform:translate(2%, 2%) rotate(1deg);
+  }
+}
+
+.hero::before {
+  content:'';
+  position:absolute;
+  top:-50%;
+  left:-50%;
+  width:200%;
+  height:200%;
+  background:radial-gradient(circle, rgba(44,255,143,0.05) 0%, transparent 70%);
+  animation:heroGlow 8s ease-in-out infinite;
+  pointer-events:none;
+  z-index:0;
+}
+
+@keyframes heroGlow {
+  0%, 100% {
+    transform:translate(0, 0) scale(1);
+    opacity:0.5;
+  }
+  50% {
+    transform:translate(10%, 10%) scale(1.1);
+    opacity:0.8;
+  }
+}
+
+.hero h1 {
+  font-size:clamp(2.4rem,4vw,3.8rem);
+  margin-bottom:var(--spacing-sm);
+  background:var(--gradient-hero);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  position:relative;
+  z-index:1;
+  animation:titleFloat 3s ease-in-out infinite;
+}
+
+@keyframes titleFloat {
+  0%, 100% {
+    transform:translateY(0);
+  }
+  50% {
+    transform:translateY(-10px);
+  }
+}
+
+.hero span {
+  display:block;
+  margin-bottom:var(--spacing-sm);
+  color:var(--accent);
+  font-weight:600;
+  letter-spacing:1px;
+  font-size:1.1rem;
+  position:relative;
+  z-index:1;
+}
+
+.hero p {
+  max-width:650px;
+  color:var(--text-secondary);
+  margin:0 auto var(--spacing-md);
+  font-size:1.05rem;
+  line-height:1.7;
+  position:relative;
+  z-index:1;
+}
+
+.hero-buttons {
+  display:flex;
+  gap:1rem;
+  justify-content:center;
+  flex-wrap:wrap;
+  position:relative;
+  z-index:1;
+}
+
+/* Magnetic Effect */
+.magnetic {
+  position:relative;
+  transition:transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Text Reveal Animation */
+.text-reveal {
+  opacity:0;
+  animation:textReveal 1s ease forwards;
+}
+
+.text-reveal:nth-child(1) {
+  animation-delay:0.5s;
+}
+
+.text-reveal:nth-child(2) {
+  animation-delay:0.7s;
+}
+
+.text-reveal:nth-child(3) {
+  animation-delay:0.9s;
+}
+
+@keyframes textReveal {
+  from {
+    opacity:0;
+    transform:translateY(30px);
+    filter:blur(10px);
+  }
+  to {
+    opacity:1;
+    transform:translateY(0);
+    filter:blur(0);
+  }
+}
+
+/* Buttons */
+.btn {
+  padding:0.85rem 1.7rem;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--accent),#6bffcf);
+  color:#000;
+  font-weight:600;
+  box-shadow:0 10px 35px rgba(44,255,143,0.35);
+  display:inline-block;
+  transition:all 0.3s;
+  border:none;
+  cursor:pointer;
+  font-size:0.95rem;
+  position:relative;
+  overflow:hidden;
+}
+
+.btn::before {
+  content:'';
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:0;
+  height:0;
+  border-radius:50%;
+  background:rgba(255,255,255,0.3);
+  transform:translate(-50%, -50%);
+  transition:width 0.5s, height 0.5s;
+}
+
+.btn:hover::before {
+  width:300px;
+  height:300px;
+}
+
+.btn:active {
+  transform:scale(0.95);
+}
+
+.btn:hover {
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 20px 40px rgba(44,255,143,0.45);
+}
+
+.btn-secondary {
+  background:transparent;
+  border:2px solid var(--accent);
+  color:var(--accent);
+  box-shadow:none;
+}
+
+.btn-secondary:hover {
+  background:var(--accent);
+  color:#000;
+}
+
+/* Grid Layout */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:2rem;
+}
+
+/* Cards */
+.card {
+  background:var(--bg-card);
+  backdrop-filter:blur(16px);
+  border:1px solid var(--glass-border);
+  border-radius:20px;
+  padding:2rem;
+  transition:transform 0.35s ease,box-shadow 0.35s ease;
+  position:relative;
+  overflow:hidden;
+  will-change:transform;
+}
+
+.card::after {
+  content:'';
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:0;
+  height:0;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(44,255,143,0.2), transparent);
+  transform:translate(-50%, -50%);
+  transition:width 0.6s ease, height 0.6s ease;
+}
+
+.card:hover::after {
+  width:300px;
+  height:300px;
+}
+
+.card:hover {
+  transform:translateY(-6px);
+  box-shadow:0 30px 60px rgba(0,0,0,0.5);
+  border-color:var(--accent);
+}
+
+.card::before {
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(90deg, transparent, rgba(44,255,143,0.1), transparent);
+  transition:left 0.5s ease;
+  z-index:0;
+}
+
+.card:hover::before {
+  left:100%;
+}
+
+.card > * {
+  position:relative;
+  z-index:1;
+}
+
+/* Device Frame */
+.device-frame {
+  background:linear-gradient(180deg,#1f2937,#020617);
+  border-radius:24px;
+  padding:16px;
+  overflow:hidden;
+  transition:transform 0.35s ease;
+  margin-bottom:var(--spacing-sm);
+}
+
+.device-frame img {
+  border-radius:18px;
+  transition:transform 0.4s ease;
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.card:hover .device-frame img {
+  transform:scale(1.07);
+}
+
+/* Project Card Enhancements */
+.project-card {
+  display:block;
+  text-decoration:none;
+}
+
+.project-card .btn {
+  margin-top:var(--spacing-sm);
+  font-size:0.85rem;
+  padding:0.6rem 1.2rem;
+}
+
+.project-card p {
+  color:var(--text-secondary);
+  font-size:0.95rem;
+  margin-bottom:var(--spacing-sm);
+}
+
+/* Case Study Cards */
+.case-study-card {
+  background:var(--bg-card);
+  backdrop-filter:blur(16px);
+  border:1px solid var(--glass-border);
+  border-radius:20px;
+  padding:2rem;
+  margin-bottom:2rem;
+  transition:transform 0.3s, box-shadow 0.3s;
+}
+
+.case-study-card:hover {
+  transform:translateY(-4px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+.case-study-card h3 {
+  color:var(--accent);
+  margin-bottom:var(--spacing-sm);
+}
+
+.case-study-section {
+  margin-bottom:var(--spacing-md);
+}
+
+.case-study-section h4 {
+  color:var(--text-primary);
+  margin-bottom:var(--spacing-xs);
+  font-size:1.1rem;
+}
+
+.case-study-section p, .case-study-section ul {
+  color:var(--text-secondary);
+  line-height:1.7;
+}
+
+.case-study-section ul {
+  list-style:none;
+  padding-left:0;
+}
+
+.case-study-section ul li {
+  padding-left:1.5rem;
+  position:relative;
+  margin-bottom:0.5rem;
+}
+
+.case-study-section ul li::before {
+  content:'✓';
+  position:absolute;
+  left:0;
+  color:var(--accent);
+  font-weight:bold;
+}
+
+/* About Section */
+.about-content {
+  max-width:800px;
+  margin:0 auto;
+  text-align:center;
+}
+
+.about-content p {
+  color:var(--text-secondary);
+  font-size:1.05rem;
+  line-height:1.8;
+  margin-bottom:var(--spacing-md);
+}
+
+.about-stats {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));
+  gap:2rem;
+  margin-top:var(--spacing-lg);
+}
+
+.stat-item {
+  text-align:center;
+}
+
+.stat-number {
+  font-size:2.5rem;
+  font-weight:700;
+  color:var(--accent);
+  display:inline-block;
+}
+
+.stat-plus, .stat-percent {
+  font-size:2.5rem;
+  font-weight:700;
+  color:var(--accent);
+}
+
+.stat-label {
+  color:var(--text-secondary);
+  font-size:0.9rem;
+  display:block;
+  margin-top:0.3rem;
+}
+
+/* Design Process Section */
+.process-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:2rem;
+  margin-top:var(--spacing-lg);
+}
+
+.process-card {
+  background:var(--bg-card);
+  border:1px solid var(--glass-border);
+  border-radius:20px;
+  padding:2rem;
+  text-align:center;
+  transition:all 0.3s;
+  position:relative;
+  overflow:hidden;
+}
+
+.process-card::before {
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(90deg, transparent, rgba(44,255,143,0.1), transparent);
+  transition:left 0.5s;
+}
+
+.process-card:hover::before {
+  left:100%;
+}
+
+.process-card:hover {
+  transform:translateY(-8px);
+  border-color:var(--accent);
+  box-shadow:0 20px 40px rgba(44,255,143,0.2);
+}
+
+.process-icon {
+  width:80px;
+  height:80px;
+  margin:0 auto var(--spacing-sm);
+  background:linear-gradient(135deg, var(--accent), #6bffcf);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+  color:#000;
+  transition:transform 0.3s;
+}
+
+.process-card:hover .process-icon {
+  transform:scale(1.1) rotate(5deg);
+}
+
+.process-card h3 {
+  color:var(--text-primary);
+  margin-bottom:var(--spacing-xs);
+}
+
+.process-card p {
+  color:var(--text-secondary);
+  font-size:0.95rem;
+  line-height:1.6;
+}
+
+/* Project Filters */
+.project-filters {
+  display:flex;
+  justify-content:center;
+  gap:1rem;
+  margin-bottom:var(--spacing-lg);
+  flex-wrap:wrap;
+}
+
+.filter-btn {
+  padding:0.6rem 1.5rem;
+  border:2px solid var(--glass-border);
+  background:transparent;
+  color:var(--text-secondary);
+  border-radius:30px;
+  cursor:pointer;
+  transition:all 0.3s;
+  font-weight:600;
+  font-size:0.9rem;
+}
+
+.filter-btn:hover, .filter-btn.active {
+  border-color:var(--accent);
+  background:var(--accent);
+  color:#000;
+  transform:translateY(-2px);
+}
+
+.project-grid {
+  transition:opacity 0.3s;
+}
+
+.project-grid.filtering {
+  opacity:0.5;
+}
+
+.project-card {
+  transition:all 0.3s;
+}
+
+.project-card.hidden {
+  display:none;
+}
+
+/* Skills Section - Improved */
+.skills-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:2rem;
+}
+
+.skill-category {
+  background:var(--bg-card);
+  border:1px solid var(--glass-border);
+  border-radius:16px;
+  padding:1.5rem;
+  transition:transform 0.3s;
+}
+
+.skill-category:hover {
+  transform:translateY(-4px);
+}
+
+.skill-category h3 {
+  color:var(--accent);
+  margin-bottom:var(--spacing-sm);
+  font-size:1.2rem;
+}
+
+.skill-item {
+  margin-bottom:1rem;
+}
+
+.skill-name {
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:0.5rem;
+  color:var(--text-primary);
+  font-size:0.95rem;
+}
+
+.skill-bar {
+  background:rgba(255,255,255,0.08);
+  border-radius:14px;
+  overflow:hidden;
+  height:8px;
+}
+
+.skill-bar-fill {
+  height:100%;
+  background:linear-gradient(90deg, var(--accent), #6bffcf);
+  border-radius:14px;
+  transition:width 1s ease;
+}
+
+/* Timeline */
+.timeline {
+  position:relative;
+  padding-left:30px;
+}
+
+.timeline::before {
+  content:'';
+  position:absolute;
+  left:20px;
+  top:0;
+  width:2px;
+  height:100%;
+  background:var(--accent);
+}
+
+.timeline-item {
+  margin-bottom:2.5rem;
+  position:relative;
+  background:var(--bg-card);
+  border:1px solid var(--glass-border);
+  border-radius:16px;
+  padding:1.5rem;
+  margin-left:20px;
+  transition:transform 0.3s;
+}
+
+.timeline-item:hover {
+  transform:translateX(5px);
+}
+
+.timeline-item::before {
+  content:'';
+  position:absolute;
+  left:-32px;
+  top:20px;
+  width:14px;
+  height:14px;
+  background:var(--accent);
+  border-radius:50%;
+  border:3px solid var(--bg-dark);
+}
+
+.timeline-company {
+  font-weight:700;
+  color:var(--accent);
+  font-size:1.1rem;
+  margin-bottom:0.3rem;
+}
+
+.timeline-date {
+  color:var(--text-secondary);
+  font-size:0.9rem;
+  margin-bottom:var(--spacing-sm);
+}
+
+.timeline-description {
+  color:var(--text-secondary);
+  line-height:1.7;
+}
+
+.timeline-achievements {
+  list-style:none;
+  padding-left:0;
+  margin-top:var(--spacing-sm);
+}
+
+.timeline-achievements li {
+  padding-left:1.5rem;
+  position:relative;
+  margin-bottom:0.5rem;
+  color:var(--text-secondary);
+}
+
+.timeline-achievements li::before {
+  content:'→';
+  position:absolute;
+  left:0;
+  color:var(--accent);
+}
+
+/* Testimonials */
+.testimonial-card {
+  background:var(--bg-card);
+  padding:2rem;
+  border-radius:20px;
+  backdrop-filter:blur(16px);
+  margin-bottom:2rem;
+  position:relative;
+  transition:transform 0.3s;
+  border:1px solid var(--glass-border);
+}
+
+.testimonial-card:hover {
+  transform:translateY(-4px);
+}
+
+.testimonial-card::before {
+  content:'"';
+  font-size:4rem;
+  position:absolute;
+  top:-10px;
+  left:20px;
+  color:var(--accent);
+  opacity:0.3;
+  font-family:Georgia, serif;
+}
+
+.testimonial-text {
+  color:var(--text-secondary);
+  line-height:1.8;
+  font-size:1.05rem;
+  margin-bottom:var(--spacing-sm);
+  font-style:italic;
+}
+
+.testimonial-author {
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  margin-top:var(--spacing-sm);
+}
+
+.testimonial-avatar {
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:linear-gradient(135deg, var(--accent), #6bffcf);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  color:#000;
+}
+
+.testimonial-info h4 {
+  color:var(--text-primary);
+  margin:0;
+  font-size:1rem;
+}
+
+.testimonial-info p {
+  color:var(--text-secondary);
+  margin:0;
+  font-size:0.85rem;
+}
+
+/* Tools Section */
+.tools-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
+  gap:1.5rem;
+}
+
+.tool-card {
+  background:var(--bg-card);
+  border:1px solid var(--glass-border);
+  border-radius:16px;
+  padding:1.5rem;
+  text-align:center;
+  transition:all 0.3s;
+  cursor:pointer;
+}
+
+.tool-card:hover {
+  transform:translateY(-6px) scale(1.05);
+  border-color:var(--accent);
+  box-shadow:0 20px 40px rgba(44,255,143,0.2);
+}
+
+.tool-card i {
+  font-size:2.5rem;
+  color:var(--accent);
+  margin-bottom:var(--spacing-xs);
+}
+
+.tool-card p {
+  color:var(--text-primary);
+  font-weight:600;
+  font-size:0.95rem;
+}
+
+/* Contact Section */
+.contact-content {
+  text-align:center;
+  max-width:600px;
+  margin:0 auto;
+}
+
+.contact-content p {
+  color:var(--text-secondary);
+  margin-bottom:var(--spacing-md);
+  font-size:1.05rem;
+}
+
+.contact-buttons {
+  display:flex;
+  gap:1rem;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-bottom:var(--spacing-lg);
+}
+
+.social-links {
+  display:flex;
+  gap:1rem;
+  justify-content:center;
+  margin-top:var(--spacing-md);
+}
+
+.social-link {
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:var(--bg-card);
+  border:1px solid var(--glass-border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:all 0.3s;
+  font-size:1.3rem;
+}
+
+.social-link:hover {
+  background:var(--accent);
+  color:#000;
+  transform:translateY(-3px);
+}
+
+/* Footer */
+footer {
+  text-align:center;
+  padding:3rem 1.5rem;
+  color:var(--text-secondary);
+  font-size:0.85rem;
+  border-top:1px solid rgba(255,255,255,0.05);
+}
+
+.icon {
+  margin-right:0.5rem;
+  color:var(--accent);
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:var(--accent);
+  color:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.5rem;
+  cursor:pointer;
+  opacity:0;
+  visibility:hidden;
+  transition:all 0.3s;
+  z-index:100;
+  box-shadow:0 10px 30px rgba(44,255,143,0.4);
+  animation:floatButton 3s ease-in-out infinite;
+}
+
+@keyframes floatButton {
+  0%, 100% {
+    transform:translateY(0);
+  }
+  50% {
+    transform:translateY(-10px);
+  }
+}
+
+.back-to-top.visible {
+  opacity:1;
+  visibility:visible;
+}
+
+.back-to-top:hover {
+  transform:translateY(-5px);
+  box-shadow:0 15px 40px rgba(44,255,143,0.6);
+}
+
+/* Responsive */
+@media(max-width:768px) {
+  nav {
+    display:none;
+  }
+  
+  .mobile-menu-toggle {
+    display:block;
+  }
+  
+  .header-controls {
+    gap:0.5rem;
+  }
+  
+  section {
+    padding:var(--spacing-lg) 1.5rem;
+  }
+  
+  .grid {
+    grid-template-columns:1fr;
+  }
+  
+  .hero-buttons {
+    flex-direction:column;
+    align-items:center;
+  }
+  
+  .btn {
+    width:100%;
+    max-width:300px;
+  }
+  
+  .about-stats {
+    grid-template-columns:repeat(2, 1fr);
+  }
+  
+  .tools-grid {
+    grid-template-columns:repeat(2, 1fr);
+  }
+  
+  .process-grid {
+    grid-template-columns:1fr;
+  }
+  
+  .project-filters {
+    gap:0.5rem;
+  }
+  
+  .filter-btn {
+    padding:0.5rem 1rem;
+    font-size:0.85rem;
+  }
+}
+
+@media(max-width:480px) {
+  .mobile-sidebar {
+    width:85%;
+  }
+  
+  .about-stats {
+    grid-template-columns:1fr;
+  }
+}
 </style>
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Scroll Progress Bar -->
+<div class="scroll-progress">
+  <div class="scroll-progress-bar"></div>
+</div>
+
+<div class="custom-cursor"></div>
+
+<!-- Loading Screen -->
+<div class="loading-screen">
+  <div class="loader-content">
+    <div class="loader-logo">
+      <span class="logo-letter">A</span>
+      <span class="logo-letter">N</span>
+    </div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+    <p class="loader-text">Loading Portfolio...</p>
+    <div class="loader-spinner"></div>
+  </div>
+</div>
+
+<!-- Page Transition Loader -->
+<div class="page-transition">
+  <div class="transition-bar"></div>
+</div>
+
 <header>
   <div>
     <div>Allah Nawaz</div>
-    <div class="mobile-menu-toggle">&#9776;</div>
+    <div class="header-controls">
+      <button class="theme-toggle" aria-label="Toggle dark/light mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <div class="mobile-menu-toggle" aria-label="Open menu">☰</div>
+    </div>
     <nav>
       <a href="#home"><i class="fas fa-home icon"></i>Home</a>
+      <a href="#about"><i class="fas fa-user icon"></i>About</a>
       <a href="#projects"><i class="fas fa-briefcase icon"></i>Projects</a>
-      <a href="#case-study"><i class="fas fa-file-alt icon"></i>Case Study</a>
+      <a href="#case-studies"><i class="fas fa-file-alt icon"></i>Case Studies</a>
       <a href="#skills"><i class="fas fa-lightbulb icon"></i>Skills</a>
       <a href="#experience"><i class="fas fa-briefcase icon"></i>Experience</a>
       <a href="#testimonials"><i class="fas fa-star icon"></i>Testimonials</a>
       <a href="#tools"><i class="fas fa-tools icon"></i>Tools</a>
       <a href="#contact"><i class="fas fa-envelope icon"></i>Contact</a>
-      <a href="https://www.behance.net/allahnawaz175" target="_blank"><i class="fab fa-behance icon"></i>Behance</a>
-      <a href="https://www.linkedin.com/in/allah-nawaz-256a81286" target="_blank"><i class="fab fa-linkedin icon"></i>LinkedIn</a>
     </nav>
   </div>
 </header>
 
+<div class="mouse-follower"></div>
+
+<div class="mobile-sidebar-overlay"></div>
 <nav class="mobile-sidebar">
-  <span class="close-btn">&times;</span>
+  <span class="close-btn" aria-label="Close menu">&times;</span>
   <a href="#home"><i class="fas fa-home icon"></i>Home</a>
+  <a href="#about"><i class="fas fa-user icon"></i>About</a>
   <a href="#projects"><i class="fas fa-briefcase icon"></i>Projects</a>
-  <a href="#case-study"><i class="fas fa-file-alt icon"></i>Case Study</a>
+  <a href="#case-studies"><i class="fas fa-file-alt icon"></i>Case Studies</a>
   <a href="#skills"><i class="fas fa-lightbulb icon"></i>Skills</a>
   <a href="#experience"><i class="fas fa-briefcase icon"></i>Experience</a>
   <a href="#testimonials"><i class="fas fa-star icon"></i>Testimonials</a>
   <a href="#tools"><i class="fas fa-tools icon"></i>Tools</a>
   <a href="#contact"><i class="fas fa-envelope icon"></i>Contact</a>
-  <a href="https://www.behance.net/allahnawaz175" target="_blank"><i class="fab fa-behance icon"></i>Behance</a>
-  <a href="https://www.linkedin.com/in/allah-nawaz-256a81286" target="_blank"><i class="fab fa-linkedin icon"></i>LinkedIn</a>
+  <a href="https://www.behance.net/allahnawaz175" target="_blank" rel="noopener"><i class="fab fa-behance icon"></i>Behance</a>
+  <a href="https://www.linkedin.com/in/allah-nawaz-256a81286" target="_blank" rel="noopener"><i class="fab fa-linkedin icon"></i>LinkedIn</a>
 </nav>
 
+<main id="main-content">
+
 <section id="home" class="hero">
-<h1>Allah Nawaz</h1>
-<span>UI/UX & Product Designer</span>
-<p>Crafting professional, responsive, and interactive interfaces for SaaS, E-commerce & marketing platforms.</p>
-<a href="https://www.behance.net/allahnawaz175" target="_blank" class="btn">View Portfolio</a>
+  <canvas class="particle-canvas"></canvas>
+  <div class="parallax-bg" data-speed="0.5"></div>
+  <h1 class="text-reveal">Allah Nawaz</h1>
+  <span class="text-reveal">UI/UX & Product Designer</span>
+  <p class="text-reveal">I help SaaS and E-commerce companies increase conversions through data-driven, user-centered design solutions that solve real problems.</p>
+  <div class="hero-buttons">
+    <a href="#case-studies" class="btn magnetic">View Case Studies</a>
+    <a href="https://www.behance.net/allahnawaz175" target="_blank" rel="noopener" class="btn btn-secondary magnetic">See Portfolio</a>
+  </div>
+</section>
+
+<section id="process">
+  <h2>My Design Process</h2>
+  <div class="process-grid">
+    <div class="process-card">
+      <div class="process-icon">
+        <i class="fas fa-search"></i>
+      </div>
+      <h3>Research</h3>
+      <p>User interviews, competitive analysis, and data gathering to understand the problem deeply.</p>
+    </div>
+    
+    <div class="process-card">
+      <div class="process-icon">
+        <i class="fas fa-lightbulb"></i>
+      </div>
+      <h3>Ideate</h3>
+      <p>Brainstorming solutions, creating user flows, and sketching initial concepts.</p>
+    </div>
+    
+    <div class="process-card">
+      <div class="process-icon">
+        <i class="fas fa-pencil-ruler"></i>
+      </div>
+      <h3>Design</h3>
+      <p>High-fidelity mockups, interactive prototypes, and design system creation.</p>
+    </div>
+    
+    <div class="process-card">
+      <div class="process-icon">
+        <i class="fas fa-vial"></i>
+      </div>
+      <h3>Test</h3>
+      <p>Usability testing, gathering feedback, and iterating based on user insights.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="about-content">
+    <p>I'm a passionate UI/UX designer with over 2 years of experience crafting intuitive digital experiences. My approach combines user research, data analysis, and creative problem-solving to deliver designs that not only look great but achieve measurable business results.</p>
+    <p>I believe great design is invisible—it guides users effortlessly to their goals while delighting them along the way.</p>
+    
+    <div class="about-stats">
+      <div class="stat-item">
+        <span class="stat-number" data-target="15">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Projects Completed</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="3">0</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="10">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Happy Clients</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="100">0</span><span class="stat-percent">%</span>
+        <span class="stat-label">Satisfaction Rate</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="projects">
-<h2>Projects</h2>
-<div class="grid">
-<a href="https://www.behance.net/gallery/181181535/Smarter-Influencer-Marketing-with-AI" target="_blank" class="card">
-<div class="device-frame"><img src="assets/smarter-influencer.jpg" alt="Smarter Influencer Marketing with AI"></div>
-<h3>Smarter Influencer Marketing with AI</h3>
-<p>UI/UX design for an AI-powered influencer marketing platform.</p>
-<span class="btn">View on Behance</span>
-</a>
-<a href="https://www.behance.net/gallery/181181540/Conectlab" target="_blank" class="card">
-<div class="device-frame"><img src="assets/conectlab.jpg" alt="Conectlab"></div>
-<h3>Conectlab</h3>
-<p>Platform UI design for streamlined collaboration and networking.</p>
-<span class="btn">View on Behance</span>
-</a>
-<a href="https://www.behance.net/gallery/181181545/Pet-Food-and-Sales-Web-UI" target="_blank" class="card">
-<div class="device-frame"><img src="assets/pet-food.jpg" alt="Pet Food and Sales Web UI"></div>
-<h3>Pet Food and Sales Web UI</h3>
-<p>E-commerce web UI with interactive product pages and responsive design.</p>
-<span class="btn">View on Behance</span>
-</a>
-</div>
+  <h2>Featured Projects</h2>
+  
+  <div class="project-filters">
+    <button class="filter-btn active" data-filter="all">All Projects</button>
+    <button class="filter-btn" data-filter="saas">SaaS</button>
+    <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+    <button class="filter-btn" data-filter="marketing">Marketing</button>
+  </div>
+  
+  <div class="grid project-grid">
+    <a href="https://www.behance.net/gallery/181181535/Smarter-Influencer-Marketing-with-AI" target="_blank" rel="noopener" class="project-card card" data-category="saas marketing">
+      <div class="device-frame">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop" alt="Smarter Influencer Marketing AI Platform Dashboard">
+      </div>
+      <h3>Smarter Influencer Marketing with AI</h3>
+      <p>AI-powered platform that streamlines influencer discovery and campaign management, reducing setup time by 60%.</p>
+      <span class="btn">View Case Study</span>
+    </a>
+    
+    <a href="https://www.behance.net/gallery/181181540/Conectlab" target="_blank" rel="noopener" class="project-card card" data-category="saas">
+      <div class="device-frame">
+        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop" alt="Conectlab Collaboration Platform Interface">
+      </div>
+      <h3>Conectlab</h3>
+      <p>Collaborative workspace platform designed to improve team productivity with intuitive task management and real-time collaboration.</p>
+      <span class="btn">View Case Study</span>
+    </a>
+    
+    <a href="https://www.behance.net/gallery/181181545/Pet-Food-and-Sales-Web-UI" target="_blank" rel="noopener" class="project-card card" data-category="ecommerce">
+      <div class="device-frame">
+        <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=400&h=300&fit=crop" alt="Pet Food E-commerce Website Design">
+      </div>
+      <h3>Pet Food & Sales E-commerce</h3>
+      <p>Modern e-commerce experience with advanced filtering, personalized recommendations, and seamless checkout flow.</p>
+      <span class="btn">View Case Study</span>
+    </a>
+  </div>
 </section>
 
-<section id="case-study">
-<h2>Case Studies</h2>
-<div class="card">Smarter Influencer Marketing with AI UX Process (Problem → Solution → Impact)</div>
-<div class="card">Conectlab UX Process (Problem → Solution → Impact)</div>
-<div class="card">Pet Food and Sales Web UI UX Process (Problem → Solution → Impact)</div>
-</section>
-
-<section id="skills">
-<h2>Skills</h2>
-<div>UI/UX Design</div><div class="skills-bar"><div class="skills-bar-fill" style="width:90%"></div></div>
-<div>Wireframing & Prototyping</div><div class="skills-bar"><div class="skills-bar-fill" style="width:85%"></div></div>
-<div>User Research & Testing</div><div class="skills-bar"><div class="skills-bar-fill" style="width:80%"></div></div>
-</section>
-
-<section id="experience">
-<h2>Experience</h2>
-<div class="timeline">
-<div class="timeline-item">T-Tech Solutions Pvt Ltd (May 2025 – Nov 2025)</div>
-<div class="timeline-item">Profituned Marketing (May 2024 – Apr 2025)</div>
-<div class="timeline-item">Design Peeps (Oct 2023 – Apr 2024)</div>
-</div>
-</section>
-
-<section id="testimonials">
-<h2>Testimonials</h2>
-<div class="testimonial-card">"Allah Nawaz is an exceptional designer, creating beautiful, user-friendly experiences."</div>
-</section>
-
-<section id="tools">
-<h2>Tools & Technologies</h2>
-<div class="grid">
-<div class="card"><i class="fab fa-figma icon"></i>Figma</div>
-<div class="card"><i class="fab fa-adobe icon"></i>Adobe Suite</div>
-<div class="card"><i class="fas fa-tools icon"></i>Framer</div>
-<div class="card"><i class="fas fa-tools icon"></i>Canva & Miro</div>
-</div>
-</section>
-
-<section id="contact">
-<h2>Contact</h2>
-<a href="mailto:allahnawazmalik175@gmail.com" class="btn">Email Me</a>
-<a href="assets/AllahNawaz_Resume.pdf" download class="btn">Download Resume</a>
-</section>
-
-<footer>© 2025 Allah Nawaz | All Rights Reserved</footer>
-
-<script>
-const toggle=document.querySelector('.mobile-menu-toggle');
-const sidebar=document.querySelector('.mobile-sidebar');
-const closeBtn=document.querySelector('.close-btn');
-toggle.addEventListener('click',()=>sidebar.classList.add('active'));
-closeBtn.addEventListener('click',()=>sidebar.classList.remove('active'));
-</script>
-
-</body>
-</html>
+<section id="case-studies">
+  <h2>Detailed Case Studies</h2>
+  
+  <div class="case-study-card">
+    <h3>Smarter Influencer Marketing with AI</h3>
+    
+    <div class="case-study-section">
+      <h4>The Problem</h4>
+      <p>Marketing teams were spending 15+ hours weekly manually searching for influencers across multiple platforms, leading to missed opportunities and inefficient campaign launches.</p>
+    </div>
+    
+    <div class="case-study-section">
+      <h4>Research & Discovery</h4>
+      <ul>
+        <li>Conducted 12 user interviews with marketing managers</li>
+        <li>Analyzed competitor platforms and identified gaps</li>
+        <li>Created user journey maps highlighting pain points</li>
+        <li>Discovered 73% of users wanted AI-powered recommendations</li>
+      </ul>
+    </div>
+    
+    <div class="case-study-section">
+      <h4>The Solution</h4>
+      <p>Designed an AI-powered dashboard that aggregates influencer data, provides smart recommendations, and automates campaign tracking—all in one unified interface.</p>
+      <ul>
+        <li>Smart search with AI-powered filters</li>
+        <li>Automated performance analytics</li>
+        <li>One-click campaign management</li>

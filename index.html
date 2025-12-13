@@ -1,175 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Allah Nawaz - UI/UX & Product Designer</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Allah Nawaz — UI/UX & Product Designer</title>
+
+<meta name="description" content="Interactive UI/UX portfolio with device mockups, scroll animations & micro-interactions.">
+<meta name="author" content="Allah Nawaz">
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
-:root {
-  --bg-dark:#0b0f14; --bg-card:rgba(255,255,255,0.08); --text-primary:#f5f7fa; --text-secondary:#a0a8b3; --accent:#2cff8f; --glass-border:rgba(255,255,255,0.18); --gradient-hero:linear-gradient(90deg,#ffffff,#2cff8f);
+:root{
+  --bg:#0b0f14;
+  --card:#141a22;
+  --text:#f5f7fa;
+  --muted:#9aa3ad;
+  --accent:#2cff8f;
 }
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;scroll-behavior:smooth;}
-body{background:var(--bg-dark);color:var(--text-primary);line-height:1.6;}
-img{max-width:100%;display:block;border-radius:14px;}
-a{text-decoration:none;color:inherit;transition:color 0.3s;}
-h2{margin-bottom:1.5rem;text-align:center;color:var(--accent);}
-header{position:sticky;top:0;z-index:10;backdrop-filter:blur(12px);background:rgba(11,15,20,0.7);border-bottom:1px solid rgba(255,255,255,0.05);}
-header>div{padding:1.5rem;max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;}
-nav a{margin-left:1.5rem;font-size:0.95rem;color:var(--text-secondary);}
-nav a:hover{color:var(--text-primary);}
-.mobile-menu-toggle{display:none;cursor:pointer;font-size:2rem;color:var(--accent);}
-.mobile-sidebar{position:fixed;top:0;right:-100%;width:75%;height:100%;background:var(--bg-dark);backdrop-filter:blur(12px);padding:3rem 2rem;transition:right 0.3s ease;z-index:20;display:flex;flex-direction:column;}
-.mobile-sidebar.active{right:0;}
-.mobile-sidebar a{margin-bottom:1.5rem;font-size:1.2rem;color:var(--text-primary);}
-.mobile-sidebar .close-btn{font-size:2rem;align-self:flex-end;cursor:pointer;color:var(--accent);margin-bottom:2rem;}
-section{padding:5rem 1.5rem;max-width:1100px;margin:auto;animation:fadeUp 0.8s ease both;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-.hero{text-align:center;position:relative;}
-.hero h1{font-size:clamp(2.4rem,4vw,3.8rem);margin-bottom:1rem;background:var(--gradient-hero);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.hero span{display:block;margin-bottom:1rem;color:var(--accent);font-weight:600;letter-spacing:1px;}
-.hero p{max-width:650px;color:var(--text-secondary);margin:0 auto 2rem;font-size:1.05rem;}
-.btn{padding:0.85rem 1.7rem;border-radius:12px;background:linear-gradient(135deg,var(--accent),#6bffcf);color:#000;font-weight:600;box-shadow:0 10px 35px rgba(44,255,143,0.35);margin:0.5rem;display:inline-block;transition:all 0.3s;}
-.btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 20px 40px rgba(44,255,143,0.45);}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;}
-.card{background:var(--bg-card);backdrop-filter:blur(16px);border:1px solid var(--glass-border);border-radius:20px;padding:2rem;transition:transform 0.35s ease,box-shadow 0.35s ease;position:relative;overflow:hidden;}
-.card:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 50px 90px rgba(0,0,0,0.85);}
-.device-frame{background:linear-gradient(180deg,#1f2937,#020617);border-radius:24px;padding:16px;overflow:hidden;transition:transform 0.35s ease;}
-.device-frame img{border-radius:18px;transition:transform 0.4s ease;}
-.card:hover .device-frame img{transform:scale(1.07);}
-.skills-bar{background: rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;margin-bottom:1.2rem;}
-.skills-bar-fill{height:12px;background:var(--accent);border-radius:14px;transition:width 1s ease;}
-.timeline{position:relative;}
-.timeline::before{content:'';position:absolute;left:20px;top:0;width:2px;height:100%;background:var(--accent);}
-.timeline-item{margin-left:50px;margin-bottom:2.5rem;position:relative;}
-.timeline-item::before{content:'';position:absolute;left:-32px;top:0;width:14px;height:14px;background:var(--accent);border-radius:50%;}
-.testimonial-card{background:var(--bg-card);padding:2rem;border-radius:20px;backdrop-filter:blur(16px);margin-bottom:2rem;position:relative;transition:transform 0.3s;}
-.testimonial-card:hover{transform:translateY(-4px) scale(1.02);}
-.testimonial-card::before{content:'\\f005';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;top:-15px;left:-10px;font-size:2.2rem;color:var(--accent);}
-footer{text-align:center;padding:3rem 1.5rem;color:var(--text-secondary);font-size:0.85rem;}
-.icon{margin-right:0.5rem;color:var(--accent);}
-@media(max-width:768px){nav{display:none;}.mobile-menu-toggle{display:block;}}
+.light{
+  --bg:#f5f7fa;
+  --card:#ffffff;
+  --text:#0b0f14;
+  --muted:#4b5563;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter}
+body{
+  background:var(--bg);
+  color:var(--text);
+  transition:.25s;
+}
+section{padding:5rem 1.5rem;max-width:1100px;margin:auto}
+h1,h2{letter-spacing:-.03em}
+h1{font-size:clamp(2.4rem,4vw,3.5rem)}
+h2{text-align:center;color:var(--accent);margin-bottom:3rem}
+
+.btn{
+  padding:.85rem 1.6rem;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--accent),#6bffcf);
+  color:#000;
+  font-weight:600;
+  display:inline-block;
+  transition:.25s;
+}
+.btn:hover{transform:translateY(-3px) scale(1.05)}
+
+.nav{
+  position:sticky;top:0;
+  backdrop-filter:blur(12px);
+  background:rgba(0,0,0,.4);
+  display:flex;justify-content:space-between;
+  padding:1.2rem 2rem;
+  z-index:10
+}
+
+.toggle{cursor:pointer;font-size:1.2rem}
+
+.hero{text-align:center}
+.hero p{max-width:620px;margin:1rem auto 2rem;color:var(--muted)}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:2rem;
+}
+
+.card{
+  background:var(--card);
+  border-radius:20px;
+  padding:1.5rem;
+  transition:.35s;
+  transform:translateY(40px);
+  opacity:0;
+}
+.card.show{
+  transform:none;
+  opacity:1;
+}
+.card:hover{
+  transform:translateY(-6px) scale(1.03);
+  box-shadow:0 40px 80px rgba(0,0,0,.5)
+}
+
+.device{
+  background:linear-gradient(180deg,#1f2937,#020617);
+  padding:14px;border-radius:22px;
+  overflow:hidden;margin-bottom:1rem
+}
+.device img{
+  border-radius:14px;
+  width:100%;
+  transition:.4s;
+}
+.card:hover img{transform:scale(1.06)}
+
+footer{text-align:center;padding:3rem;color:var(--muted)}
 </style>
 </head>
+
 <body>
 
-<header>
-  <div>
-    <div>Allah Nawaz</div>
-    <div class="mobile-menu-toggle">&#9776;</div>
-    <nav>
-      <a href="#home"><i class="fas fa-home icon"></i>Home</a>
-      <a href="#projects"><i class="fas fa-briefcase icon"></i>Projects</a>
-      <a href="#case-study"><i class="fas fa-file-alt icon"></i>Case Study</a>
-      <a href="#skills"><i class="fas fa-lightbulb icon"></i>Skills</a>
-      <a href="#experience"><i class="fas fa-briefcase icon"></i>Experience</a>
-      <a href="#testimonials"><i class="fas fa-star icon"></i>Testimonials</a>
-      <a href="#tools"><i class="fas fa-tools icon"></i>Tools</a>
-      <a href="#contact"><i class="fas fa-envelope icon"></i>Contact</a>
-      <a href="https://www.behance.net/allahnawaz175" target="_blank"><i class="fab fa-behance icon"></i>Behance</a>
-      <a href="https://www.linkedin.com/in/allah-nawaz-256a81286" target="_blank"><i class="fab fa-linkedin icon"></i>LinkedIn</a>
-    </nav>
+<!-- NAV -->
+<div class="nav">
+  <strong>Allah Nawaz</strong>
+  <div class="toggle" onclick="toggleTheme()">🌗</div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <span style="color:var(--accent);font-weight:600">UI/UX & Product Designer</span>
+  <h1>Crafting Interaction-Driven Digital Products</h1>
+  <p>
+    Fully interactive portfolio with device mockups, scroll animations,
+    and polished micro-interactions — built for recruiters.
+  </p>
+  <a class="btn">▶ View Interactive Portfolio</a>
+</section>
+
+<!-- PROJECTS -->
+<section>
+  <h2>Selected Projects</h2>
+  <div class="grid">
+
+    <div class="card">
+      <div class="device">
+        <img src="https://via.placeholder.com/800x500" alt="">
+      </div>
+      <h3>Smarter Influencer Marketing (AI)</h3>
+      <p style="color:var(--muted)">SaaS platform UI with data-driven flows.</p>
+    </div>
+
+    <div class="card">
+      <div class="device">
+        <img src="https://via.placeholder.com/800x500" alt="">
+      </div>
+      <h3>ConectLab Platform</h3>
+      <p style="color:var(--muted)">Modern collaboration & networking UI.</p>
+    </div>
+
+    <div class="card">
+      <div class="device">
+        <img src="https://via.placeholder.com/800x500" alt="">
+      </div>
+      <h3>E-Commerce Pet Food</h3>
+      <p style="color:var(--muted)">Conversion-focused shopping experience.</p>
+    </div>
+
   </div>
-</header>
-
-<nav class="mobile-sidebar">
-  <span class="close-btn">&times;</span>
-  <a href="#home"><i class="fas fa-home icon"></i>Home</a>
-  <a href="#projects"><i class="fas fa-briefcase icon"></i>Projects</a>
-  <a href="#case-study"><i class="fas fa-file-alt icon"></i>Case Study</a>
-  <a href="#skills"><i class="fas fa-lightbulb icon"></i>Skills</a>
-  <a href="#experience"><i class="fas fa-briefcase icon"></i>Experience</a>
-  <a href="#testimonials"><i class="fas fa-star icon"></i>Testimonials</a>
-  <a href="#tools"><i class="fas fa-tools icon"></i>Tools</a>
-  <a href="#contact"><i class="fas fa-envelope icon"></i>Contact</a>
-  <a href="https://www.behance.net/allahnawaz175" target="_blank"><i class="fab fa-behance icon"></i>Behance</a>
-  <a href="https://www.linkedin.com/in/allah-nawaz-256a81286" target="_blank"><i class="fab fa-linkedin icon"></i>LinkedIn</a>
-</nav>
-
-<section id="home" class="hero">
-<h1>Allah Nawaz</h1>
-<span>UI/UX & Product Designer</span>
-<p>Crafting professional, responsive, and interactive interfaces for SaaS, E-commerce & marketing platforms.</p>
-<a href="https://www.behance.net/allahnawaz175" target="_blank" class="btn">View Portfolio</a>
 </section>
 
-<section id="projects">
-<h2>Projects</h2>
-<div class="grid">
-<a href="https://www.behance.net/gallery/181181535/Smarter-Influencer-Marketing-with-AI" target="_blank" class="card">
-<div class="device-frame"><img src="assets/smarter-influencer.jpg" alt="Smarter Influencer Marketing with AI"></div>
-<h3>Smarter Influencer Marketing with AI</h3>
-<p>UI/UX design for an AI-powered influencer marketing platform.</p>
-<span class="btn">View on Behance</span>
-</a>
-<a href="https://www.behance.net/gallery/181181540/Conectlab" target="_blank" class="card">
-<div class="device-frame"><img src="assets/conectlab.jpg" alt="Conectlab"></div>
-<h3>Conectlab</h3>
-<p>Platform UI design for streamlined collaboration and networking.</p>
-<span class="btn">View on Behance</span>
-</a>
-<a href="https://www.behance.net/gallery/181181545/Pet-Food-and-Sales-Web-UI" target="_blank" class="card">
-<div class="device-frame"><img src="assets/pet-food.jpg" alt="Pet Food and Sales Web UI"></div>
-<h3>Pet Food and Sales Web UI</h3>
-<p>E-commerce web UI with interactive product pages and responsive design.</p>
-<span class="btn">View on Behance</span>
-</a>
-</div>
+<!-- CONTACT -->
+<section style="text-align:center">
+  <h2>Let’s Work Together</h2>
+  <a class="btn" href="mailto:allahnawazmalik175@gmail.com">Contact Me</a>
 </section>
 
-<section id="case-study">
-<h2>Case Studies</h2>
-<div class="card">Smarter Influencer Marketing with AI UX Process (Problem → Solution → Impact)</div>
-<div class="card">Conectlab UX Process (Problem → Solution → Impact)</div>
-<div class="card">Pet Food and Sales Web UI UX Process (Problem → Solution → Impact)</div>
-</section>
-
-<section id="skills">
-<h2>Skills</h2>
-<div>UI/UX Design</div><div class="skills-bar"><div class="skills-bar-fill" style="width:90%"></div></div>
-<div>Wireframing & Prototyping</div><div class="skills-bar"><div class="skills-bar-fill" style="width:85%"></div></div>
-<div>User Research & Testing</div><div class="skills-bar"><div class="skills-bar-fill" style="width:80%"></div></div>
-</section>
-
-<section id="experience">
-<h2>Experience</h2>
-<div class="timeline">
-<div class="timeline-item">T-Tech Solutions Pvt Ltd (May 2025 – Nov 2025)</div>
-<div class="timeline-item">Profituned Marketing (May 2024 – Apr 2025)</div>
-<div class="timeline-item">Design Peeps (Oct 2023 – Apr 2024)</div>
-</div>
-</section>
-
-<section id="testimonials">
-<h2>Testimonials</h2>
-<div class="testimonial-card">"Allah Nawaz is an exceptional designer, creating beautiful, user-friendly experiences."</div>
-</section>
-
-<section id="tools">
-<h2>Tools & Technologies</h2>
-<div class="grid">
-<div class="card"><i class="fab fa-figma icon"></i>Figma</div>
-<div class="card"><i class="fab fa-adobe icon"></i>Adobe Suite</div>
-<div class="card"><i class="fas fa-tools icon"></i>Framer</div>
-<div class="card"><i class="fas fa-tools icon"></i>Canva & Miro</div>
-</div>
-</section>
-
-<section id="contact">
-<h2>Contact</h2>
-<a href="mailto:allahnawazmalik175@gmail.com" class="btn">Email Me</a>
-<a href="assets/AllahNawaz_Resume.pdf" download class="btn">Download Resume</a>
-</section>
-
-<footer>© 2025 Allah Nawaz | All Rights Reserved</footer>
+<footer>
+© 2025 Allah Nawaz · UI/UX & Product Designer · Open for Opportunities
+</footer>
 
 <script>
-const toggle=document.querySelector('.mobile-menu-toggle');
-const sidebar=document.querySelector('.mobile-sidebar');
-const closeBtn=document.querySelector('.close-btn');
-toggle.addEventListener('click',()=>sidebar.classList.add('active'));
-closeBtn.addEventListener('click',()=>sidebar.classList.remove('active'));
+/* Dark Light Toggle */
+function toggleTheme(){
+  document.body.classList.toggle("light")
+}
+
+/* Scroll Reveal */
+const cards=document.querySelectorAll(".card")
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add("show")
+  })
+},{threshold:.2})
+cards.forEach(c=>io.observe(c))
 </script>
 
 </body>

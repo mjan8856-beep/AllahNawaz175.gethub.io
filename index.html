@@ -9,7 +9,7 @@
     <meta property="og:title" content="Allah Nawaz — UI/UX Designer">
     <meta property="og:description" content="Professional UI/UX Designer with 2+ years of experience">
     <meta property="og:image" content="https://a.lovart.ai/artifacts/user/rvfgbqzQbeafPpJE.png">
-    <meta property="og:url" content="https://allahnawaz-portfolio.com">
+    <meta property="og:url" content="https://allahnawaz.portfolio.com">
     <meta name="twitter:card" content="summary_large_image">
     <title>Allah Nawaz — UI/UX Designer</title>
     <style>
@@ -19,7 +19,7 @@
             box-sizing: border-box;
         }
 
-        :root {
+        : root {
             --bg-primary: #1A1A1A;
             --bg-secondary: #2C2C2C;
             --text-primary: #FFFFFF;
@@ -150,6 +150,12 @@
             padding-left: 13px;
         }
 
+        .nav-icon {
+            font-size: 18px;
+            width: 18px;
+            height: 18px;
+        }
+
         /* STACK SECTION */
         .sidebar-stack {
             width: 100%;
@@ -179,12 +185,17 @@
             justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 28px;
         }
 
         .stack-logo:hover {
             background-color: var(--accent);
             transform: scale(1.1);
+        }
+
+        .stack-logo img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
         }
 
         /* MAIN CONTENT */
@@ -223,6 +234,15 @@
             animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
+        .typing-cursor {
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+
         .cta-button {
             display: inline-block;
             padding: 12px 24px;
@@ -247,8 +267,7 @@
         }
 
         /* ABOUT SECTION */
-        .about-title,
-        .section-title {
+        .about-title {
             font-size: 36px;
             font-weight: 700;
             color: var(--text-primary);
@@ -343,6 +362,19 @@
             margin-bottom: 32px;
             position: relative;
             padding-left: 50%;
+            margin-left: 0;
+        }
+
+        .timeline-item:nth-child(odd) {
+            padding-left: 50%;
+            padding-right: 0;
+            text-align: left;
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: 0;
+            padding-right: 50%;
+            text-align: right;
         }
 
         .timeline-dot {
@@ -363,6 +395,17 @@
             border-radius: 12px;
             padding: 24px;
             max-width: 350px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+            margin-right: 0;
         }
 
         .timeline-company {
@@ -399,6 +442,83 @@
         .timeline-description li {
             margin-left: 16px;
             margin-bottom: 8px;
+        }
+
+        /* EDUCATION SECTION */
+        .education-card {
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 24px;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .education-degree {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .education-university {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .education-duration {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .education-location {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .certification-badge {
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .certification-badge:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px var(--shadow-lg);
+        }
+
+        .certification-icon {
+            font-size: 24px;
+            color: var(--accent);
+        }
+
+        .certification-info {
+            text-align: left;
+        }
+
+        .certification-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .certification-duration {
+            font-size: 12px;
+            color: var(--text-secondary);
         }
 
         /* SKILLS SECTION */
@@ -447,8 +567,12 @@
         }
 
         @keyframes progressBar {
-            from { width: 0%; }
-            to { width: var(--progress-width); }
+            from {
+                width: 0%;
+            }
+            to {
+                width: var(--progress-width);
+            }
         }
 
         /* PROJECTS SECTION */
@@ -478,6 +602,11 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.1);
         }
 
         .project-content {
@@ -501,9 +630,11 @@
             font-size: 14px;
             color: var(--text-secondary);
             line-height: 1.5;
+            max-height: 60px;
+            overflow: hidden;
         }
 
-        /* STACK SECTION (Main) */
+        /* STACK SECTION (Main Content) */
         .stack-grid-main {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -546,11 +677,13 @@
             font-weight: 600;
             color: var(--text-primary);
             margin-bottom: 8px;
+            transition: color 0.3s ease;
         }
 
         .stack-card-description {
             font-size: 12px;
             color: var(--text-secondary);
+            transition: color 0.3s ease;
         }
 
         /* TESTIMONIALS SECTION */
@@ -593,10 +726,28 @@
             margin-bottom: 20px;
         }
 
+        .testimonial-client {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .client-photo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .client-info {
+            text-align: left;
+        }
+
         .client-name {
             font-size: 14px;
             font-weight: 600;
             color: var(--text-primary);
+            margin-bottom: 4px;
         }
 
         .client-role {
@@ -645,7 +796,7 @@
             transition: all 0.3s ease;
         }
 
-        .form-input:focus,
+        .form-input: focus,
         .form-textarea:focus {
             outline: none;
             border-color: var(--accent);
@@ -675,6 +826,31 @@
             background-color: var(--accent-dark);
             transform: translateY(-2px);
             box-shadow: 0 8px 24px rgba(0, 200, 83, 0.3);
+        }
+
+        .form-submit:active {
+            transform: translateY(0);
+        }
+
+        .form-message {
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            display: none;
+            margin-top: 12px;
+        }
+
+        .form-message.success {
+            background-color: rgba(0, 200, 83, 0.2);
+            color: var(--accent);
+            display: block;
+        }
+
+        .form-message.error {
+            background-color: rgba(255, 0, 0, 0.2);
+            color: #FF4444;
+            display: block;
         }
 
         .social-links {
@@ -713,7 +889,11 @@
             border-top: 1px solid var(--bg-secondary);
         }
 
-        /* SCROLL TO TOP */
+        .footer-text {
+            margin-bottom: 4px;
+        }
+
+        /* SCROLL TO TOP BUTTON */
         .scroll-to-top {
             position: fixed;
             bottom: 30px;
@@ -736,6 +916,7 @@
 
         .scroll-to-top:hover {
             transform: translateY(-4px);
+            box-shadow: 0 8px 24px var(--shadow-lg);
         }
 
         .scroll-to-top.show {
@@ -785,8 +966,32 @@
                 display: none;
             }
 
+            .sidebar-nav {
+                margin-bottom: 20px;
+            }
+
+            .nav-link {
+                justify-content: center;
+                padding: 12px;
+            }
+
+            .nav-icon {
+                margin: 0;
+            }
+
             .nav-link span {
                 display: none;
+            }
+
+            .nav-link.active {
+                border-left: none;
+                border-bottom: 3px solid var(--accent);
+                padding-left: 12px;
+            }
+
+            .stack-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 4px;
             }
 
             .hero-title {
@@ -795,22 +1000,57 @@
 
             .achievements-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
             }
 
             .projects-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
             }
 
             .stack-grid-main {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
             }
 
             .testimonials-grid {
                 grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .certifications-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
             }
 
             section {
                 padding: 60px 0;
+            }
+
+            .timeline::before {
+                left: 24px;
+            }
+
+            .timeline-item {
+                padding-left: 80px;
+                padding-right: 0;
+                text-align: left;
+            }
+
+            .timeline-item:nth-child(even) {
+                padding-left: 80px;
+                padding-right: 0;
+                text-align: left;
+            }
+
+            .timeline-dot {
+                left: 24px;
+            }
+
+            .timeline-content {
+                margin-left: 0;
+                margin-right: auto;
+                max-width: 100%;
             }
         }
 
@@ -828,10 +1068,40 @@
                 font-size: 36px;
             }
 
-            .achievements-grid,
-            .projects-grid,
+            .hero-subtitle {
+                font-size: 14px;
+            }
+
+            .about-title,
+            .projects-grid {
+                font-size: 28px;
+            }
+
+            .achievements-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
             .stack-grid-main {
                 grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .contact-section {
+                padding: 20px;
+            }
+
+            .scroll-to-top {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+                bottom: 20px;
+                right: 20px;
             }
         }
     </style>
@@ -844,117 +1114,3 @@
             <h1 class="sidebar-name">Allah Nawaz</h1>
             <div class="status-badge">
                 <div class="status-dot"></div>
-                <span class="status-text">Available for Work</span>
-            </div>
-        </div>
-
-        <nav>
-            <ul class="sidebar-nav">
-                <li class="nav-item"><a href="#home" class="nav-link active"><span>🏠</span> <span>Home</span></a></li>
-                <li class="nav-item"><a href="#about" class="nav-link"><span>👤</span> <span>About</span></a></li>
-                <li class="nav-item"><a href="#projects" class="nav-link"><span>📁</span> <span>Projects</span></a></li>
-                <li class="nav-item"><a href="#stack" class="nav-link"><span>🛠️</span> <span>Stack</span></a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link"><span>✉️</span> <span>Contact</span></a></li>
-            </ul>
-        </nav>
-
-        <div class="sidebar-stack">
-            <div class="stack-title">My Stack</div>
-            <div class="stack-grid">
-                <div class="stack-logo" title="Figma">🎨</div>
-                <div class="stack-logo" title="Framer">⚡</div>
-                <div class="stack-logo" title="Photoshop">📸</div>
-                <div class="stack-logo" title="Illustrator">✏️</div>
-                <div class="stack-logo" title="Canva">🖼️</div>
-                <div class="stack-logo" title="Miro">🗂️</div>
-                <div class="stack-logo" title="Google My Business">🌐</div>
-                <div class="stack-logo" title="Sketch">🎯</div>
-            </div>
-        </div>
-    </aside>
-
-    <!-- MAIN CONTENT -->
-    <main>
-        <!-- HERO SECTION -->
-        <section id="home" class="hero">
-            <h1 class="hero-title">Hello Everyone! I'm Allah Nawaz</h1>
-            <p class="hero-subtitle">UI/UX & Product Designer | 2+ Years Experience</p>
-            <a href="#about" class="cta-button">More about Me →</a>
-        </section>
-
-        <!-- ABOUT SECTION -->
-        <section id="about" class="fade-in-section">
-            <h2 class="about-title">About Me</h2>
-            <p class="about-summary">
-                UI/UX and Graphic Designer with 2+ years of experience in web and mobile applications for SaaS, e-commerce, and marketing platforms. Proven track record of increasing user engagement by 25% and improving online visibility by 30%. Expertise in Figma, Framer, Adobe Creative Suite, design systems, wireframing, and prototyping.
-            </p>
-
-            <div class="achievements-grid">
-                <div class="achievement-card">
-                    <div class="achievement-number">25%</div>
-                    <div class="achievement-label">User Engagement ↑</div>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-number">30%</div>
-                    <div class="achievement-label">Online Visibility ↑</div>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-number">35%</div>
-                    <div class="achievement-label">Design Time ↓</div>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-number">40%</div>
-                    <div class="achievement-label">Project Delivery ↑</div>
-                </div>
-            </div>
-
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span class="contact-icon">📞</span>
-                    <span>+92 305 574 3436</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">✉️</span>
-                    <span>allahnawazmalik175@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">💼</span>
-                    <span>in/allah-nawaz-256a81286</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">🎨</span>
-                    <span>behance.net/allahnawaz175</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- EXPERIENCE SECTION -->
-        <section id="experience" class="fade-in-section">
-            <h2 class="section-title">My Professional Journey</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-company">T-Tech Solutions Pvt Ltd</div>
-                        <div class="timeline-location">Islamabad, Pakistan</div>
-                        <div class="timeline-duration">May 2025 – Nov 2025</div>
-                        <div class="timeline-role">UI/UX & Graphic Designer</div>
-                        <ul class="timeline-description">
-                            <li>Designed responsive web and mobile interfaces with unified visual identity</li>
-                            <li>Built scalable design systems, reducing repetitive work by 40%</li>
-                            <li>Created Google My Business optimized visuals and social media creatives</li>
-                            <li>Collaborated with cross-functional teams on dashboards and campaigns</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-company">Profituned Marketing</div>
-                        <div class="timeline-location">Rawalpindi, Pakistan</div>
-                        <div class="timeline-duration">May 2024 – Apr 2025</div>
-                        <div class="timeline-role">UI/UX & Graphic Designer</div>
-                        <ul class="timeline-description">
-                            <li>Designed user interfaces increasing engagement and retention by 25%</li>
-                              <li>Developed high-fidelity Figma prototypes, reducing handoff delays</li>

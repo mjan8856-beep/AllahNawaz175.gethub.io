@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Allah Nawaz: Strategic UI/UX & Product Designer specializing in scalable, user-centered systems for SaaS, E-commerce, and Marketing.">
+    <title>Allah Nawaz | Strategic UI/UX & Product Designer</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom scrollbar style to match dark theme */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 10px; } /* Updated to new accent */
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Style for the timeline dots */
+        .timeline-dot {
+            position: absolute;
+            left: -1.75rem;
+            top: 0;
+            height: 1.5rem;
+            width: 1.5rem;
+            background-color: #6366f1; /* Updated to new accent */
+            border-radius: 50%;
+            border: 4px solid #0f172a;
+            z-index: 10;
+        }
+
+        /* Enhanced hover shadow for project cards */
+        .project-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.2), 0 4px 6px -2px rgba(99, 102, 241, 0.1);
+            transform: translateY(-4px);
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        /* Hamburger menu styles */
+        #menu-toggle:checked ~ .menu {
+            display: block;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#0f172a', /* Slate 900 */
+                        'secondary-dark': '#1e293b', /* Slate 800 (Used for cards) */
+                        'accent': '#6366f1', /* Indigo 500 (New primary accent) */
+                        'accent-light': '#818cf8', /* Indigo 400 */
+                        'light-card': '#2d3748',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-primary-dark text-slate-200 min-h-screen">
+
+    <!-- Navbar with Hamburger for Mobile -->
+    <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sticky top-0 z-20 bg-primary-dark/95 backdrop-blur-sm shadow-xl border-b border-slate-700">
+        <div class="flex justify-between items-center">
+            <a href="#" class="text-3xl font-extrabold text-accent tracking-tight">AN.</a>
+            <nav class="hidden sm:flex space-x-4 sm:space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-accent transition duration-300">About</a>
+                <a href="#experience" class="hover:text-accent transition duration-300">Experience</a>
+                <a href="#projects" class="hover:text-accent transition duration-300">Projects</a>
+                <a href="#contact" class="px-4 py-2 bg-accent text-white rounded-xl shadow-lg hover:bg-accent-light transition duration-300 text-base">Get in Touch</a>
+            </nav>
+            <!-- Hamburger Icon -->
+            <label for="menu-toggle" class="sm:hidden cursor-pointer">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </label>
+            <input type="checkbox" id="menu-toggle" class="hidden">
+            <div class="menu hidden absolute top-full left-0 w-full bg-primary-dark shadow-lg sm:hidden">
+                <a href="#about" class="block px-4 py-2 hover:text-accent">About</a>
+                <a href="#experience" class="block px-4 py-2 hover:text-accent">Experience</a>
+                <a href="#projects" class="block px-4 py-2 hover:text-accent">Projects</a>
+                <a href="#contact" class="block px-4 py-2 bg-accent text-white">Get in Touch</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Hero Section (Personalized with Story, Visible Image on Mobile) -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center py-20 md:py-36 border-b border-slate-800 fade-in">
+            <!-- Text Content -->
+            <div id="about" role="region" aria-labelledby="about-heading">
+                <h2 id="about-heading" class="sr-only">About Section</h2>
+                <p class="text-base font-medium uppercase text-accent mb-4 tracking-widest">Allah Nawaz — UI/UX & Product Designer</p>
+                <h1 class="text-6xl sm:text-8xl font-extrabold text-white tracking-tight leading-none mb-6">
+                    Crafting Scalable, <span class="text-accent-light">User-Centered</span> Systems.
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-400 mb-8 font-light">
+                    From networking tech roots to designing intuitive experiences, I've spent 2+ years blending research and creativity in SaaS, E-commerce, and Marketing. Passionate about solving real problems—whether through side projects or client work—that drive measurable impact.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#projects" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl shadow-xl text-white bg-accent hover:bg-accent-light transition duration-300 transform hover:scale-[1.01] focus:ring-2 focus:ring-accent">
+                        View Key Projects
+                    </a>
+                    <a href="https://example.com/resume.pdf" download class="inline-flex items-center justify-center px-6 py-3 border border-slate-600 text-base font-medium rounded-xl shadow-md text-slate-300 hover:bg-slate-700 transition duration-300 focus:ring-2 focus:ring-accent">
+                        Download Resume (PDF)
+                    </a>
+                </div>
+            </div>
+
+            <!-- Professional Profile Image (Visible on Mobile) -->
+            <div class="flex justify-center items-center">
+                <div class="w-80 h-80 relative">
+                    <!-- Outer glowing ring -->
+                    <div class="absolute inset-0 rounded-full bg-accent opacity-10 animate-pulse"></div>
+                    <!-- Inner content box with the provided image -->
+                    <div class="absolute inset-4 bg-secondary-dark rounded-full overflow-hidden shadow-2xl border-4 border-accent/50">
+                        <img src="1765530464249.jpg" 
+                             alt="Allah Nawaz Professional Profile Photo" 
+                             class="w-full h-full object-cover object-center"
+                             onerror="this.onerror=null; this.src='https://placehold.co/300x300/1e293b/6366f1?text=AN+Photo+Error';"
+                             loading="lazy">
+                    </div>
+                    <!-- Small badge/dot -->
+                    <div class="absolute bottom-6 right-6 w-8 h-8 bg-green-500 rounded-full border-4 border-primary-dark shadow-xl flex items-center justify-center text-sm font-bold text-white">
+                        ✓
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Three Pillars Section -->
+        <section class="py-16 md:py-24 fade-in">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-12 text-center text-white">
+                Strategic, Systematic & Problem-Solving Designer
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-secondary-dark p-8 rounded-2xl shadow-2xl border border-slate-700 hover:border-accent transition duration-300">
+                    <div class="text-4xl text-accent mb-4">👤</div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">User-Centered Focus</h3>
+                    <p class="text-slate-400">Validated design decisions by user research and usability testing, ensuring solutions directly address real-world pain points and drive adoption.</p>
+                </div>
+                <div class="bg-secondary-dark p-8 rounded-2xl shadow-2xl border border-slate-700 hover:border-accent transition duration-300">
+                    <div class="text-4xl text-accent mb-4">📈</div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Business-Focused Results</h3>
+                    <p class="text-slate-400">Proven ability to translate business objectives into high-impact interfaces, increasing user engagement by **25%** and online visibility by **30%**.</p>
+                </div>
+                <div class="bg-secondary-dark p-8 rounded-2xl shadow-2xl border border-slate-700 hover:border-accent transition duration-300">
+                    <div class="text-4xl text-accent mb-4">🏗️</div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">System-Driven Efficiency</h3>
+                    <p class="text-slate-400">Expert in building scalable design systems and component libraries in Figma/Framer, accelerating feature rollouts by **40%**.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Skills Section (Grid with Icons) -->
+        <section class="py-16 md:py-24 border-t border-slate-800 fade-in">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-12 text-center text-white">Skills & Tools</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <div class="bg-secondary-dark p-6 rounded-2xl shadow-2xl border border-slate-700 text-center">
+                    <div class="text-4xl mb-2">🎨</div>
+                    <h3 class="text-lg font-semibold text-white">Figma/Framer</h3>
+                    <p class="text-slate-400 text-sm">Built systems accelerating rollouts by 40%.</p>
+                </div>
+                <div class="bg-secondary-dark p-6 rounded-2xl shadow-2xl border border-slate-700 text-center">
+                    <div class="text-4xl mb-2">🔍</div>
+                    <h3 class="text-lg font-semibold text-white">User Research</h3>
+                    <p class="text-slate-400 text-sm">Conducted testing for SaaS usability.</p>
+                </div>
+                <div class="bg-secondary-dark p-6 rounded-2xl shadow-2xl border border-slate-700 text-center">
+                    <div class="text-4xl mb-2">📊</div>
+                    <h3 class="text-lg font-semibold text-white">A/B Testing</h3>
+                    <p class="text-slate-400 text-sm">Optimized interfaces for 25% engagement boost.</p>
+                </div>
+                <div class="bg-secondary-dark p-6 rounded-2xl shadow-2xl border border-slate-700 text-center">
+                    <div class="text-4xl mb-2">🛠️</div>
+                    <h3 class="text-lg font-semibold text-white">Prototyping</h3>
+                    <p class="text-slate-400 text-sm">Interactive mocks in Figma for client approvals.</p>
+                </div>
+                <!-- Add more as needed -->
+            </div>
+        </section>
+
+        <!-- Experience Timeline (Updated Dates for Dec 2025) -->
+        <section id="experience" class="py-16 md:py-24 border-t border-slate-800 fade-in" role="region" aria-labelledby="experience-heading">
+            <h2 id="experience-heading" class="text-3xl sm:text-4xl font-extrabold mb-12 text-center text-white">Professional Experience</h2>
+            <div class="max-w-4xl mx-auto relative border-l-4 border-slate-700 pl-8">
+                <!-- Role 1: T-Tech Solutions Pvt Ltd (Updated to Present) -->
+                <div class="mb-10 relative">
+                    <div class="timeline-dot"></div>
+                    <p class="text-sm font-medium text-slate-400 mb-1">May 2025 – Present</p>
+                    <h3 class="text-2xl font-bold text-white">UI/UX & Graphic Designer</h3>
+                    <p class="text-accent font-semibold mb-3">T-Tech Solutions Pvt Ltd | Islamabad</p>
+                    <ul class="list-disc list-inside text-slate-400 space-y-2 bg-secondary-dark p-4 rounded-xl border border-slate-700">
+                        <li>Built scalable design systems that reduced repetitive work and **accelerated new feature rollouts by 40%**.</li>
+                        <li>Designed responsive web and mobile interfaces with unified visual identity across multiple platforms.</li>
+                        <li>Created Google My Business optimized visuals and high-impact campaigns aligned with business goals.</li>
+                    </ul>
+                </div>
+                <!-- Other roles remain the same -->
+                <div class="mb-10 relative">
+                    <div class="timeline-dot"></div>
+                    <p class="text-sm font-medium text-slate-400 mb-1">May 2024 – Apr 2025</p>
+                    <h3 class="text-2xl font-bold text-white">UI/UX & Graphic Designer</h3>
+                    <p class="text-accent font-semibold mb-3">Profituned Marketing | Rawalpindi</p>
+                    <ul class="list-disc list-inside text-slate-400 space-y-2 bg-secondary-dark p-4 rounded-xl border border-slate-700">
+                        <li>Designed responsive UIs that **increased user engagement and retention by 25%**.</li>
+                        <li>Reduced design time by **35%** by creating scalable design systems across multiple products.</li>
+                        <li>Produced SEO-optimized graphics that **increased local GMB impressions by 30%**.</li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <div class="timeline-dot"></div>
+                    <p class="text-sm font-medium text-slate-400 mb-1">Oct 2023 – Apr 2024</p>
+                    <h3 class="text-2xl font-bold text-white">UI/UX Design Intern</h3>
+                    <p class="text-accent font-semibold mb-3">Design Peeps | Islamabad</p>
+                    <ul class="list-disc list-inside text-slate-400 space-y-2 bg-secondary-dark p-4 rounded-xl border border-slate-700">
+                        <li>Conducted user research and usability testing for SaaS and e-commerce platforms to identify usability issues.</li>
+                        <li>Created interactive Figma prototypes that accelerated client approval processes.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section (Expanded Case Studies) -->
+        <section id="projects" class="py-16 md:py-24 border-t border-slate-800 fade-in" role="region" aria-labelledby="projects-heading">
+            <h2 id="projects-heading" class="text-3xl sm:text-4xl font-extrabold mb-12 text-center text-white">Featured Projects & Case Studies</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1: Expanded with Process -->
+                <div class="project-card bg-secondary-dark rounded-2xl shadow-2xl overflow-hidden border border-slate-700 flex flex-col transition duration-500">
+                    <div class="h-64 bg-slate-800 flex items-center justify-center p-8">
+                        <img src="https://placehold.co/600x400/1f2937/a1a1a1?text=T-Tech+SaaS+System+Redesign" alt="SaaS Dashboard Placeholder" class="rounded-lg shadow-xl max-w-full h-auto" loading="lazy">
+                    </div>
+                    <div class="p-6 md:p-8 flex flex-col flex-grow">
+                        <span class="text-sm font-medium uppercase text-accent mb-2">SaaS / Design Systems</span>
+                        <h3 class="text-2xl font-bold text-white mb-3">T-Tech Solutions Dashboard Redesign</h3>
+                        <p class="text-slate-400 mb-6 flex-grow">
+                            <strong>Problem:</strong> Fragmented UI leading to slow development.<br>
+                            <strong>Research:</strong> User interviews revealed pain points in navigation.<br>
+                            <strong>Process:</strong> Wireframed iterations, A/B tested prototypes.<br>
+                            <strong>Challenges:</strong> Integrated legacy systems; solved via modular components.<br>
+                            <strong>Results:</strong> 40% faster rollouts, improved accessibility.<br>
+                            <strong>Reflections:</strong> Emphasized metrics earlier in future projects.
+                        </p>
+                        <a href="https://www.figma.com/design/vt3zmYnIUFYfTq9fQlvsng?node-id=" target="_blank" rel="noopener" class="inline-flex items-center text-accent font-semibold hover:text-accent-light transition duration-300 focus:ring-2 focus:ring-accent">
+                            View Figma Prototype &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Expanded -->
+                <div class="project-card bg-secondary-dark rounded-2xl shadow-2xl overflow-hidden border border-slate-700 flex flex-col transition duration-500">
+                    <div class="h-64 bg-slate-800 flex items-center justify-center p-8">
+                        <img src="https://placehold.co/600x400/1f2937/a1a1a1?text=Profituned+Marketing+UI/UX" alt="E-commerce Campaign Placeholder" class="rounded-lg shadow-xl max-w-full h-auto" loading="lazy">
+                    </div>
+                    <div class="p-6 md:p-8 flex flex-col flex-grow">
+                        <span class="text-sm font-medium uppercase text-accent mb-2">E-commerce / Marketing</span>
+                        <h3 class="text-2xl font-bold text-white mb-3">Profituned Marketing Assets</h3>
+                        <p class="text-slate-400 mb-6 flex-grow">
+                            <strong>Problem:</strong> Low engagement on campaigns.<br>
+                            <strong>Research:</strong> Analyzed user data for preferences.<br>
+                            <strong>Process:</strong> Designed visuals, tested SEO impact.<br>
+                            <strong>Challenges:</strong> Balanced creativity with performance; iterated based on feedback.<br>
+                            <strong>Results:</strong> 25% engagement increase, 30% visibility boost.<br>
+                            <strong>Reflections:</strong> More emphasis on mobile-first in visuals.
+                        </p>
+                        <a href="https://www.behance.net/allahnawaz175" target="_blank" rel="noopener" class="inline-flex items-center text-accent font-semibold hover:text-accent-light transition duration-300 focus:ring-2 focus:ring-accent">
+                            Explore Visuals & Assets &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Testimonials Section -->
+        <section class="py-16 md:py-24 border-t border-slate-800 fade-in">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-12 text-center text-white">What Clients Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-secondary-dark p-8 rounded-2xl shadow-2xl border border-slate-700">
+                    <p class="text-slate-400 mb-4">"Allah's design systems transformed our workflow—highly recommend!"</p>
+                    <p class="text-accent font-semibold">- Manager, T-Tech Solutions</p>
+                </div>
+                <div class="bg-secondary-dark p-8 rounded-2xl shadow-2xl border border-slate-700">
+                    <p class="text-slate-400 mb-4">"Innovative visuals that boosted our engagement metrics."</p>
+                    <p class="text-accent font-semibold">- Client, Profituned Marketing</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certifications Section -->
+        <section class="py-16 md:py-24 border-t border-slate-800 fade-in">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-12 text-center text-white">Education & Professional Development</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                <div class="p-8 bg-secondary-dark rounded-2xl shadow-2xl border border-slate-700">
+                    <h3 class="text-2xl font-bold text-accent mb-4">Education</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <p class="text-xl font-semibold text-white">Associate Degree Program</p>
+                            <p class="text-slate-400">Islamia University of Bahawalpur</p>
+                            <p class="text-sm text-slate-500">2020 - 2022</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 bg-secondary-dark rounded-2xl shadow-2xl border border-slate-700">
+                    <h3 class="text-2xl font-bold text-accent mb-4">Certifications</h3>
+                    <div class="space-y-6">
+                        <div class="border-b border-slate-700 pb-4">
+                            <p class="text-xl font-semibold text-white">Website Design Course</p>
+                            <p class="text-slate-400">National Vocational & Technical Training Commission (NAVTTC)</p>
+                            <p class="text-sm text-slate-500">6 Months</p>
+                        </div>
+                        <div class="border-b border-slate-700 pb-4">
+                            <p class="text-xl font-semibold text-white">Networking Technician Course</p>
+                            <p class="text-slate-400">Punjab Skills Development Fund (PSDF)</p>
+                            <p class="text-sm text-slate-500">6 Months</p>
+                        </div>
+                        <div>
+                            <p class="text-xl font-semibold text-white">Information Technology Course</p>
+                            <p class="text-slate-400">Technical Education & Vocational Training Authority (TEVTA)</p>
+                            <p class="text-sm text-slate-500">3 Months</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA Section (With Placeholder Form) -->
+        <section id="contact" class="text-center py-20 md:py-32 bg-secondary-dark rounded-2xl my-10 shadow-2xl border border-slate-700 fade-in">
+            <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4">Ready to build your next digital experience?</h2>
+            <p class="text-xl text-slate-300 max-w-3xl mx-auto mb-10">
+                Let's collaborate on scalable design solutions that deliver **measurable results**.
+            </p>
+            <form action="https://formspree.io/f/your-form-id" method="POST" class="max-w-xl mx-auto space-y-4">
+                <input type="text" name="name" placeholder="Your Name" class="w-full px-4 py-3 bg-primary-dark border border-slate-600 rounded-xl text-slate-300 focus:ring-2 focus:ring-accent">
+                <input type="email" name="email" placeholder="Your Email" class="w-full px-4 py-3 bg-primary-dark border border-slate-600 rounded-xl text-slate-300 focus:ring-2 focus:ring-accent">
+                <textarea name="message" placeholder="Your Message" class="w-full px-4 py-3 bg-primary-dark border border-slate-600 rounded-xl text-slate-300 focus:ring-2 focus:ring-accent"></textarea>
+                <button type="submit" class="px-8 py-3 bg-accent text-white rounded-xl shadow-lg hover:bg-accent-light transition duration-300 focus:ring-2 focus:ring-accent">
+                    Send Message
+                </button>
+            </form>
+            <div class="mt-6 space-x-6">
+                <a href="https://www.behance.net/allahnawaz175" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-8 py-3 border border-slate-600 text-base font-medium rounded-xl shadow-lg text-slate-300 bg-primary-dark hover:bg-slate-700 transition duration-300 focus:ring-2 focus:ring-accent">
+                    <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    View My Projects on Behance
+                </a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

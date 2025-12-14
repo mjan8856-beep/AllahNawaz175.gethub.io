@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>Allah Nawaz | UI/UX & Product Designer</title>
-<meta name="description" content="Allah Nawaz – UI/UX & Product Designer crafting scalable SaaS, mobile & web experiences.">
-<meta name="keywords" content="UI UX Designer, Product Designer, SaaS Designer, Portfolio">
+<meta name="description" content="Portfolio of Allah Nawaz — UI/UX & Product Designer (2+ years), showcasing professional journey, featured projects, skills, and case studies.">
 
 <!-- SEO Schema -->
 <script type="application/ld+json">
@@ -29,6 +28,7 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter}
 html{scroll-behavior:smooth}
 
+/* Colors */
 :root{
 --bg:#0b0f14;
 --card:#151a20;
@@ -43,144 +43,80 @@ html{scroll-behavior:smooth}
 --muted:#4b5563;
 --accent:#16a34a;
 }
-
 body{background:var(--bg);color:var(--text);display:flex}
 
 /* Sidebar */
 aside{
-width:220px;
-height:100vh;
-position:fixed;
-background:var(--card);
-padding:1.5rem;
+width:240px;position:fixed;top:0;left:0;
+background:var(--card);padding:2rem;min-height:100vh;
 }
-aside h2{margin-bottom:2rem}
+aside h2{margin-bottom:1rem;font-size:1.4rem}
+aside p{color:var(--muted);font-size:.9rem;}
 aside a{
-display:block;
-margin-bottom:1rem;
-color:var(--muted);
-text-decoration:none;
-font-size:.9rem;
+display:block;margin:.8rem 0;color:var(--muted);text-decoration:none;font-size:.93rem;
 }
 aside a:hover{color:var(--accent)}
+.aside-btn{margin-top:1rem;display:inline-block}
 
 /* Main */
-main{
-margin-left:220px;
-padding:2.5rem;
-max-width:1200px;
-width:100%;
-}
+main{margin-left:240px;padding:2.8rem;max-width:1150px;width:100%}
 section{margin-bottom:4rem}
-h1{font-size:2.6rem}
-h2{color:var(--accent);margin-bottom:1rem}
-p{color:var(--muted);line-height:1.6}
 
-/* Buttons */
-.btn{
-display:inline-block;
-margin-top:1rem;
-padding:.6rem 1.3rem;
-border-radius:999px;
-background:var(--accent);
-color:#000;
-font-weight:600;
-text-decoration:none;
-font-size:.85rem;
-}
+/* Hero */
+.hero h1{font-size:2.8rem;font-weight:700}
+.hero p{margin:.8rem 0;font-size:1.1rem;color:var(--muted)}
 
-/* Grid */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:1.5rem;
-}
+/* Stats */
+.stats{display:flex;flex-wrap:wrap;gap:1rem;font-size:1.1rem}
+.stats div{background:var(--card);padding:1rem;border-radius:14px;flex:1;text-align:center}
 
-/* Card + Motion */
-.card{
-background:var(--card);
-padding:2rem;
-border-radius:20px;
-transition:transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s;
+/* Project Filters */
+input[type="search"]{
+padding:.6rem 1rem;border-radius:999px;border:none;
+background:var(--card);color:var(--text);width:100%;margin-bottom:1rem;
 }
-.card:hover{
-transform:translateY(-8px) scale(1.04);
-box-shadow:0 30px 60px rgba(0,0,0,.4);
-}
-
-/* Device mockups */
-.device svg{width:100%;height:auto}
-.device img{
-width:100%;
-height:100%;
-object-fit:cover;
-border-radius:12px;
-transition:.4s;
-}
-.card:hover img{transform:scale(1.05)}
-
-/* Filters */
-.filters{
-display:flex;
-gap:.8rem;
-margin:1rem 0;
-}
+.filters{display:flex;gap:.7rem;margin-bottom:1rem}
 .filters button{
-background:var(--card);
-border:none;
-padding:.4rem 1rem;
-border-radius:999px;
-color:var(--muted);
-cursor:pointer;
+padding:.5rem 1rem;background:var(--card);border:none;border-radius:999px;color:var(--muted);cursor:pointer;
 }
 .filters button:hover{color:var(--accent)}
 
-/* Search */
-input[type="search"]{
-padding:.5rem 1rem;
-border-radius:999px;
-border:none;
-background:var(--card);
-color:var(--text);
-margin-bottom:1rem;
-width:100%;
+/* Project Cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.card{
+background:var(--card);padding:2rem;border-radius:20px;
+transition:transform .4s ease,box-shadow .4s ease;
 }
+.card:hover{
+transform:translateY(-6px) scale(1.03);
+box-shadow:0 30px 60px rgba(0,0,0,.4);
+}
+
+/* Device Mockups */
+.device svg{width:100%;height:auto}
+.device img{
+width:100%;height:100%;object-fit:cover;border-radius:12px;transition:.4s;
+}
+.card:hover img{transform:scale(1.05)}
 
 /* Reveal */
-.reveal{opacity:0;transform:translateY(40px);transition:.6s}
+.reveal{opacity:0;transform:translateY(40px);transition:.7s}
 .reveal.active{opacity:1;transform:none}
 
-/* Case Modal */
-.case-modal{
-position:fixed;inset:0;
-background:rgba(0,0,0,.6);
-display:flex;align-items:center;justify-content:center;
-opacity:0;pointer-events:none;transition:.4s;
-}
+/* Modal */
+.case-modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.3s}
 .case-modal.show{opacity:1;pointer-events:auto}
-.case-content{
-background:var(--card);
-padding:2rem;
-border-radius:20px;
-max-width:600px;
-width:90%;
-transform:scale(.9);
-transition:.4s;
-}
+.case-content{background:var(--card);padding:2rem;border-radius:18px;max-width:600px;width:90%;transform:scale(.9);transition:.3s}
 .case-modal.show .case-content{transform:scale(1)}
 
 /* Toggle */
 .toggle{
-position:fixed;top:1rem;right:1rem;
-background:var(--card);
-border:none;border-radius:50%;
-padding:.5rem .7rem;cursor:pointer;
+position:fixed;top:1rem;right:1rem;background:var(--card);border:none;border-radius:50%;padding:.5rem;cursor:pointer;
 }
 
-/* Mobile */
+/* Responsive */
 @media(max-width:900px){
-aside{display:none}
-main{margin:0;padding:1.5rem}
+aside{display:none}main{margin:0;padding:1.5rem}
 }
 </style>
 </head>
@@ -189,24 +125,42 @@ main{margin:0;padding:1.5rem}
 
 <button class="toggle" onclick="toggleTheme()">🌗</button>
 
-<!-- SIDEBAR -->
+<!-- Sidebar -->
 <aside>
 <h2>Allah Nawaz</h2>
+<p>UI/UX & Product Designer<br>Available for Work</p>
+
 <a href="#home">Home</a>
+<a href="#stats">Stats</a>
 <a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#testimonials">Testimonials</a>
 <a href="#contact">Contact</a>
-<a href="assets/Allah-Nawaz-Resume.pdf" download class="btn">Download Resume</a>
+
+<a href="assets/Allah-Nawaz-Resume.pdf" download class="btn aside-btn">Download Resume</a>
 </aside>
 
 <main>
 
-<section id="home" class="reveal">
-<h1>UI/UX & Product Designer</h1>
-<p>I design interaction-driven SaaS, mobile & web products with strong UX foundations.</p>
+<!-- Hero -->
+<section id="home" class="reveal hero">
+<h1>I'm Allah Nawaz</h1>
+<p>UI/UX & Product Designer | 2+ Years Experience</p>
 </section>
 
+<!-- Stats -->
+<section id="stats" class="reveal">
+<div class="stats">
+<div><strong>25%</strong><br>Engagement Increase</div>
+<div><strong>30%</strong><br>Visibility Boost</div>
+<div><strong>35%</strong><br>Design Time Reduction</div>
+<div><strong>40%</strong><br>Delivery Acceleration</div>
+</div>
+</section>
+
+<!-- Projects -->
 <section id="projects">
-<h2>Projects</h2>
+<h2>Featured Projects</h2>
 
 <input type="search" placeholder="Search projects…" oninput="searchProjects(this.value)">
 
@@ -220,17 +174,39 @@ main{margin:0;padding:1.5rem}
 <div class="grid" id="projectGrid"></div>
 </section>
 
+<!-- Skills -->
+<section id="skills" class="reveal">
+<h2>Skills</h2>
+<div class="grid">
+<div class="card">UI/UX Design – 90%</div>
+<div class="card">Wireframing – 85%</div>
+<div class="card">Prototyping – 80%</div>
+<div class="card">Figma – 90%</div>
+<div class="card">Adobe Suite – 85%</div>
+<div class="card">Responsive Design – 80%</div>
+</div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials" class="reveal">
+<h2>Kind Words</h2>
+<div class="card">"Exceptional UI design — revitalized our brand." — Sarah Johnson</div>
+<div class="card">"Professional, timely, intuitive." — Mike Ross</div>
+</section>
+
+<!-- Contact -->
 <section id="contact" class="reveal">
 <h2>Contact</h2>
 <div class="card">
-<p>Email: allahnawazmalik175@gmail.com</p>
-<p>LinkedIn: linkedin.com/in/allah-nawaz-256a81286</p>
+<p>📞 +92 305 574 3436</p>
+<p>✉️ allahnawazmalik175@gmail.com</p>
+<p>📍 Islamabad, Pakistan</p>
 </div>
 </section>
 
 </main>
 
-<!-- CASE STUDY MODAL -->
+<!-- Case Study Modal -->
 <div class="case-modal" id="caseModal">
 <div class="case-content">
 <button onclick="closeCase()">✕</button>
@@ -242,107 +218,64 @@ main{margin:0;padding:1.5rem}
 </div>
 </div>
 
-<!-- ANALYTICS (replace IDs) -->
-<!-- GA4 -->
+<!-- Analytics + Scripts -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
 <script>
 window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments)}
+function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());
 gtag('config','G-XXXXXXX');
 </script>
 
 <script>
-/* THEME */
 function toggleTheme(){
 document.body.classList.toggle("light");
-localStorage.setItem("theme",
-document.body.classList.contains("light")?"light":"dark");
+localStorage.setItem("theme", document.body.classList.contains("light")?"light":"dark");
 }
-if(localStorage.getItem("theme")==="light"){
-document.body.classList.add("light");
-}
+if(localStorage.getItem("theme")==="light"){document.body.classList.add("light");}
 
-/* PROJECT CMS */
 const projects=[
-{
-id:"ai",
-title:"Smarter Influencer Marketing",
-category:"saas",
-image:"https://via.placeholder.com/900x600",
-problem:"Manual influencer discovery",
-solution:"AI scoring & dashboards",
-impact:"60% faster decisions"
-},
-{
-id:"solar",
-title:"Solar Energy Platform",
-category:"web",
-image:"https://via.placeholder.com/900x600",
-problem:"Low trust",
-solution:"Education-first UI",
-impact:"Higher engagement"
-},
-{
-id:"food",
-title:"Food Delivery App",
-category:"mobile",
-image:"https://via.placeholder.com/500x900",
-problem:"Checkout drop-offs",
-solution:"Simplified flow",
-impact:"Higher conversions"
-}
+{id:"ai",title:"Smarter Influencer Marketing",category:"saas",image:"https://via.placeholder.com/900x600",problem:"Manual influencer discovery",solution:"AI dashboards",impact:"60% faster decisions"},
+{id:"solar",title:"Solar Energy Solutions",category:"web",image:"https://via.placeholder.com/900x600",problem:"Low trust & engagement",solution:"Clean UX education",impact:"Improved engagement"},
+{id:"petfood",title:"Pet Food E-commerce",category:"web",image:"https://via.placeholder.com/900x600",problem:"Retail UI needs",solution:"Vibrant UI",impact:"Boosted conversions"},
+{id:"clicksy",title:"ClickSy Platform",category:"mobile",image:"https://via.placeholder.com/500x900",problem:"Mobile analytics UX",solution:"Dashboard UI",impact:"Better retention"},
+{id:"conectlab",title:"Conectlab",category:"saas",image:"https://via.placeholder.com/900x600",problem:"Business UX clarity",solution:"Brand-aligned design",impact:"Higher engagement"}
 ];
 
-const grid=document.getElementById("projectGrid");
-
 function renderProjects(list){
-grid.innerHTML="";
+document.getElementById("projectGrid").innerHTML="";
 list.forEach(p=>{
-grid.innerHTML+=`
+document.getElementById("projectGrid").innerHTML+=`
 <div class="card reveal">
-<div class="device">
-<svg viewBox="0 0 800 500">
-<rect x="40" y="20" rx="18" width="720" height="420" fill="#020617"/>
-<foreignObject x="60" y="40" width="680" height="380">
-<img src="${p.image}">
-</foreignObject>
-</svg>
-</div>
-<h3>${p.title}</h3>
-<p>${p.category.toUpperCase()}</p>
-<button class="btn" onclick="openCase('${p.id}')">View Case</button>
-</div>`;
+<div class="device"><svg viewBox="0 0 800 500"><rect x="40" y="20" rx="18" width="720" height="420" fill="#020617"/><foreignObject x="60" y="40" width="680" height="380"><img src="${p.image}"></foreignObject></svg></div>
+<h3>${p.title}</h3><p>${p.category.toUpperCase()}</p>
+<button class="btn" onclick="openCase('${p.id}')">View Case</button></div>`
 });
-observe();
+observeReveal();
 }
 renderProjects(projects);
 
 function filterProjects(type){
-if(type==="all") renderProjects(projects);
+if(type==="all")renderProjects(projects);
 else renderProjects(projects.filter(p=>p.category===type));
 }
-function searchProjects(q){
-renderProjects(projects.filter(p=>p.title.toLowerCase().includes(q.toLowerCase())));
-}
+function searchProjects(q){renderProjects(projects.filter(p=>p.title.toLowerCase().includes(q.toLowerCase())));}
 
-/* CASE MODAL */
 function openCase(id){
 const p=projects.find(x=>x.id===id);
-caseTitle.innerText=p.title;
-caseImage.src=p.image;
-caseProblem.innerText=p.problem;
-caseSolution.innerText=p.solution;
-caseImpact.innerText=p.impact;
-caseModal.classList.add("show");
+document.getElementById("caseTitle").innerText=p.title;
+document.getElementById("caseImage").src=p.image;
+document.getElementById("caseProblem").innerText=p.problem;
+document.getElementById("caseSolution").innerText=p.solution;
+document.getElementById("caseImpact").innerText=p.impact;
+document.getElementById("caseModal").classList.add("show");
 }
-function closeCase(){caseModal.classList.remove("show")}
+function closeCase(){document.getElementById("caseModal").classList.remove("show");}
 
-/* SCROLL REVEAL */
-function observe(){
+function observeReveal(){
 document.querySelectorAll(".reveal").forEach(el=>{
-new IntersectionObserver(e=>{
-if(e[0].isIntersecting)el.classList.add("active");
+new IntersectionObserver(entries=>{
+if(entries[0].isIntersecting)el.classList.add("active");
 },{threshold:.15}).observe(el);
 });
 }

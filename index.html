@@ -1,118 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>Allah Nawaz | UI/UX & Product Designer</title>
+<meta name="description" content="Allah Nawaz – UI/UX & Product Designer crafting scalable SaaS, mobile & web experiences.">
+<meta name="keywords" content="UI UX Designer, Product Designer, SaaS Designer, Portfolio">
 
-<meta name="description" content="Allah Nawaz – UI/UX & Product Designer creating scalable, user-centered SaaS, mobile & web experiences." />
-<meta name="keywords" content="UI UX Designer, Product Designer, SaaS Design, Figma, Framer" />
-<meta name="author" content="Allah Nawaz" />
+<!-- SEO Schema -->
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"Person",
+"name":"Allah Nawaz",
+"jobTitle":"UI/UX & Product Designer",
+"url":"https://yourdomain.com",
+"sameAs":[
+"https://www.linkedin.com/in/allah-nawaz-256a81286",
+"https://www.behance.net/allahnawaz175"
+]
+}
+</script>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-<!-- ================= STYLES ================= -->
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter}
 html{scroll-behavior:smooth}
 
 :root{
---bg:#0f1113;
---card:#171a1d;
---text:#ffffff;
+--bg:#0b0f14;
+--card:#151a20;
+--text:#fff;
 --muted:#9ca3af;
 --accent:#22c55e;
-transition:.3s;
 }
 .light{
 --bg:#f4f6f8;
 --card:#ffffff;
---text:#0f1113;
+--text:#0b0f14;
 --muted:#4b5563;
 --accent:#16a34a;
 }
 
 body{background:var(--bg);color:var(--text);display:flex}
 
-/* ---------- SIDEBAR ---------- */
+/* Sidebar */
 aside{
-width:220px;min-height:100vh;
+width:220px;
+height:100vh;
+position:fixed;
 background:var(--card);
 padding:1.5rem;
-position:fixed;
 }
 aside h2{margin-bottom:2rem}
 aside a{
 display:block;
+margin-bottom:1rem;
 color:var(--muted);
 text-decoration:none;
-margin-bottom:1rem;
 font-size:.9rem;
 }
 aside a:hover{color:var(--accent)}
 
-/* ---------- MAIN ---------- */
+/* Main */
 main{
 margin-left:220px;
 padding:2.5rem;
 max-width:1200px;
 width:100%;
 }
-
-/* ---------- COMMON ---------- */
 section{margin-bottom:4rem}
-h1{font-size:2.5rem}
-h2{margin-bottom:1rem;color:var(--accent)}
-p{color:var(--muted);line-height:1.7}
+h1{font-size:2.6rem}
+h2{color:var(--accent);margin-bottom:1rem}
+p{color:var(--muted);line-height:1.6}
 
-.card{
-background:var(--card);
-padding:2rem;
-border-radius:18px;
-margin-bottom:1.5rem;
+/* Buttons */
+.btn{
+display:inline-block;
+margin-top:1rem;
+padding:.6rem 1.3rem;
+border-radius:999px;
+background:var(--accent);
+color:#000;
+font-weight:600;
+text-decoration:none;
+font-size:.85rem;
 }
 
+/* Grid */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:1.5rem;
 }
 
-.btn{
-display:inline-block;
-padding:.6rem 1rem;
-border-radius:999px;
-background:var(--accent);
-color:#fff;
-text-decoration:none;
-font-size:.85rem;
-margin-top:1rem;
+/* Card + Motion */
+.card{
+background:var(--card);
+padding:2rem;
+border-radius:20px;
+transition:transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s;
+}
+.card:hover{
+transform:translateY(-8px) scale(1.04);
+box-shadow:0 30px 60px rgba(0,0,0,.4);
 }
 
-/* ---------- REVEAL ---------- */
-.reveal{
-opacity:0;
-transform:translateY(40px);
-transition:.6s ease;
+/* Device mockups */
+.device svg{width:100%;height:auto}
+.device img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:12px;
+transition:.4s;
 }
-.reveal.active{
-opacity:1;
-transform:none;
-}
+.card:hover img{transform:scale(1.05)}
 
-/* ---------- TOGGLE ---------- */
-.toggle{
-position:fixed;
-top:1rem;right:1rem;
+/* Filters */
+.filters{
+display:flex;
+gap:.8rem;
+margin:1rem 0;
+}
+.filters button{
 background:var(--card);
 border:none;
-padding:.5rem .7rem;
-border-radius:50%;
+padding:.4rem 1rem;
+border-radius:999px;
+color:var(--muted);
 cursor:pointer;
 }
+.filters button:hover{color:var(--accent)}
 
-/* ---------- MOBILE ---------- */
+/* Search */
+input[type="search"]{
+padding:.5rem 1rem;
+border-radius:999px;
+border:none;
+background:var(--card);
+color:var(--text);
+margin-bottom:1rem;
+width:100%;
+}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(40px);transition:.6s}
+.reveal.active{opacity:1;transform:none}
+
+/* Case Modal */
+.case-modal{
+position:fixed;inset:0;
+background:rgba(0,0,0,.6);
+display:flex;align-items:center;justify-content:center;
+opacity:0;pointer-events:none;transition:.4s;
+}
+.case-modal.show{opacity:1;pointer-events:auto}
+.case-content{
+background:var(--card);
+padding:2rem;
+border-radius:20px;
+max-width:600px;
+width:90%;
+transform:scale(.9);
+transition:.4s;
+}
+.case-modal.show .case-content{transform:scale(1)}
+
+/* Toggle */
+.toggle{
+position:fixed;top:1rem;right:1rem;
+background:var(--card);
+border:none;border-radius:50%;
+padding:.5rem .7rem;cursor:pointer;
+}
+
+/* Mobile */
 @media(max-width:900px){
 aside{display:none}
 main{margin:0;padding:1.5rem}
@@ -124,113 +189,71 @@ main{margin:0;padding:1.5rem}
 
 <button class="toggle" onclick="toggleTheme()">🌗</button>
 
-<!-- ================= SIDEBAR ================= -->
+<!-- SIDEBAR -->
 <aside>
 <h2>Allah Nawaz</h2>
 <a href="#home">Home</a>
-<a href="#journey">Journey</a>
-<a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
-<a href="#cases">Case Studies</a>
 <a href="#contact">Contact</a>
+<a href="assets/Allah-Nawaz-Resume.pdf" download class="btn">Download Resume</a>
 </aside>
 
-<!-- ================= MAIN ================= -->
 <main>
 
-<!-- HERO -->
 <section id="home" class="reveal">
-<h1>I'm Allah Nawaz</h1>
-<p>UI/UX & Product Designer building scalable, human-centered digital products.</p>
-<a href="#projects" class="btn">View Work</a>
+<h1>UI/UX & Product Designer</h1>
+<p>I design interaction-driven SaaS, mobile & web products with strong UX foundations.</p>
 </section>
 
-<!-- JOURNEY -->
-<section id="journey" class="reveal">
-<h2>Professional Journey</h2>
-<div class="card">
-<p><strong>UI/UX Designer</strong> – SaaS, Mobile & Web Platforms</p>
-<p>Focused on clean systems, usability, and business impact.</p>
+<section id="projects">
+<h2>Projects</h2>
+
+<input type="search" placeholder="Search projects…" oninput="searchProjects(this.value)">
+
+<div class="filters">
+<button onclick="filterProjects('all')">All</button>
+<button onclick="filterProjects('web')">Web</button>
+<button onclick="filterProjects('mobile')">Mobile</button>
+<button onclick="filterProjects('saas')">SaaS</button>
 </div>
+
+<div class="grid" id="projectGrid"></div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills" class="reveal">
-<h2>Skills</h2>
-<div class="grid">
-<div class="card">UI/UX Design</div>
-<div class="card">Design Systems</div>
-<div class="card">Figma & Framer</div>
-<div class="card">Prototyping</div>
-<div class="card">User Research</div>
-<div class="card">SaaS & Mobile Apps</div>
-</div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="reveal">
-<h2>Featured Projects</h2>
-<div class="grid">
-<div class="card">
-<h3>AI Influencer Platform</h3>
-<p>AI-powered SaaS dashboard</p>
-<a href="#case-ai" class="btn">Case Study</a>
-</div>
-
-<div class="card">
-<h3>Solar Energy Solution</h3>
-<p>Clean energy website UX</p>
-<a href="#case-solar" class="btn">Case Study</a>
-</div>
-
-<div class="card">
-<h3>Food E-commerce</h3>
-<p>Conversion-focused shopping flow</p>
-<a href="#case-food" class="btn">Case Study</a>
-</div>
-</div>
-</section>
-
-<!-- CASE STUDIES -->
-<section id="cases">
-<h2>Case Studies</h2>
-
-<div id="case-ai" class="card reveal">
-<h3>AI Influencer Platform</h3>
-<p><strong>Problem:</strong> Manual influencer discovery</p>
-<p><strong>Solution:</strong> AI scoring & filters</p>
-<p><strong>Result:</strong> Faster decisions, higher clarity</p>
-</div>
-
-<div id="case-solar" class="card reveal">
-<h3>Solar Energy Solution</h3>
-<p><strong>Problem:</strong> Low trust & conversions</p>
-<p><strong>Solution:</strong> Clean UX + education</p>
-<p><strong>Result:</strong> Improved engagement</p>
-</div>
-
-<div id="case-food" class="card reveal">
-<h3>Food E-commerce</h3>
-<p><strong>Problem:</strong> Drop-offs at checkout</p>
-<p><strong>Solution:</strong> Simplified cart flow</p>
-<p><strong>Result:</strong> Higher order completion</p>
-</div>
-
-</section>
-
-<!-- CONTACT -->
 <section id="contact" class="reveal">
-<h2>Get in Touch</h2>
+<h2>Contact</h2>
 <div class="card">
-<p>Email: allahnawaz.uiux@gmail.com</p>
-<p>LinkedIn: linkedin.com/in/allahnawaz</p>
+<p>Email: allahnawazmalik175@gmail.com</p>
+<p>LinkedIn: linkedin.com/in/allah-nawaz-256a81286</p>
 </div>
 </section>
 
 </main>
 
-<!-- ================= SCRIPTS ================= -->
+<!-- CASE STUDY MODAL -->
+<div class="case-modal" id="caseModal">
+<div class="case-content">
+<button onclick="closeCase()">✕</button>
+<h2 id="caseTitle"></h2>
+<img id="caseImage">
+<p><strong>Problem:</strong> <span id="caseProblem"></span></p>
+<p><strong>Solution:</strong> <span id="caseSolution"></span></p>
+<p><strong>Impact:</strong> <span id="caseImpact"></span></p>
+</div>
+</div>
+
+<!-- ANALYTICS (replace IDs) -->
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
 <script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments)}
+gtag('js',new Date());
+gtag('config','G-XXXXXXX');
+</script>
+
+<script>
+/* THEME */
 function toggleTheme(){
 document.body.classList.toggle("light");
 localStorage.setItem("theme",
@@ -240,25 +263,90 @@ if(localStorage.getItem("theme")==="light"){
 document.body.classList.add("light");
 }
 
-const reveals=document.querySelectorAll(".reveal");
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){entry.target.classList.add("active")}
-});
-},{threshold:.15});
-reveals.forEach(r=>observer.observe(r));
-</script>
+/* PROJECT CMS */
+const projects=[
+{
+id:"ai",
+title:"Smarter Influencer Marketing",
+category:"saas",
+image:"https://via.placeholder.com/900x600",
+problem:"Manual influencer discovery",
+solution:"AI scoring & dashboards",
+impact:"60% faster decisions"
+},
+{
+id:"solar",
+title:"Solar Energy Platform",
+category:"web",
+image:"https://via.placeholder.com/900x600",
+problem:"Low trust",
+solution:"Education-first UI",
+impact:"Higher engagement"
+},
+{
+id:"food",
+title:"Food Delivery App",
+category:"mobile",
+image:"https://via.placeholder.com/500x900",
+problem:"Checkout drop-offs",
+solution:"Simplified flow",
+impact:"Higher conversions"
+}
+];
 
-<!-- Google Analytics (replace ID) -->
-<!--
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXX"></script>
-<script>
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());
-gtag('config','G-XXXX');
+const grid=document.getElementById("projectGrid");
+
+function renderProjects(list){
+grid.innerHTML="";
+list.forEach(p=>{
+grid.innerHTML+=`
+<div class="card reveal">
+<div class="device">
+<svg viewBox="0 0 800 500">
+<rect x="40" y="20" rx="18" width="720" height="420" fill="#020617"/>
+<foreignObject x="60" y="40" width="680" height="380">
+<img src="${p.image}">
+</foreignObject>
+</svg>
+</div>
+<h3>${p.title}</h3>
+<p>${p.category.toUpperCase()}</p>
+<button class="btn" onclick="openCase('${p.id}')">View Case</button>
+</div>`;
+});
+observe();
+}
+renderProjects(projects);
+
+function filterProjects(type){
+if(type==="all") renderProjects(projects);
+else renderProjects(projects.filter(p=>p.category===type));
+}
+function searchProjects(q){
+renderProjects(projects.filter(p=>p.title.toLowerCase().includes(q.toLowerCase())));
+}
+
+/* CASE MODAL */
+function openCase(id){
+const p=projects.find(x=>x.id===id);
+caseTitle.innerText=p.title;
+caseImage.src=p.image;
+caseProblem.innerText=p.problem;
+caseSolution.innerText=p.solution;
+caseImpact.innerText=p.impact;
+caseModal.classList.add("show");
+}
+function closeCase(){caseModal.classList.remove("show")}
+
+/* SCROLL REVEAL */
+function observe(){
+document.querySelectorAll(".reveal").forEach(el=>{
+new IntersectionObserver(e=>{
+if(e[0].isIntersecting)el.classList.add("active");
+},{threshold:.15}).observe(el);
+});
+}
 </script>
--->
 
 </body>
 </html>

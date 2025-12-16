@@ -1,285 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-<title>Allah Nawaz | UI/UX & Product Designer</title>
-<meta name="description" content="Portfolio of Allah Nawaz — UI/UX & Product Designer (2+ years), showcasing professional journey, featured projects, skills, and case studies.">
-
-<!-- SEO Schema -->
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"Person",
-"name":"Allah Nawaz",
-"jobTitle":"UI/UX & Product Designer",
-"url":"https://yourdomain.com",
-"sameAs":[
-"https://www.linkedin.com/in/allah-nawaz-256a81286",
-"https://www.behance.net/allahnawaz175"
-]
-}
-</script>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter}
-html{scroll-behavior:smooth}
-
-/* Colors */
-:root{
---bg:#0b0f14;
---card:#151a20;
---text:#fff;
---muted:#9ca3af;
---accent:#22c55e;
-}
-.light{
---bg:#f4f6f8;
---card:#ffffff;
---text:#0b0f14;
---muted:#4b5563;
---accent:#16a34a;
-}
-body{background:var(--bg);color:var(--text);display:flex}
-
-/* Sidebar */
-aside{
-width:240px;position:fixed;top:0;left:0;
-background:var(--card);padding:2rem;min-height:100vh;
-}
-aside h2{margin-bottom:1rem;font-size:1.4rem}
-aside p{color:var(--muted);font-size:.9rem;}
-aside a{
-display:block;margin:.8rem 0;color:var(--muted);text-decoration:none;font-size:.93rem;
-}
-aside a:hover{color:var(--accent)}
-.aside-btn{margin-top:1rem;display:inline-block}
-
-/* Main */
-main{margin-left:240px;padding:2.8rem;max-width:1150px;width:100%}
-section{margin-bottom:4rem}
-
-/* Hero */
-.hero h1{font-size:2.8rem;font-weight:700}
-.hero p{margin:.8rem 0;font-size:1.1rem;color:var(--muted)}
-
-/* Stats */
-.stats{display:flex;flex-wrap:wrap;gap:1rem;font-size:1.1rem}
-.stats div{background:var(--card);padding:1rem;border-radius:14px;flex:1;text-align:center}
-
-/* Project Filters */
-input[type="search"]{
-padding:.6rem 1rem;border-radius:999px;border:none;
-background:var(--card);color:var(--text);width:100%;margin-bottom:1rem;
-}
-.filters{display:flex;gap:.7rem;margin-bottom:1rem}
-.filters button{
-padding:.5rem 1rem;background:var(--card);border:none;border-radius:999px;color:var(--muted);cursor:pointer;
-}
-.filters button:hover{color:var(--accent)}
-
-/* Project Cards */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
-.card{
-background:var(--card);padding:2rem;border-radius:20px;
-transition:transform .4s ease,box-shadow .4s ease;
-}
-.card:hover{
-transform:translateY(-6px) scale(1.03);
-box-shadow:0 30px 60px rgba(0,0,0,.4);
-}
-
-/* Device Mockups */
-.device svg{width:100%;height:auto}
-.device img{
-width:100%;height:100%;object-fit:cover;border-radius:12px;transition:.4s;
-}
-.card:hover img{transform:scale(1.05)}
-
-/* Reveal */
-.reveal{opacity:0;transform:translateY(40px);transition:.7s}
-.reveal.active{opacity:1;transform:none}
-
-/* Modal */
-.case-modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.3s}
-.case-modal.show{opacity:1;pointer-events:auto}
-.case-content{background:var(--card);padding:2rem;border-radius:18px;max-width:600px;width:90%;transform:scale(.9);transition:.3s}
-.case-modal.show .case-content{transform:scale(1)}
-
-/* Toggle */
-.toggle{
-position:fixed;top:1rem;right:1rem;background:var(--card);border:none;border-radius:50%;padding:.5rem;cursor:pointer;
-}
-
-/* Responsive */
-@media(max-width:900px){
-aside{display:none}main{margin:0;padding:1.5rem}
-}
-</style>
+<title>Allah Nawaz - UI/UX & Product Designer</title>
 </head>
-
 <body>
+Allah Nawaz
 
-<button class="toggle" onclick="toggleTheme()">🌗</button>
+<nav>
+  <a href="#About">About</a>
+  <a href="#Achievements">Achievements</a>
+  <a href="#Experience">Experience</a>
+  <a href="#Skills">Skills</a>
+  <a href="#Projects">Projects</a>
+  <a href="#Contact">Contact</a>
+</nav>
 
-<!-- Sidebar -->
-<aside>
-<h2>Allah Nawaz</h2>
-<p>UI/UX & Product Designer<br>Available for Work</p>
+<h1>Allah Nawaz</h1>
+<p>UI/UX & Product Designer</p>
+<p>Islamabad, Pakistan</p>
+<p>Passionate UI/UX designer with a focus on creating intuitive and engaging digital experiences. I blend aesthetic design with functional usability to build products that users love. Specialized in mobile apps, web platforms, and design systems.</p>
 
-<a href="#home">Home</a>
-<a href="#stats">Stats</a>
-<a href="#projects">Projects</a>
-<a href="#skills">Skills</a>
-<a href="#testimonials">Testimonials</a>
-<a href="#contact">Contact</a>
+<p>1.2K Followers</p>
+<p>5.8K Likes</p>
+<p>48 Shots</p>
 
-<a href="assets/Allah-Nawaz-Resume.pdf" download class="btn aside-btn">Download Resume</a>
-</aside>
+<a href="#">Hire Me</a> | <a href="#">Download CV</a>
 
-<main>
+<p>hello@allahnawaz.com</p>
+<p>LinkedIn Behance +92 300 123 4567</p>
 
-<!-- Hero -->
-<section id="home" class="reveal hero">
-<h1>I'm Allah Nawaz</h1>
-<p>UI/UX & Product Designer | 2+ Years Experience</p>
+<h2>Key Achievements</h2>
+<ul>
+  <li>25% Increase in User Engagement</li>
+  <li>30% Boost in Online Visibility</li>
+  <li>35% Reduction in Design Time</li>
+  <li>40% Faster Project Delivery</li>
+</ul>
+
+<h2>Professional Experience</h2>
+
+<section>
+  <h3>Senior Product Designer</h3>
+  <p>May 2025 - Nov 2025 | Islamabad, PK</p>
+  <p>Led redesign of core SaaS platform, improving user retention by 15%. Managed a team of 3 junior designers and established the company's first design system.</p>
 </section>
 
-<!-- Stats -->
-<section id="stats" class="reveal">
-<div class="stats">
-<div><strong>25%</strong><br>Engagement Increase</div>
-<div><strong>30%</strong><br>Visibility Boost</div>
-<div><strong>35%</strong><br>Design Time Reduction</div>
-<div><strong>40%</strong><br>Delivery Acceleration</div>
-</div>
+<section>
+  <h3>UI/UX Designer</h3>
+  <p>May 2024 - Apr 2025 | Remote</p>
+  <p>Designed high-converting landing pages and marketing collateral for e-commerce clients. Collaborated with developers to ensure pixel-perfect implementation.</p>
 </section>
 
-<!-- Projects -->
-<section id="projects">
+<section>
+  <h3>Junior Designer</h3>
+  <p>Oct 2023 - Apr 2024 | Hybrid</p>
+  <p>Assisted in mobile app interface design and conducted user research. Created interactive prototypes for client presentations.</p>
+</section>
+
+<h2>Skills & Expertise</h2>
+<h3>Design Core</h3>
+<p>UI Design, UX Research, Wireframing, Prototyping, Interaction Design, Design Systems, Typography, Color Theory</p>
+
+<h3>Tools</h3>
+<p>Figma, Adobe XD, Photoshop, Illustrator, After Effects, Webflow, Framer, Miro</p>
+
+<h3>Industry Focus</h3>
+<p>SaaS, E-commerce, Fintech, Healthtech</p>
+
+<h3>Emerging Skills</h3>
+<p>AI Integration, No-Code Dev, 3D Modeling, Motion Graphics</p>
+
+<h2>Education & Certifications</h2>
+<p>Associate Degree in Computer Science — Islamia University, Bahawalpur (2020 - 2022)</p>
+<p>Google UX Design Professional Certificate — Coursera (2023)</p>
+
 <h2>Featured Projects</h2>
-
-<input type="search" placeholder="Search projects…" oninput="searchProjects(this.value)">
-
-<div class="filters">
-<button onclick="filterProjects('all')">All</button>
-<button onclick="filterProjects('web')">Web</button>
-<button onclick="filterProjects('mobile')">Mobile</button>
-<button onclick="filterProjects('saas')">SaaS</button>
+<div>
+  <p>All Web Design Mobile App Branding</p>
+  <img src="assets-persist.lovart.ai" alt="Influencer Marketing AI">
+  <p>Influencer AI Marketing Dashboard — Web Design</p>
+  <img src="assets-persist.lovart.ai" alt="Solar Energy Website">
+  <p>EcoSolar Corporate Identity — Branding</p>
+  <img src="assets-persist.lovart.ai" alt="Pet Food Shop">
+  <p>PawSome Food Store — Web Design</p>
+  <img src="assets-persist.lovart.ai" alt="ClickSy App">
+  <p>ClickSy Mobile Analytics — Mobile App</p>
+  <img src="assets-persist.lovart.ai" alt="Conectlab">
+  <p>Conectlab Business Hub — Branding</p>
+  <img src="assets-persist.lovart.ai" alt="Finance App">
+  <p>SmartWallet Finance App — Mobile App</p>
 </div>
 
-<div class="grid" id="projectGrid"></div>
-</section>
-
-<!-- Skills -->
-<section id="skills" class="reveal">
-<h2>Skills</h2>
-<div class="grid">
-<div class="card">UI/UX Design – 90%</div>
-<div class="card">Wireframing – 85%</div>
-<div class="card">Prototyping – 80%</div>
-<div class="card">Figma – 90%</div>
-<div class="card">Adobe Suite – 85%</div>
-<div class="card">Responsive Design – 80%</div>
-</div>
-</section>
-
-<!-- Testimonials -->
-<section id="testimonials" class="reveal">
-<h2>Kind Words</h2>
-<div class="card">"Exceptional UI design — revitalized our brand." — Sarah Johnson</div>
-<div class="card">"Professional, timely, intuitive." — Mike Ross</div>
-</section>
-
-<!-- Contact -->
-<section id="contact" class="reveal">
-<h2>Contact</h2>
-<div class="card">
-<p>📞 +92 305 574 3436</p>
-<p>✉️ allahnawazmalik175@gmail.com</p>
-<p>📍 Islamabad, Pakistan</p>
-</div>
-</section>
-
-</main>
-
-<!-- Case Study Modal -->
-<div class="case-modal" id="caseModal">
-<div class="case-content">
-<button onclick="closeCase()">✕</button>
-<h2 id="caseTitle"></h2>
-<img id="caseImage">
-<p><strong>Problem:</strong> <span id="caseProblem"></span></p>
-<p><strong>Solution:</strong> <span id="caseSolution"></span></p>
-<p><strong>Impact:</strong> <span id="caseImpact"></span></p>
-</div>
-</div>
-
-<!-- Analytics + Scripts -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-<script>
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());
-gtag('config','G-XXXXXXX');
-</script>
-
-<script>
-function toggleTheme(){
-document.body.classList.toggle("light");
-localStorage.setItem("theme", document.body.classList.contains("light")?"light":"dark");
-}
-if(localStorage.getItem("theme")==="light"){document.body.classList.add("light");}
-
-const projects=[
-{id:"ai",title:"Smarter Influencer Marketing",category:"saas",image:"https://via.placeholder.com/900x600",problem:"Manual influencer discovery",solution:"AI dashboards",impact:"60% faster decisions"},
-{id:"solar",title:"Solar Energy Solutions",category:"web",image:"https://via.placeholder.com/900x600",problem:"Low trust & engagement",solution:"Clean UX education",impact:"Improved engagement"},
-{id:"petfood",title:"Pet Food E-commerce",category:"web",image:"https://via.placeholder.com/900x600",problem:"Retail UI needs",solution:"Vibrant UI",impact:"Boosted conversions"},
-{id:"clicksy",title:"ClickSy Platform",category:"mobile",image:"https://via.placeholder.com/500x900",problem:"Mobile analytics UX",solution:"Dashboard UI",impact:"Better retention"},
-{id:"conectlab",title:"Conectlab",category:"saas",image:"https://via.placeholder.com/900x600",problem:"Business UX clarity",solution:"Brand-aligned design",impact:"Higher engagement"}
-];
-
-function renderProjects(list){
-document.getElementById("projectGrid").innerHTML="";
-list.forEach(p=>{
-document.getElementById("projectGrid").innerHTML+=`
-<div class="card reveal">
-<div class="device"><svg viewBox="0 0 800 500"><rect x="40" y="20" rx="18" width="720" height="420" fill="#020617"/><foreignObject x="60" y="40" width="680" height="380"><img src="${p.image}"></foreignObject></svg></div>
-<h3>${p.title}</h3><p>${p.category.toUpperCase()}</p>
-<button class="btn" onclick="openCase('${p.id}')">View Case</button></div>`
-});
-observeReveal();
-}
-renderProjects(projects);
-
-function filterProjects(type){
-if(type==="all")renderProjects(projects);
-else renderProjects(projects.filter(p=>p.category===type));
-}
-function searchProjects(q){renderProjects(projects.filter(p=>p.title.toLowerCase().includes(q.toLowerCase())));}
-
-function openCase(id){
-const p=projects.find(x=>x.id===id);
-document.getElementById("caseTitle").innerText=p.title;
-document.getElementById("caseImage").src=p.image;
-document.getElementById("caseProblem").innerText=p.problem;
-document.getElementById("caseSolution").innerText=p.solution;
-document.getElementById("caseImpact").innerText=p.impact;
-document.getElementById("caseModal").classList.add("show");
-}
-function closeCase(){document.getElementById("caseModal").classList.remove("show");}
-
-function observeReveal(){
-document.querySelectorAll(".reveal").forEach(el=>{
-new IntersectionObserver(entries=>{
-if(entries[0].isIntersecting)el.classList.add("active");
-},{threshold:.15}).observe(el);
-});
-}
-</script>
-
+<footer>
+  <p>© 2025 Allah Nawaz. All rights reserved.</p>
+</footer>
 </body>
 </html>

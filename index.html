@@ -209,12 +209,10 @@ document.querySelectorAll('.filter-btns button').forEach(btn=>{btn.addEventListe
 
 // Modal
 const modal=document.getElementById('projectModal');const modalTitle=document.getElementById('modalTitle');const modalDesc=document.getElementById('modalDesc');const modalTech=document.getElementById('modalTech');const modalImg=document.getElementById('modalImg');
-let modalIndex=0;
-function openModal(idx){modalIndex=idx;const card=cards[modalIndex];modalTitle.textContent=card.dataset.title;modalDesc.textContent=card.dataset.desc;modalTech.textContent=card.dataset.tech;modalImg.src=card.dataset.img;modal.style.display='flex';}
-cards.forEach((card, idx)=>{card.addEventListener('click',()=>{openModal(idx);});});
+cards.forEach((card, idx)=>{card.addEventListener('click',()=>{modal.style.display='flex';modalTitle.textContent=card.dataset.title;modalDesc.textContent=card.dataset.desc;modalTech.textContent=card.dataset.tech;modalImg.src=card.dataset.img;});});
 document.querySelector('.close').addEventListener('click',()=>{modal.style.display='none';});
 
-// Simple particles
+// Particles
 const canvas=document.getElementById('particles');const ctx=canvas.getContext('2d');canvas.width=window.innerWidth;canvas.height=window.innerHeight;
 let particles=[];for(let i=0;i<80;i++){particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*2+1,speed:Math.random()*0.5+0.2});}
-function drawParticles(){ctx.clearRect(0,0,canvas.width,canvas.height);ctx.fillStyle='rgba(108,242,194,0.6)';particles.forEach(p=>{ctx.begin
+function drawParticles(){ctx.clearRect(0,0,canvas.width,canvas.height);ctx.fillStyle='rgba(108,242,194,0.6)';particles.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();p.y-=p.speed;if(p.y<0)p.y=

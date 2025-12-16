@@ -14,20 +14,15 @@
   --bg:#f9f9f9; --text:#0b0e14; --card:#fff; --muted:#6c6c6c; --accent:#00b894; --border:rgba(0,0,0,.08);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;scroll-behavior:smooth;overflow:hidden;transition:all .3s ease;}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;transition:all .3s ease;}
 a{color:inherit;text-decoration:none;}
 header{position:fixed;top:0;left:0;width:100%;z-index:100;backdrop-filter:blur(12px);background:rgba(11,14,20,.85);border-bottom:1px solid var(--border);}
 .nav{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:16px 20px;}
 .nav a{margin-left:18px;font-size:14px;color:var(--muted);transition:color .3s;}
 .nav a:hover{color:var(--accent);}
-
-/* Sections setup for full-screen snap */
 .sections-wrapper{height:100vh;overflow:hidden;position:relative;}
-section{width:100%;height:100vh;padding:40px 20px;display:flex;flex-direction:column;justify-content:center;align-items:center;transition:transform .7s cubic-bezier(.25,.8,.25,1),opacity .7s;opacity:0;transform:translateY(50px);}
-section.active{opacity:1;transform:translateY(0);}
-section h1,h2,h3,p{margin-bottom:16px;transition:all .7s ease;}
-
-/* Hero */
+section{width:100%;height:100vh;padding:40px 20px;display:flex;flex-direction:column;justify-content:center;align-items:center;transition:transform .7s cubic-bezier(.25,.8,.25,1),opacity .7s;opacity:0;}
+section.active{opacity:1;}
 .hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden;}
 .badge{display:inline-block;padding:6px 12px;background:rgba(108,242,194,.1);color:var(--accent);border-radius:999px;font-size:12px;margin-bottom:16px;}
 .cta a{display:inline-block;margin-right:14px;padding:12px 22px;border-radius:12px;background:var(--accent);color:#04120c;font-weight:600;overflow:hidden;position:relative;transition:all .3s;}
@@ -35,10 +30,8 @@ section h1,h2,h3,p{margin-bottom:16px;transition:all .7s ease;}
 .cta a.outline{background:transparent;color:var(--text);border:1px solid var(--border);}
 .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px;transition:all .3s ease;cursor:pointer;opacity:0;transform:translateY(20px);}
 .card.visible{opacity:1;transform:translateY(0);}
-
-/* Infographics */
 .infographic{display:flex;gap:24px;flex-wrap:wrap;margin-top:16px;}
-.info-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;flex:1;min-width:120px;text-align:center;position:relative;transition:transform .5s, opacity .5s;opacity:0;transform:translateY(20px);}
+.info-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;flex:1;min-width:120px;text-align:center;opacity:0;transform:translateY(20px);transition:all .5s;}
 .info-card.visible{opacity:1;transform:translateY(0);}
 .info-card i{font-size:28px;margin-bottom:8px;color:var(--accent);}
 .bar-container{background:var(--border);height:12px;border-radius:12px;overflow:hidden;margin-top:12px;}
@@ -48,30 +41,22 @@ section h1,h2,h3,p{margin-bottom:16px;transition:all .7s ease;}
 .circle-chart circle{fill:none;stroke-width:10;stroke:var(--border);}
 .circle-chart circle.progress{stroke:var(--accent);stroke-dasharray:314;stroke-dashoffset:314;transition:stroke-dashoffset 1.5s ease;}
 .circle-chart p{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);margin:0;font-weight:600;color:var(--accent);}
-
-/* Carousel & Projects */
 .carousel-container{position:relative;overflow:hidden;perspective:1200px;margin-top:40px;}
 .carousel-track{display:flex;transition:transform .7s cubic-bezier(.25,.8,.25,1);}
-.carousel-card{min-width:280px;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px;margin-right:24px;cursor:pointer;transition:all .5s;transform-origin:center center;opacity:0;transform:translateY(30px) scale(0.95);}
+.carousel-card{min-width:280px;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px;margin-right:24px;cursor:pointer;opacity:0;transform:translateY(30px) scale(0.95);transition:all .5s;}
 .carousel-card.visible{opacity:1;transform:translateY(0) scale(1);}
 .carousel-card:hover{transform:scale(1.05) rotateY(5deg);}
 .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:var(--accent);border:none;padding:10px 16px;border-radius:50%;cursor:pointer;color:#04120c;z-index:10;}
 .carousel-btn.prev{left:10px;} .carousel-btn.next{right:10px;}
-
-/* Modal */
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);align-items:center;justify-content:center;z-index:1000;}
 .modal-content{background:var(--card);padding:30px;border-radius:18px;max-width:800px;width:90%;max-height:90%;overflow-y:auto;position:relative;animation:fadeIn 0.5s ease;}
 .close{position:absolute;top:16px;right:16px;font-size:22px;cursor:pointer;color:var(--accent);}
 @keyframes fadeIn{from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);}}
 .device-mockup{border:1px solid var(--border);border-radius:24px;overflow:hidden;background:#000;display:flex;align-items:center;justify-content:center;padding:20px;margin-top:16px;}
 .device-mockup img{max-width:100%;border-radius:16px;}
-
-/* Filter Buttons */
 .filter-btns{margin-bottom:20px;}
 .filter-btns button{padding:8px 14px;margin-right:10px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all .3s;}
 .filter-btns button.active, .filter-btns button:hover{background:var(--accent);color:#04120c;}
-
-/* Animated Background & Particles */
 body::before{content:"";position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;background:linear-gradient(270deg,#6cf2c2,#00b894,#6cf2c2);background-size:600% 600%;animation:gradientBG 20s ease infinite;opacity:0.15;}
 @keyframes gradientBG{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 canvas#particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none;}
@@ -80,6 +65,7 @@ canvas#particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;po
 <body data-theme="dark">
 
 <canvas id="particles"></canvas>
+
 <header>
   <div class="nav">
     <strong>Allah Nawaz</strong>
@@ -114,7 +100,6 @@ canvas#particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;po
     </div>
   </section>
 
-  <!-- Skills Section -->
   <section id="skills">
     <h2>Skills & Achievements</h2>
     <div class="infographic">
@@ -142,7 +127,6 @@ canvas#particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;po
     </div>
   </section>
 
-  <!-- Projects Section -->
   <section id="projects">
     <h2>Projects</h2>
     <div class="filter-btns">
@@ -162,7 +146,6 @@ canvas#particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;po
     </div>
   </section>
 
-  <!-- Contact / Footer -->
   <section id="contact">
     <footer>
       <p>© 2025 Allah Nawaz — All rights reserved</p>
@@ -170,7 +153,6 @@ canvas#particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;po
   </section>
 </div>
 
-<!-- Modal -->
 <div class="modal" id="projectModal">
   <div class="modal-content">
     <span class="close">&times;</span>
@@ -182,84 +164,45 @@ canvas#particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;po
 </div>
 
 <script>
-// Theme toggle
-document.getElementById('theme-toggle').addEventListener('click',()=>{ document.body.dataset.theme=document.body.dataset.theme==='dark'?'light':'dark'; });
+// JS: Theme toggle
+document.getElementById('theme-toggle').addEventListener('click',()=>{document.body.dataset.theme=document.body.dataset.theme==='dark'?'light':'dark';});
 
-// Animate charts
+// JS: Animate charts on scroll
 function animateCharts(){
-  document.querySelectorAll('.bar-fill').forEach(bar=>{
-    const rect=bar.getBoundingClientRect();
-    if(rect.top<window.innerHeight-50) bar.style.width=bar.dataset.percent;
-  });
-  document.querySelectorAll('.circle-chart .progress').forEach(circle=>{
-    const rect=circle.getBoundingClientRect();
-    if(rect.top<window.innerHeight-50){
-      const percent=circle.dataset.percent;
-      circle.style.strokeDashoffset=314*(1-percent/100);
-    }
-  });
+  document.querySelectorAll('.bar-fill').forEach(bar=>{const rect=bar.getBoundingClientRect();if(rect.top<window.innerHeight-50) bar.style.width=bar.dataset.percent;});
+  document.querySelectorAll('.circle-chart .progress').forEach(circle=>{const rect=circle.getBoundingClientRect();if(rect.top<window.innerHeight-50){const percent=circle.dataset.percent;circle.style.strokeDashoffset=314*(1-percent/100);}});
 }
-window.addEventListener('scroll',animateCharts);
-window.addEventListener('load',animateCharts);
+window.addEventListener('scroll',animateCharts);window.addEventListener('load',animateCharts);
 
-// Section swipe/scroll snapping
-const sections=document.querySelectorAll('.sections-wrapper section');
-let currentIndex=0;
-function showSection(index){sections.forEach((s,i)=>{s.style.transform=`translateY(${(i-index)*100}vh)`;s.classList.toggle('active',i===index);});}
-showSection(currentIndex);
+// JS: Section scroll navigation
+const sections=document.querySelectorAll('.sections-wrapper section');let currentIndex=0;
+function showSection(index){sections.forEach((s,i)=>{s.style.transform=`translateY(${(i-index)*100}vh)`;s.classList.toggle('active',i===index);});}showSection(currentIndex);
 let startY=0;
 document.addEventListener('touchstart',e=>{startY=e.touches[0].clientY;});
-document.addEventListener('touchend',e=>{
-  let diff=startY-e.changedTouches[0].clientY;
-  if(diff>50){currentIndex=Math.min(currentIndex+1,sections.length-1);}
-  if(diff<-50){currentIndex=Math.max(currentIndex-1,0);}
-  showSection(currentIndex);
-});
+document.addEventListener('touchend',e=>{let diff=startY-e.changedTouches[0].clientY;if(diff>50){currentIndex=Math.min(currentIndex+1,sections.length-1);}if(diff<-50){currentIndex=Math.max(currentIndex-1,0);}showSection(currentIndex);});
+document.addEventListener('wheel',e=>{if(e.deltaY>0){currentIndex=Math.min(currentIndex+1,sections.length-1);}if(e.deltaY<0){currentIndex=Math.max(currentIndex-1,0);}showSection(currentIndex);});
 
-// Carousel
-const track=document.querySelector('.carousel-track');
-const cards=document.querySelectorAll('.carousel-card');
-let index=0;
-document.querySelector('.carousel-btn.next').addEventListener('click',()=>{index=(index+1)%cards.length; track.style.transform=`translateX(-${index*320}px)`;});
-document.querySelector('.carousel-btn.prev').addEventListener('click',()=>{index=(index-1+cards.length)%cards.length; track.style.transform=`translateX(-${index*320}px)`;});
+// JS: Carousel navigation
+const track=document.querySelector('.carousel-track');const cards=document.querySelectorAll('.carousel-card');let index=0;
+document.querySelector('.carousel-btn.next').addEventListener('click',()=>{index=(index+1)%cards.length;track.style.transform=`translateX(-${index*320}px)`;});
+document.querySelector('.carousel-btn.prev').addEventListener('click',()=>{index=(index-1+cards.length)%cards.length;track.style.transform=`translateX(-${index*320}px)`;});
 
-// Filter buttons
-document.querySelectorAll('.filter-btns button').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.filter-btns button').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter=btn.dataset.filter;
-    cards.forEach(c=>{c.style.display=(filter==='all'||c.dataset.type===filter)?'block':'none';});
-  });
-});
+// JS: Project filter
+document.querySelectorAll('.filter-btns button').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.filter-btns button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const filter=btn.dataset.filter;cards.forEach(c=>{c.style.display=(filter==='all'||c.dataset.type===filter)?'block':'none';});});});
 
-// Modal
-const modal=document.getElementById('projectModal');
-const modalTitle=document.getElementById('modalTitle');
-const modalDesc=document.getElementById('modalDesc');
-const modalTech=document.getElementById('modalTech');
-const modalImg=document.getElementById('modalImg');
-cards.forEach(card=>{
-  card.addEventListener('click',()=>{
-    modalTitle.textContent=card.dataset.title;
-    modalDesc.textContent=card.dataset.desc;
-    modalTech.textContent=card.dataset.tech;
-    modalImg.src=card.dataset.img;
-    modal.style.display='flex';
-  });
-});
+// JS: Modal with swipe
+const modal=document.getElementById('projectModal');const modalTitle=document.getElementById('modalTitle');const modalDesc=document.getElementById('modalDesc');const modalTech=document.getElementById('modalTech');const modalImg=document.getElementById('modalImg');
+let modalIndex=0;
+function openModal(idx){modalIndex=idx;const card=cards[modalIndex];modalTitle.textContent=card.dataset.title;modalDesc.textContent=card.dataset.desc;modalTech.textContent=card.dataset.tech;modalImg.src=card.dataset.img;modal.style.display='flex';}
+cards.forEach((card, idx)=>{card.addEventListener('click',()=>{openModal(idx);});});
+let startX=0;modal.addEventListener('touchstart', e=>{startX=e.touches[0].clientX;});
+modal.addEventListener('touchend', e=>{let diff=startX-e.changedTouches[0].clientX;if(diff>50) nextModal();if(diff<-50) prevModal();});
+function nextModal(){modalIndex=(modalIndex+1)%cards.length;animateModal();}
+function prevModal(){modalIndex=(modalIndex-1+cards.length)%cards.length;animateModal();}
+function animateModal(){const card=cards[modalIndex];modalTitle.textContent=card.dataset.title;modalDesc.textContent=card.dataset.desc;modalTech.textContent=card.dataset.tech;modalImg.src=card.dataset.img;modalImg.style.opacity=0;setTimeout(()=>{modalImg.style.opacity=1;},50);}
 document.querySelector('.close').addEventListener('click',()=>{modal.style.display='none';});
-window.addEventListener('click',e=>{if(e.target==modal) modal.style.display='none';});
+window.addEventListener('click', e=>{if(e.target==modal) modal.style.display='none';});
 
-// Particle effect
-const canvas=document.getElementById('particles');
-const ctx=canvas.getContext('2d');
-canvas.width=window.innerWidth; canvas.height=window.innerHeight;
-let particles=[];
-for(let i=0;i<100;i++){particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*2+1,speed:Math.random()*0.5+0.2});}
-function drawParticles(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle="rgba(108,242,194,0.6)";ctx.fill();p.y-=p.speed;if(p.y<0)p.y=canvas.height;});requestAnimationFrame(drawParticles);}
-drawParticles();
-window.addEventListener('resize',()=>{canvas.width=window.innerWidth; canvas.height=window.innerHeight;});
-</script>
-</body>
-</html>
+// JS: Particles background
+const canvas=document.getElementById('particles');const ctx=canvas.getContext('2d');canvas.width=window.innerWidth;canvas.height=window.innerHeight;let particles=[];for(let i=0;i<100;i++){particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*2+1,speed:Math.random()*0.5+0.2});}
+function drawParticles(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r

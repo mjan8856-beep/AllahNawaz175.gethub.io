@@ -3,1047 +3,1105 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Allah Nawaz - Product Designer Portfolio</title>
+    <meta name="viewport" content="width=1920, initial-scale=1.0">
+    <title>Allah Nawaz - Premium Product Designer Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
     <style>
-        :root {
-            --bg-color: #F8FAFC;
-            --text-primary: #0F172A;
-            --text-secondary: #475569;
-            --accent-color: #3B82F6;
-            --card-bg: #FFFFFF;
-            --dark-bg: #0F172A;
-            --dark-card: #1E293B;
-            --success: #10B981;
-            --border-radius: 20px;
-            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
-        }
-
-        @font-face {
-            font-family: 'MiSans-Regular';
-            src: url('https://assets-persist.lovart.ai/agent-static-assets/MiSans-Regular.ttf');
-        }
-        @font-face {
-            font-family: 'MiSans-Medium';
-            src: url('https://assets-persist.lovart.ai/agent-static-assets/MiSans-Medium.ttf');
-        }
-        @font-face {
-            font-family: 'MiSans-Bold';
-            src: url('https://assets-persist.lovart.ai/agent-static-assets/MiSans-Bold.ttf');
-        }
+        @import url('https://assets-persist.lovart.ai/agent-static-assets/MiSans-Regular.ttf');
+        @import url('https://assets-persist.lovart.ai/agent-static-assets/MiSans-Semibold.ttf');
+        @import url('https://assets-persist.lovart.ai/agent-static-assets/MiSans-Bold.ttf');
+        @import url('https://assets-persist.lovart.ai/agent-static-assets/Alibaba-PuHuiTi-Bold.otf');
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
         }
 
         body {
-            font-family: 'MiSans-Regular', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            line-height: 1.5;
             width: 1920px;
-            margin: 0 auto;
+            background-color: #0F0F0F;
+            color: #E0E0E0;
+            font-family: 'MiSans', sans-serif;
             overflow-x: hidden;
         }
 
-        /* Typography */
+        /* Typography Utilities */
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'MiSans-Bold', sans-serif;
-            letter-spacing: -0.02em;
+            font-family: 'Alibaba PuHuiTi', 'MiSans', sans-serif;
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+
+        .text-accent {
+            color: #9FFF00;
         }
 
         .container {
-            width: 1600px;
+            width: 1400px;
             margin: 0 auto;
-            padding: 0 40px;
+            position: relative;
         }
 
-        /* Navigation */
-        nav {
+        /* Header */
+        header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 30px 0;
-            position: sticky;
-            top: 0;
-            background: rgba(248, 250, 252, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 40px 0;
+            width: 1400px;
+            margin: 0 auto;
+            z-index: 100;
+            position: relative;
         }
 
         .logo {
             font-size: 24px;
-            font-family: 'MiSans-Bold';
-            color: var(--text-primary);
+            font-weight: bold;
+            letter-spacing: 1px;
         }
 
-        .nav-links {
+        nav ul {
             display: flex;
-            gap: 40px;
+            gap: 50px;
+            list-style: none;
         }
 
-        .nav-links a {
+        nav a {
+            color: #BBBBBB;
             text-decoration: none;
-            color: var(--text-secondary);
-            font-weight: 500;
             font-size: 16px;
+            font-weight: 500;
             transition: color 0.3s;
         }
 
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--accent-color);
+        nav a:hover, nav a.active {
+            color: #9FFF00;
         }
 
-        .nav-cta {
-            background-color: var(--text-primary);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 100px;
+        .btn-hire {
+            padding: 12px 32px;
+            border: 1px solid #9FFF00;
+            color: #9FFF00;
             text-decoration: none;
+            border-radius: 30px;
             font-weight: 600;
-            font-size: 14px;
-            transition: transform 0.2s;
+            transition: all 0.3s;
         }
-        
-        .nav-cta:hover {
-            transform: translateY(-1px);
+
+        .btn-hire:hover {
+            background: #9FFF00;
+            color: #000;
+            box-shadow: 0 0 20px rgba(159, 255, 0, 0.4);
         }
 
         /* Hero Section */
         .hero {
-            padding: 120px 0 100px;
-            text-align: center;
+            padding: 80px 0 120px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             position: relative;
             overflow: hidden;
         }
-        
-        /* Decorative Background Elements */
-        .bg-gradient-1 {
+
+        .hero::before {
+            content: '';
             position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
-            top: -100px;
-            left: -100px;
-            z-index: -1;
+            top: -20%;
+            right: -10%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(159, 255, 0, 0.08) 0%, rgba(15, 15, 15, 0) 70%);
+            z-index: 0;
+            pointer-events: none;
         }
 
-        .bg-gradient-2 {
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
-            bottom: 0;
-            right: 0;
-            z-index: -1;
+        .hero-content {
+            width: 55%;
+            z-index: 1;
         }
 
-        .hero-label {
+        .hero-tag {
             display: inline-block;
-            background-color: rgba(59, 130, 246, 0.1);
-            color: var(--accent-color);
+            background: rgba(159, 255, 0, 0.1);
+            color: #9FFF00;
             padding: 8px 16px;
-            border-radius: 100px;
+            border-radius: 20px;
             font-size: 14px;
             font-weight: 600;
             margin-bottom: 24px;
+            letter-spacing: 1px;
         }
 
         .hero h1 {
             font-size: 80px;
             line-height: 1.1;
             margin-bottom: 24px;
-            color: var(--text-primary);
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
+            background: linear-gradient(135deg, #FFFFFF 0%, #BBBBBB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            font-size: 24px;
-            color: var(--text-secondary);
+            font-size: 20px;
+            color: #BBBBBB;
+            line-height: 1.6;
             margin-bottom: 48px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 600px;
         }
 
-        .hero-buttons {
+        .cta-group {
             display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .btn {
-            padding: 16px 32px;
-            border-radius: 100px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-primary {
-            background-color: var(--accent-color);
-            color: white;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-        }
-        
-        .btn-primary:hover {
-            background-color: #2563EB;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background-color: white;
-            color: var(--text-primary);
-            border: 1px solid #E2E8F0;
-        }
-        
-        .btn-secondary:hover {
-            border-color: var(--text-primary);
-            transform: translateY(-2px);
-        }
-
-        /* Impact Section */
-        .impact-section {
-            padding: 0 0 100px;
-        }
-
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
             gap: 24px;
         }
 
-        .impact-card {
-            background: var(--card-bg);
-            padding: 32px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid #F1F5F9;
-            transition: transform 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .impact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .impact-icon {
-            font-size: 28px;
-            color: var(--accent-color);
-            margin-bottom: 20px;
-            background: rgba(59, 130, 246, 0.1);
-            width: 56px;
-            height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 16px;
-        }
-
-        .impact-card p {
+        .btn-primary {
+            background: #9FFF00;
+            color: #0F0F0F;
+            padding: 16px 40px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
             font-size: 18px;
-            font-weight: 500;
-            color: var(--text-primary);
-            line-height: 1.4;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px rgba(159, 255, 0, 0.2);
         }
 
-        /* Case Studies */
-        .case-studies {
-            padding: 100px 0;
-            background-color: #fff;
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(159, 255, 0, 0.3);
         }
 
-        .section-header {
-            margin-bottom: 80px;
-            max-width: 800px;
+        .btn-outline {
+            border: 2px solid #333;
+            color: #FFF;
+            padding: 16px 40px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s;
         }
 
-        .section-header h2 {
-            font-size: 48px;
+        .btn-outline:hover {
+            border-color: #9FFF00;
+            color: #9FFF00;
+        }
+
+        .hero-image {
+            width: 40%;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .img-wrapper {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            border: 3px solid #9FFF00;
+            box-shadow: 0 0 40px rgba(159, 255, 0, 0.3);
+            background: #1a1a1a;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: #151515;
+            padding: 60px 0;
+            margin-bottom: 120px;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            transition: transform 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: #9FFF00;
+        }
+
+        .stat-icon {
+            font-size: 32px;
+            color: #9FFF00;
             margin-bottom: 16px;
         }
 
-        .section-header p {
-            font-size: 20px;
-            color: var(--text-secondary);
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #FFF;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            color: #888;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-subtitle {
+            color: #9FFF00;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 48px;
+            margin-bottom: 24px;
+        }
+
+        .section-desc {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #BBBBBB;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Featured Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-bottom: 80px;
         }
 
         .project-card {
-            margin-bottom: 160px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        
-        .project-card:last-child {
-            margin-bottom: 0;
-        }
-        
-        .project-card.reverse {
-            direction: rtl;
-        }
-        
-        .project-card.reverse .project-content {
-            direction: ltr;
+            background: #1A1A1A;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            height: 500px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            group: project-hover;
         }
 
-        .project-image-wrapper {
-            position: relative;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            background: #f1f5f9;
-            height: 500px;
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
         .project-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .project-image-wrapper:hover .project-image {
-            transform: scale(1.02);
+            transition: transform 0.6s;
         }
 
-        .project-content {
-            padding: 20px 0;
+        .project-card:hover .project-image {
+            transform: scale(1.05);
         }
 
-        .project-tags {
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.2) 100%);
             display: flex;
-            gap: 12px;
-            margin-bottom: 24px;
-            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 40px;
+            opacity: 1;
+            transition: opacity 0.3s;
         }
 
-        .tag {
-            font-size: 12px;
+        .project-category {
+            color: #9FFF00;
+            font-size: 14px;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 700;
-            color: var(--accent-color);
-            background: rgba(59, 130, 246, 0.08);
-            padding: 6px 12px;
-            border-radius: 6px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
         }
 
         .project-title {
-            font-size: 40px;
-            margin-bottom: 16px;
-            color: var(--text-primary);
+            font-size: 32px;
+            margin-bottom: 12px;
+            color: #fff;
         }
 
-        .project-overview {
-            font-size: 20px;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-            line-height: 1.6;
+        .project-desc {
+            color: #ccc;
+            font-size: 16px;
+            margin-bottom: 24px;
+            line-height: 1.5;
+            max-width: 90%;
         }
 
         .project-metrics {
+            display: flex;
+            gap: 24px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .metric-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .metric-val {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .metric-lbl {
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* Banner Divider */
+        .divider-banner {
+            width: 100%;
+            height: 400px;
+            margin: 120px 0;
+            position: relative;
+            background-color: #000;
+            overflow: hidden;
+        }
+
+        .divider-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+        }
+
+        .banner-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+        }
+
+        .banner-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        /* All Projects List */
+        .all-projects-wrapper {
+            padding: 0 0 100px;
+        }
+
+        .projects-list-cols {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-bottom: 40px;
-            padding: 24px 0;
-            border-top: 1px solid #E2E8F0;
-            border-bottom: 1px solid #E2E8F0;
+            gap: 60px;
         }
 
-        .metric h4 {
-            font-size: 28px;
-            color: var(--accent-color);
-            margin-bottom: 4px;
+        .proj-col h3 {
+            font-size: 24px;
+            color: #9FFF00;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(159, 255, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .metric span {
-            font-size: 14px;
-            color: var(--text-secondary);
+        .proj-list-item {
+            margin-bottom: 16px;
+            padding: 16px;
+            background: #181818;
+            border-radius: 8px;
+            border-left: 3px solid transparent;
+            transition: all 0.3s;
+            cursor: default;
+        }
+
+        .proj-list-item:hover {
+            background: #202020;
+            border-left-color: #9FFF00;
+            transform: translateX(5px);
+        }
+
+        .proj-name {
+            font-size: 16px;
+            color: #ddd;
             font-weight: 500;
         }
-        
-        .key-learning {
-            background: #F8FAFC;
-            padding: 24px;
-            border-radius: 12px;
-            border-left: 4px solid var(--accent-color);
-            margin-bottom: 32px;
-        }
-        
-        .key-learning p {
-            font-size: 16px;
-            color: var(--text-secondary);
-            font-style: italic;
-        }
-        
-        .key-learning strong {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-            font-style: normal;
-        }
 
-        .project-link {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--text-primary);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 2px;
-        }
-
-        /* Product Thinking Section */
-        .thinking-section {
+        /* Design Process */
+        .process-section {
+            background: #121212;
             padding: 120px 0;
-            background-color: var(--dark-bg);
-            color: white;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 60px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #333;
+            z-index: 0;
+        }
+
+        .timeline-step {
+            position: relative;
+            z-index: 1;
+            width: 15%;
             text-align: center;
         }
 
-        .thinking-header {
-            max-width: 800px;
-            margin: 0 auto 80px;
-        }
-        
-        .thinking-header h2 {
-            font-size: 48px;
-            margin-bottom: 24px;
-        }
-        
-        .thinking-header p {
-            font-size: 20px;
-            color: #94A3B8;
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 24px;
-        }
-
-        .process-card {
-            background: var(--dark-card);
-            padding: 32px 20px;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: #1A1A1A;
+            border: 2px solid #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 32px;
+            color: #9FFF00;
             transition: all 0.3s;
         }
-        
-        .process-card:hover {
-            border-color: var(--accent-color);
-            transform: translateY(-5px);
+
+        .timeline-step:hover .step-icon {
+            border-color: #9FFF00;
+            background: #0F0F0F;
+            transform: scale(1.1);
         }
 
-        .process-number {
+        .step-title {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .step-desc {
             font-size: 14px;
-            color: var(--accent-color);
-            font-weight: 700;
-            margin-bottom: 16px;
-            display: block;
+            color: #888;
+            line-height: 1.4;
         }
 
-        .process-card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-        }
-
-        .process-card p {
-            font-size: 14px;
-            color: #94A3B8;
-            line-height: 1.5;
-        }
-
-        /* Skills Section */
-        .skills-section {
-            padding: 100px 0;
-        }
-
-        .skills-grid {
+        /* Skills & Experience */
+        .skills-exp-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 80px;
+            margin-top: 60px;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 40px;
         }
 
-        .skill-column h3 {
-            font-size: 24px;
-            margin-bottom: 32px;
+        .skill-group h4 {
+            font-size: 20px;
+            margin-bottom: 24px;
+            color: #fff;
             display: flex;
             align-items: center;
+            gap: 10px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
             gap: 12px;
         }
-        
-        .skill-column h3 i {
-            color: var(--accent-color);
+
+        .skill-tag {
+            background: #1F1F1F;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #ccc;
+            border: 1px solid transparent;
+            transition: all 0.3s;
         }
 
-        .skill-list {
-            list-style: none;
+        .skill-tag:hover {
+            border-color: #9FFF00;
+            color: #fff;
         }
 
-        .skill-list li {
-            font-size: 18px;
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid #E2E8F0;
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .skill-list li:last-child {
-            border-bottom: none;
-        }
-
-        /* About Section */
-        .about-section {
-            padding: 100px 0;
-            background-color: #fff;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 80px;
-        }
-        
-        .about-image {
-            background: #F1F5F9;
-            border-radius: 24px;
-            height: 400px;
-            width: 100%;
-            object-fit: cover;
-        }
-
-        .experience-item {
+        .exp-item {
             margin-bottom: 40px;
             padding-left: 24px;
-            border-left: 2px solid #E2E8F0;
+            border-left: 2px solid #333;
             position: relative;
         }
-        
-        .experience-item::before {
+
+        .exp-item::before {
             content: '';
             position: absolute;
             left: -6px;
-            top: 6px;
+            top: 0;
             width: 10px;
             height: 10px;
+            background: #9FFF00;
             border-radius: 50%;
-            background-color: var(--accent-color);
         }
 
         .exp-role {
             font-size: 20px;
-            font-weight: 700;
-            color: var(--text-primary);
+            color: #fff;
             margin-bottom: 4px;
         }
-        
-        .exp-company {
-            font-size: 16px;
-            color: var(--accent-color);
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        
+
         .exp-date {
             font-size: 14px;
-            color: #94A3B8;
+            color: #9FFF00;
             margin-bottom: 12px;
+            display: block;
         }
 
         .exp-desc {
-            color: var(--text-secondary);
+            color: #888;
+            font-size: 15px;
+            line-height: 1.6;
         }
 
-        /* Final CTA */
-        .final-cta {
+        /* Contact */
+        .contact-section {
             padding: 120px 0;
             text-align: center;
-            background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, rgba(248, 250, 252, 0) 70%);
+            background: linear-gradient(to top, #0A0A0A 0%, #0F0F0F 100%);
         }
 
-        .final-cta h2 {
-            font-size: 56px;
-            margin-bottom: 24px;
-            color: var(--text-primary);
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 60px;
         }
 
-        .final-cta p {
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(159, 255, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 24px;
-            color: var(--text-secondary);
-            margin-bottom: 48px;
+            color: #9FFF00;
+        }
+
+        .contact-text {
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-text:hover {
+            color: #9FFF00;
         }
 
         /* Footer */
         footer {
+            border-top: 1px solid #222;
             padding: 40px 0;
             text-align: center;
-            border-top: 1px solid #E2E8F0;
-            background-color: #fff;
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--text-secondary);
+            color: #666;
             font-size: 14px;
         }
-        
-        .social-links {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .social-links a {
-            color: var(--text-primary);
-            font-size: 20px;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        
-        .social-links a:hover {
-            color: var(--accent-color);
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Layout Grid Helpers */
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        
+        .animate-up {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-            <div class="logo">AN.</div>
-            <div class="nav-links">
-                <a href="#work" class="active">Case Studies</a>
-                <a href="#thinking">Process</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-            </div>
-            <a href="/cdn-cgi/l/email-protection#056d6069696a45646969646d6b6472647f2b666a68" class="nav-cta">Let's Talk</a>
-        </div>
-    </nav>
-
-    <header class="hero">
-        <div class="bg-gradient-1"></div>
-        <div class="bg-gradient-2"></div>
-        <div class="container">
-            <span class="hero-label">Available for 2026 Opportunities</span>
-            <h1>I design scalable digital products that drive measurable business growth.</h1>
-            <p>Transforming user insights into intuitive, high-performing digital experiences for the US & Europe markets.</p>
-            <div class="hero-buttons">
-                <a href="#work" class="btn btn-primary">View Case Studies <i class="ri-arrow-down-line"></i></a>
-                <a href="/cdn-cgi/l/email-protection#ef8c80819b8e8c9baf8e83838e87818e988e95c18c8082" class="btn btn-secondary">Contact Me <i class="ri-mail-send-line"></i></a>
-            </div>
-        </div>
+    <!-- Header -->
+    <header>
+        <div class="logo">ALLAH NAWAZ<span class="text-accent">.</span></div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Process</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+        <a href="/cdn-cgi/l/email-protection#caaba6a6aba2a4abbdabb0e4aeafb9a3ada4afb88aada7aba3a6e4a9a5a7" class="btn-hire">HIRE ME</a>
     </header>
 
-    <section class="impact-section">
-        <div class="container">
-            <div class="impact-grid">
-                <div class="impact-card">
-                    <div class="impact-icon"><i class="ri-layout-masonry-line"></i></div>
-                    <p>Improved user engagement through intuitive information architecture</p>
-                </div>
-                <div class="impact-card">
-                    <div class="impact-icon"><i class="ri-user-smile-line"></i></div>
-                    <p>Reduced friction in onboarding with progressive disclosure</p>
-                </div>
-                <div class="impact-card">
-                    <div class="impact-icon"><i class="ri-flow-chart"></i></div>
-                    <p>Increased conversion flow clarity with streamlined workflows</p>
-                </div>
-                <div class="impact-card">
-                    <div class="impact-icon"><i class="ri-palette-line"></i></div>
-                    <p>Strengthened visual consistency with scalable design systems</p>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero container">
+        <div class="hero-content animate-up">
+            <span class="hero-tag">AVAILABLE FOR NEW PROJECTS</span>
+            <h1>UI/UX & Product <br>Designer</h1>
+            <p>Crafting Digital Experiences That Drive Results. I transform complex challenges into elegant, user-centric solutions that balance business objectives with exceptional user experiences.</p>
+            <div class="cta-group">
+                <a href="#projects" class="btn-primary">View My Work</a>
+                <a href="/cdn-cgi/l/email-protection#b8d9d4d4d9d0d6d9cfd9c296dcddcbd1dfd6ddcaf8dfd5d9d1d496dbd7d5" class="btn-outline">Get In Touch</a>
+            </div>
+        </div>
+        <div class="hero-image animate-up" style="animation-delay: 0.2s;">
+            <div class="img-wrapper">
+                <img src="https://a.lovart.ai/artifacts/agent/WDhbA6km5F3OUvKd.png" alt="Allah Nawaz Headshot">
             </div>
         </div>
     </section>
 
-    <section id="work" class="case-studies">
-        <div class="container">
-            <div class="section-header">
-                <h2>Featured Case Studies</h2>
-                <p>Selected works demonstrating product strategy, UX research, and high-fidelity UI design for SaaS, E-commerce, and Mobile platforms.</p>
+    <!-- Stats Section -->
+    <div class="stats-section">
+        <div class="container stats-grid">
+            <div class="stat-card">
+                <i class="ri-briefcase-4-line stat-icon"></i>
+                <div class="stat-number">3+</div>
+                <div class="stat-label">Years Experience</div>
             </div>
+            <div class="stat-card">
+                <i class="ri-checkbox-circle-line stat-icon"></i>
+                <div class="stat-number">48+</div>
+                <div class="stat-label">Projects Delivered</div>
+            </div>
+            <div class="stat-card">
+                <i class="ri-user-smile-line stat-icon"></i>
+                <div class="stat-number">30+</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-card">
+                <i class="ri-trophy-line stat-icon"></i>
+                <div class="stat-number">95%</div>
+                <div class="stat-label">Success Rate</div>
+            </div>
+        </div>
+    </div>
 
+    <!-- About Section -->
+    <section class="container section" style="padding-top: 0;">
+        <div class="section-header">
+            <span class="section-subtitle">About Me</span>
+            <h2 class="section-title">Design with Purpose</h2>
+            <p class="section-desc">
+                Premium UI/UX & Product Designer based in Islamabad, Pakistan. I specialize in creating exceptional digital experiences that drive measurable business results. My expertise spans SaaS platforms, e-commerce solutions, mobile applications, and brand identity. With a strategic approach to design thinking and a keen eye for detail, I deliver solutions that seamlessly blend aesthetics with functionality. From initial research and wireframing to high-fidelity prototypes and scalable design systems, I bring innovative ideas to life with precision and purpose.
+            </p>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="container section" id="projects">
+        <div class="section-header">
+            <span class="section-subtitle">Portfolio</span>
+            <h2 class="section-title">Featured Projects</h2>
+        </div>
+
+        <div class="projects-grid">
             <!-- Project 1 -->
             <div class="project-card">
-                <div class="project-image-wrapper">
-                    <img src="https://www.behance.net/gallery/237971145/Conectlab" alt="Conectlab SaaS Dashboard" class="project-image">
-                </div>
-                <div class="project-content">
-                    <div class="project-tags">
-                        <span class="tag">SaaS</span>
-                        <span class="tag">PLG</span>
-                        <span class="tag">Analytics</span>
-                    </div>
-                    <h3 class="project-title">Conectlab SaaS Platform</h3>
-                    <p class="project-overview">Complex SaaS platform redesign focusing on improving user engagement and feature adoption through simplified IA and enhanced onboarding flows.</p>
-                    
+                <img src="https://a.lovart.ai/artifacts/external/1X6eblWa0q9fWz6t.png" alt="Infinity Resort" class="project-image">
+                <div class="project-overlay">
+                    <span class="project-category">Web Design & Hospitality</span>
+                    <h3 class="project-title">Infinity Resort, Kumrat Valley</h3>
+                    <p class="project-desc">Immersive resort website featuring dynamic booking system, seasonal promotions, and stunning visual storytelling.</p>
                     <div class="project-metrics">
-                        <div class="metric">
-                            <h4>+45%</h4>
-                            <span>Feature Adoption</span>
+                        <div class="metric-item">
+                            <span class="metric-val">60%</span>
+                            <span class="metric-lbl">Booking Increase</span>
                         </div>
-                        <div class="metric">
-                            <h4>+38%</h4>
-                            <span>Daily Active Users</span>
-                        </div>
-                        <div class="metric">
-                            <h4>50%</h4>
-                            <span>Faster Onboarding</span>
+                        <div class="metric-item">
+                            <span class="metric-val">45%</span>
+                            <span class="metric-lbl">Session Duration</span>
                         </div>
                     </div>
-
-                    <div class="key-learning">
-                        <strong>Key Learning</strong>
-                        <p>"Clear information architecture drives user engagement; progressive disclosure improves usability."</p>
-                    </div>
-
-                    <a href="#" class="project-link">Read Full Case Study <i class="ri-arrow-right-line"></i></a>
                 </div>
             </div>
 
             <!-- Project 2 -->
-            <div class="project-card reverse">
-                <div class="project-image-wrapper">
-                    <img src="https://www.behance.net/gallery/237969847/Smarter-Influencer-Marketingwith-AI" alt="Smarter Influencer Marketing AI" class="project-image">
-                </div>
-                <div class="project-content">
-                    <div class="project-tags">
-                        <span class="tag">AI</span>
-                        <span class="tag">SaaS</span>
-                        <span class="tag">Optimization</span>
-                    </div>
-                    <h3 class="project-title">Smarter Influencer Marketing AI</h3>
-                    <p class="project-overview">Unified AI-powered platform for campaign management, solving fragmented experiences across influencer discovery and tracking.</p>
-                    
+            <div class="project-card">
+                <img src="https://a.lovart.ai/artifacts/external/IyiOTctTaDBLiQEg.png" alt="Wellness Well" class="project-image">
+                <div class="project-overlay">
+                    <span class="project-category">Product Branding & Marketing</span>
+                    <h3 class="project-title">Wellness Well Himalayan Shilajit</h3>
+                    <p class="project-desc">Complete brand identity system with product packaging, marketing collateral, and benefit-focused promotional strategy.</p>
                     <div class="project-metrics">
-                        <div class="metric">
-                            <h4>+35%</h4>
-                            <span>Completion Rate</span>
+                        <div class="metric-item">
+                            <span class="metric-val">40%</span>
+                            <span class="metric-lbl">Brand Recognition</span>
                         </div>
-                        <div class="metric">
-                            <h4>+28%</h4>
-                            <span>Engagement</span>
-                        </div>
-                        <div class="metric">
-                            <h4>40%</h4>
-                            <span>Faster Setup</span>
+                        <div class="metric-item">
+                            <span class="metric-val">35%</span>
+                            <span class="metric-lbl">Sales Growth</span>
                         </div>
                     </div>
-
-                    <div class="key-learning">
-                        <strong>Key Learning</strong>
-                        <p>"AI-powered recommendations improve user efficiency; clear campaign visibility drives completion."</p>
-                    </div>
-
-                    <a href="#" class="project-link">Read Full Case Study <i class="ri-arrow-right-line"></i></a>
                 </div>
             </div>
 
             <!-- Project 3 -->
             <div class="project-card">
-                <div class="project-image-wrapper">
-                    <img src="https://a.lovart.ai/artifacts/external/BotduADWMYIzHbwa.png" alt="Profituned Marketing Dashboard" class="project-image">
-                </div>
-                <div class="project-content">
-                    <div class="project-tags">
-                        <span class="tag">SaaS</span>
-                        <span class="tag">Feature Adoption</span>
-                        <span class="tag">Retention</span>
-                    </div>
-                    <h3 class="project-title">Profituned Marketing Dashboard</h3>
-                    <p class="project-overview">Redesign of a complex marketing dashboard to solve low feature adoption issues by implementing clear value hierarchy and intuitive navigation.</p>
-                    
+                <img src="https://a.lovart.ai/artifacts/external/CoH04s4hxiK3RHDW.png" alt="Latitude Resorts" class="project-image">
+                <div class="project-overlay">
+                    <span class="project-category">Brand Identity & Visual Design</span>
+                    <h3 class="project-title">Latitude Resorts</h3>
+                    <p class="project-desc">Comprehensive brand identity capturing the essence of mountain resort experience with cohesive visual language.</p>
                     <div class="project-metrics">
-                        <div class="metric">
-                            <h4>+35%</h4>
-                            <span>Feature Adoption</span>
+                        <div class="metric-item">
+                            <span class="metric-val">50%</span>
+                            <span class="metric-lbl">Social Engagement</span>
                         </div>
-                        <div class="metric">
-                            <h4>+28%</h4>
-                            <span>Active Users</span>
-                        </div>
-                        <div class="metric">
-                            <h4>40%</h4>
-                            <span>Faster Onboarding</span>
+                        <div class="metric-item">
+                            <span class="metric-val">30%</span>
+                            <span class="metric-lbl">Booking Increase</span>
                         </div>
                     </div>
-
-                    <div class="key-learning">
-                        <strong>Key Learning</strong>
-                        <p>"Clear navigation drives feature adoption; progressive disclosure improves usability."</p>
-                    </div>
-
-                    <a href="#" class="project-link">Read Full Case Study <i class="ri-arrow-right-line"></i></a>
                 </div>
             </div>
 
-             <!-- Project 4 -->
-             <div class="project-card reverse">
-                <div class="project-image-wrapper">
-                    <img src="https://a.lovart.ai/artifacts/external/e38dw3xXyeHIpz9v.png" alt="E-commerce Checkout Optimization" class="project-image">
-                </div>
-                <div class="project-content">
-                    <div class="project-tags">
-                        <span class="tag">E-commerce</span>
-                        <span class="tag">Conversion</span>
-                        <span class="tag">Revenue</span>
-                    </div>
-                    <h3 class="project-title">E-commerce Checkout Optimization</h3>
-                    <p class="project-overview">Checkout flow optimization project aimed at reducing cart abandonment by simplifying steps and clarifying progress indicators.</p>
-                    
+            <!-- Project 4 -->
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" alt="Profituned Marketing" class="project-image">
+                <div class="project-overlay">
+                    <span class="project-category">SaaS Dashboard & Platform</span>
+                    <h3 class="project-title">Profituned Marketing</h3>
+                    <p class="project-desc">Enterprise marketing automation platform with 6 integrated web applications and 140+ meticulously designed screens.</p>
                     <div class="project-metrics">
-                        <div class="metric">
-                            <h4>-42%</h4>
-                            <span>Cart Abandonment</span>
+                        <div class="metric-item">
+                            <span class="metric-val">35%</span>
+                            <span class="metric-lbl">User Retention</span>
                         </div>
-                        <div class="metric">
-                            <h4>+21%</h4>
-                            <span>Conversion Rate</span>
-                        </div>
-                        <div class="metric">
-                            <h4>$2.3M</h4>
-                            <span>Inc. Revenue</span>
+                        <div class="metric-item">
+                            <span class="metric-val">28%</span>
+                            <span class="metric-lbl">Feature Adoption</span>
                         </div>
                     </div>
-
-                    <div class="key-learning">
-                        <strong>Key Learning</strong>
-                        <p>"Simplifying checkout reduces abandonment; clear progress indicators improve completion."</p>
-                    </div>
-
-                    <a href="#" class="project-link">Read Full Case Study <i class="ri-arrow-right-line"></i></a>
                 </div>
             </div>
 
-             <!-- Project 5 -->
-             <div class="project-card">
-                <div class="project-image-wrapper">
-                    <img src="https://a.lovart.ai/artifacts/external/0ovYT50TaUF9tK7v.png" alt="Fitness App Onboarding" class="project-image">
-                </div>
-                <div class="project-content">
-                    <div class="project-tags">
-                        <span class="tag">Mobile</span>
-                        <span class="tag">Gamification</span>
-                        <span class="tag">Retention</span>
-                    </div>
-                    <h3 class="project-title">Fitness App Onboarding</h3>
-                    <p class="project-overview">Mobile app onboarding optimization using gamification and milestone rewards to boost user activation and day-1 retention.</p>
-                    
+            <!-- Project 5 -->
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1611974765270-ca12586343bb?q=80&w=1200&auto=format&fit=crop" alt="Richard Wealth Club" class="project-image">
+                <div class="project-overlay">
+                    <span class="project-category">Financial Platform UI/UX</span>
+                    <h3 class="project-title">Richard Wealth Club</h3>
+                    <p class="project-desc">Sophisticated investment dashboard with advanced analytics, data visualization, and intuitive wealth management tools.</p>
                     <div class="project-metrics">
-                        <div class="metric">
-                            <h4>+58%</h4>
-                            <span>Completion</span>
+                        <div class="metric-item">
+                            <span class="metric-val">45%</span>
+                            <span class="metric-lbl">User Engagement</span>
                         </div>
-                        <div class="metric">
-                            <h4>+32%</h4>
-                            <span>Activation Rate</span>
-                        </div>
-                        <div class="metric">
-                            <h4>+25%</h4>
-                            <span>7-day Retention</span>
+                        <div class="metric-item">
+                            <span class="metric-val">25%</span>
+                            <span class="metric-lbl">Faster Tasks</span>
                         </div>
                     </div>
-
-                    <div class="key-learning">
-                        <strong>Key Learning</strong>
-                        <p>"Gamification improves onboarding completion; immediate value drives activation."</p>
-                    </div>
-
-                    <a href="#" class="project-link">Read Full Case Study <i class="ri-arrow-right-line"></i></a>
                 </div>
             </div>
 
-        </div>
-    </section>
-
-    <section id="thinking" class="thinking-section">
-        <div class="container">
-            <div class="thinking-header">
-                <h2>Product Thinking Approach</h2>
-                <p>I connect user needs with business outcomes through data-driven decision making and continuous iteration.</p>
-            </div>
-            <div class="process-grid">
-                <div class="process-card">
-                    <span class="process-number">01</span>
-                    <h3>Research</h3>
-                    <p>Understand user needs, business goals, and market context</p>
-                </div>
-                <div class="process-card">
-                    <span class="process-number">02</span>
-                    <h3>Define</h3>
-                    <p>Frame problems clearly and define success metrics</p>
-                </div>
-                <div class="process-card">
-                    <span class="process-number">03</span>
-                    <h3>Strategize</h3>
-                    <p>Develop solutions that balance user needs with business objectives</p>
-                </div>
-                <div class="process-card">
-                    <span class="process-number">04</span>
-                    <h3>Design</h3>
-                    <p>Create intuitive, high-performing digital experiences</p>
-                </div>
-                <div class="process-card">
-                    <span class="process-number">05</span>
-                    <h3>Validate</h3>
-                    <p>Test solutions with users and stakeholders</p>
-                </div>
-                <div class="process-card">
-                    <span class="process-number">06</span>
-                    <h3>Iterate</h3>
-                    <p>Refine based on feedback and data</p>
+            <!-- Project 6 -->
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop" alt="Security Application" class="project-image">
+                <div class="project-overlay">
+                    <span class="project-category">Mobile UI/UX Case Study</span>
+                    <h3 class="project-title">Security Application</h3>
+                    <p class="project-desc">Comprehensive mobile security solution with biometric authentication, user flows, and detailed case study documentation.</p>
+                    <div class="project-metrics">
+                        <div class="metric-item">
+                            <span class="metric-val">55%</span>
+                            <span class="metric-lbl">User Activation</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-val">32%</span>
+                            <span class="metric-lbl">Retention Imprv</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="skills-section">
+    <!-- Divider Banner -->
+    <div class="divider-banner">
+        <img src="https://a.lovart.ai/artifacts/external/BkUWloCycCDuH1SV.png" alt="We Create Designs That Convert">
+        <div class="banner-content">
+            <h2 class="banner-title">We Create Designs That <span class="text-accent">Convert</span></h2>
+            <a href="/cdn-cgi/l/email-protection#18797474797076796f7962367c7d6b717f767d6a587f75797174367b7775" class="btn-primary">Start Your Project</a>
+        </div>
+    </div>
+
+    <!-- All Projects List -->
+    <section class="container all-projects-wrapper">
+        <div class="section-header">
+            <span class="section-subtitle">Complete Works</span>
+            <h2 class="section-title">All Project Archive</h2>
+        </div>
+
+        <div class="projects-list-cols">
+            <!-- Column 1 -->
+            <div class="proj-col">
+                <h3><i class="ri-computer-line"></i> Web & SaaS</h3>
+                <div class="proj-list-item"><div class="proj-name">Infinity Resort, Kumrat Valley</div></div>
+                <div class="proj-list-item"><div class="proj-name">Profituned Marketing</div></div>
+                <div class="proj-list-item"><div class="proj-name">Richard Wealth Club</div></div>
+                <div class="proj-list-item"><div class="proj-name">Pakistan Automotive Data Portal</div></div>
+                <div class="proj-list-item"><div class="proj-name">UI UX Design for a Modern SaaS</div></div>
+                <div class="proj-list-item"><div class="proj-name">DREAMER DIGITAL ORGANIZATION</div></div>
+                <div class="proj-list-item"><div class="proj-name">Creative Design Agency</div></div>
+                <div class="proj-list-item"><div class="proj-name">PRIME ESTIMATE</div></div>
+                <div class="proj-list-item"><div class="proj-name">IT'S TIME TO RENEWABLE ENERGY</div></div>
+                <div class="proj-list-item"><div class="proj-name">Your Home, But Better</div></div>
+                <div class="proj-list-item"><div class="proj-name">Weekend Solar Power Appliances</div></div>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="proj-col">
+                <h3><i class="ri-smartphone-line"></i> Mobile Apps</h3>
+                <div class="proj-list-item"><div class="proj-name">Security Application</div></div>
+                <div class="proj-list-item"><div class="proj-name">Travel App Screens</div></div>
+                <div class="proj-list-item"><div class="proj-name">Discover Your Inner Peace</div></div>
+                <div class="proj-list-item"><div class="proj-name">MY MOJO</div></div>
+                <div class="proj-list-item"><div class="proj-name">NOW COORSETLY?</div></div>
+                <div class="proj-list-item"><div class="proj-name">Sunrise UI Desi</div></div>
+                <div class="proj-list-item"><div class="proj-name">BRAIN BOOK</div></div>
+                <div class="proj-list-item"><div class="proj-name">MAKEITCOGNITIVE</div></div>
+                <div class="proj-list-item"><div class="proj-name">DEEP SLEEP</div></div>
+                <div class="proj-list-item"><div class="proj-name">A MOBILE GAMES LEDER</div></div>
+                <div class="proj-list-item"><div class="proj-name">Mobile App Onboarding</div></div>
+                <div class="proj-list-item"><div class="proj-name">Babby Travel System</div></div>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="proj-col">
+                <h3><i class="ri-shopping-bag-3-line"></i> Branding & E-commerce</h3>
+                <div class="proj-list-item"><div class="proj-name">Wellness Well Himalayan Shilajit</div></div>
+                <div class="proj-list-item"><div class="proj-name">ALPINE SHILAJIT</div></div>
+                <div class="proj-list-item"><div class="proj-name">FANG & BONE HAND BAG</div></div>
+                <div class="proj-list-item"><div class="proj-name">ISSA BELLA</div></div>
+                <div class="proj-list-item"><div class="proj-name">KITTY RIVULET</div></div>
+                <div class="proj-list-item"><div class="proj-name">ORIGYN SPORT</div></div>
+                <div class="proj-list-item"><div class="proj-name">CHAVELL</div></div>
+                <div class="proj-list-item"><div class="proj-name">TUCKIN TIGHT</div></div>
+                <div class="proj-list-item"><div class="proj-name">GREEN BLAZER</div></div>
+                <div class="proj-list-item"><div class="proj-name">STEVE - RING</div></div>
+                <div class="proj-list-item"><div class="proj-name">BAGIRA GEAR</div></div>
+                <div class="proj-list-item"><div class="proj-name">TIGER BLINDS</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Process -->
+    <section class="process-section">
         <div class="container">
             <div class="section-header">
-                <h2>Skills & Expertise</h2>
-                <p>A comprehensive toolkit for building world-class digital products.</p>
+                <span class="section-subtitle">Methodology</span>
+                <h2 class="section-title">Design Process</h2>
             </div>
-            <div class="skills-grid">
-                <div class="skill-column">
-                    <h3><i class="ri-lightbulb-flash-line"></i> Product & Strategy</h3>
-                    <ul class="skill-list">
-                        <li>User Research</li>
-                        <li>Problem Framing</li>
-                        <li>Information Architecture</li>
-                        <li>Growth Thinking</li>
-                        <li>UX Strategy</li>
-                        <li>KPI Awareness</li>
-                    </ul>
+            
+            <div class="timeline">
+                <div class="timeline-step">
+                    <div class="step-icon"><i class="ri-search-eye-line"></i></div>
+                    <h4 class="step-title">Discovery</h4>
+                    <p class="step-desc">User interviews, competitive analysis</p>
                 </div>
-                <div class="skill-column">
-                    <h3><i class="ri-pencil-ruler-2-line"></i> Design Execution</h3>
-                    <ul class="skill-list">
-                        <li>UI Design</li>
-                        <li>Design Systems</li>
-                        <li>Interaction Design</li>
-                        <li>Prototyping</li>
-                        <li>Responsive Design</li>
-                    </ul>
+                <div class="timeline-step">
+                    <div class="step-icon"><i class="ri-lightbulb-flash-line"></i></div>
+                    <h4 class="step-title">Strategy</h4>
+                    <p class="step-desc">Information architecture, user flows</p>
                 </div>
-                <div class="skill-column">
-                    <h3><i class="ri-tools-line"></i> Tools</h3>
-                    <ul class="skill-list">
-                        <li>Figma</li>
-                        <li>Framer</li>
-                        <li>Adobe Suite</li>
-                        <li>Notion</li>
-                        <li>AI Tools</li>
-                    </ul>
+                <div class="timeline-step">
+                    <div class="step-icon"><i class="ri-layout-2-line"></i></div>
+                    <h4 class="step-title">Wireframe</h4>
+                    <p class="step-desc">Low to high-fidelity mockups</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="about-grid">
-                <div>
-                    <h2>About Me</h2>
-                    <p style="font-size: 18px; color: var(--text-secondary); margin-bottom: 32px; line-height: 1.6;">
-                        Product Designer with hands-on experience designing mobile and web applications. I focus on building user-centered, scalable digital products that balance usability, aesthetics, and business objectives.
-                    </p>
-                    <div style="background: #F1F5F9; padding: 24px; border-radius: 16px; margin-bottom: 32px;">
-                        <h4 style="margin-bottom: 12px; color: var(--text-primary);">Education</h4>
-                        <p style="color: var(--text-secondary);"><strong>Associate Degree in Computer Science</strong><br>The Islamia University of Bahawalpur (2020 – 2022)</p>
-                    </div>
+                <div class="timeline-step">
+                    <div class="step-icon"><i class="ri-palette-line"></i></div>
+                    <h4 class="step-title">Visual</h4>
+                    <p class="step-desc">UI design, design systems, branding</p>
                 </div>
-                <div>
-                    <h3 style="margin-bottom: 32px; font-size: 24px;">Professional Experience</h3>
-                    
-                    <div class="experience-item">
-                        <div class="exp-role">Freelance UI/UX & Product Designer</div>
-                        <div class="exp-company">Self-Employed</div>
-                        <div class="exp-date">Apr 2024 – Present</div>
-                        <div class="exp-desc">Focuses on e-commerce listings, web/mobile app designs, and social media graphics.</div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="exp-role">UI/UX & Graphic Designer</div>
-                        <div class="exp-company">T-Tech Solutions Pvt Ltd</div>
-                        <div class="exp-date">May 2025 – Nov 2025</div>
-                        <div class="exp-desc">Concentrated on responsive interfaces, scalable design systems, and SEO-aligned graphics.</div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="exp-role">UI/UX & Graphic Designer</div>
-                        <div class="exp-company">Profituned Marketing</div>
-                        <div class="exp-date">May 2024 – Apr 2025</div>
-                        <div class="exp-desc">Led initiatives that increased engagement by 25% and reduced design time by 35%.</div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="exp-role">UI/UX Design Intern</div>
-                        <div class="exp-company">Design Peeps</div>
-                        <div class="exp-date">Oct 2023 – Apr 2024</div>
-                        <div class="exp-desc">Gained foundational skills in user research, wireframing, and interactive prototyping.</div>
-                    </div>
+                <div class="timeline-step">
+                    <div class="step-icon"><i class="ri-flask-line"></i></div>
+                    <h4 class="step-title">Testing</h4>
+                    <p class="step-desc">Usability testing, feedback integration</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-icon"><i class="ri-rocket-line"></i></div>
+                    <h4 class="step-title">Delivery</h4>
+                    <p class="step-desc">Developer collaboration, handoff</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="final-cta">
+    <!-- Skills & Experience -->
+    <section class="container section">
+        <div class="section-header">
+            <span class="section-subtitle">Expertise</span>
+            <h2 class="section-title">Skills & Experience</h2>
+        </div>
+
+        <div class="skills-exp-grid">
+            <div class="skills-container">
+                <div class="skill-group">
+                    <h4><i class="ri-compass-3-line text-accent"></i> Product Strategy</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">User Research</span>
+                        <span class="skill-tag">Info Architecture</span>
+                        <span class="skill-tag">UX Strategy</span>
+                        <span class="skill-tag">Problem Framing</span>
+                        <span class="skill-tag">Design Thinking</span>
+                        <span class="skill-tag">Product Analytics</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h4><i class="ri-pencil-ruler-2-line text-accent"></i> Design Execution</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">UI Design</span>
+                        <span class="skill-tag">Interaction Design</span>
+                        <span class="skill-tag">Prototyping</span>
+                        <span class="skill-tag">Design Systems</span>
+                        <span class="skill-tag">Responsive</span>
+                        <span class="skill-tag">Brand Identity</span>
+                    </div>
+                </div>
+
+                <div class="skill-group" style="grid-column: span 2;">
+                    <h4><i class="ri-tools-line text-accent"></i> Tools & Tech</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Figma (Expert)</span>
+                        <span class="skill-tag">Framer</span>
+                        <span class="skill-tag">Adobe XD</span>
+                        <span class="skill-tag">Photoshop</span>
+                        <span class="skill-tag">Illustrator</span>
+                        <span class="skill-tag">Sketch</span>
+                        <span class="skill-tag">InVision</span>
+                        <span class="skill-tag">Principle</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-col">
+                <h3 style="margin-bottom: 30px; font-size: 24px;">Work History</h3>
+                
+                <div class="exp-item">
+                    <h4 class="exp-role">Freelance UI/UX & Product Designer</h4>
+                    <span class="exp-date">Nov 2023 – Present</span>
+                    <p class="exp-desc">Designing innovative digital products for startups and established brands. Delivered 30+ projects with 95% client satisfaction.</p>
+                </div>
+
+                <div class="exp-item">
+                    <h4 class="exp-role">UI/UX & Graphic Designer</h4>
+                    <span class="exp-date">June 2022 – Aug 2023</span>
+                    <p class="exp-desc">Created scalable design systems and user-centric interfaces. Reduced design time by 35%, increased user engagement by 20%.</p>
+                </div>
+
+                <div class="exp-item">
+                    <h4 class="exp-role">UI/UX Design Intern</h4>
+                    <span class="exp-date">Jan 2022 – May 2022</span>
+                    <p class="exp-desc">Contributed to professional design projects. Spearheaded user research and wireframing initiatives.</p>
+                </div>
+
+                <h3 style="margin: 40px 0 30px; font-size: 24px;">Education</h3>
+                <div class="exp-item">
+                    <h4 class="exp-role">Bachelor's Degree in Computer Science</h4>
+                    <span class="exp-date">2018-2022 | The Islamia University of Bahawalpur</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section">
         <div class="container">
-            <h2>Let's Build Products That Matter</h2>
-            <p>Available for Product Design roles and collaborative opportunities.</p>
-            <div class="hero-buttons">
-                <a href="#" class="btn btn-primary">Download Resume <i class="ri-file-download-line"></i></a>
-                <a href="/cdn-cgi/l/email-protection#89eae6e7fde8eafdc9e8e5e5e8e1e7e8fee8f3a7eae6e4" class="btn btn-secondary">Email Me <i class="ri-mail-send-line"></i></a>
+            <span class="section-subtitle">Get In Touch</span>
+            <h2 class="section-title">Let's Create Something Amazing</h2>
+            <p class="section-desc">Have a project in mind? I'm available for freelance projects and full-time opportunities.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="ri-mail-send-line"></i></div>
+                    <a href="/cdn-cgi/l/email-protection#dabbb6b6bbb2b4bbadbba0f4bebfa9b3bdb4bfa89abdb7bbb3b6f4b9b5b7" class="contact-text"><span class="__cf_email__" data-cfemail="ddbcb1b1bcb5b3bcaabca7f3b9b8aeb4bab3b8af9dbab0bcb4b1f3beb2b0">[email&#160;protected]</span></a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="ri-behance-fill"></i></div>
+                    <a href="https://behance.net/allahnawaz175" target="_blank" class="contact-text">behance.net/allahnawaz175</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="ri-linkedin-fill"></i></div>
+                    <a href="#" class="contact-text">LinkedIn Profile</a>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div>
-                    <span style="font-weight: 700; color: var(--text-primary); margin-right: 8px;">Allah Nawaz</span>
-                    © 2026. All rights reserved.
-                </div>
-                <div class="social-links">
-                    <a href="#"><i class="ri-linkedin-fill"></i></a>
-                    <a href="#"><i class="ri-behance-fill"></i></a>
-                    <a href="#"><i class="ri-dribbble-fill"></i></a>
-                    <a href="#"><i class="ri-twitter-x-fill"></i></a>
-                </div>
-            </div>
+            <p>&copy; 2023 Allah Nawaz. All rights reserved. Designed & Built with precision.</p>
         </div>
     </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9cc5a3ac594deb47","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.9.1","token":"aa50fec79b214c0582a0bc0d66f75f48"}' crossorigin="anonymous"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9d83204d9a7534e9","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.9.1","token":"aa50fec79b214c0582a0bc0d66f75f48"}' crossorigin="anonymous"></script>
 </body>
 </html>

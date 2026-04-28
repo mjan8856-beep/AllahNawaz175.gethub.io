@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Allah Nawaz | Product Designer</title>
 
 <script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
 
@@ -15,7 +17,6 @@
     --fg:#fff;
     --muted:rgba(255,255,255,0.6);
     --border:rgba(255,255,255,0.08);
-    --card:rgba(255,255,255,0.03);
     --accent:#FFD700;
 }
 
@@ -26,8 +27,6 @@ body{
     font-family:Inter;
     overflow-x:hidden;
 }
-
-.accent-font{font-family:"Playfair Display";font-style:italic}
 
 /* NAV */
 .nav{
@@ -41,45 +40,40 @@ body{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:rgba(10,10,10,0.7);
+    background:rgba(10,10,10,0.5);
     border:1px solid var(--border);
     backdrop-filter:blur(20px);
     border-radius:999px;
     z-index:1000;
 }
 
-/* HERO */
-.hero{
-    min-height:100vh;
+/* SECTION BASE */
+.panel{
+    height:100vh;
     display:flex;
-    flex-direction:column;
-    justify-content:center;
     align-items:center;
-    text-align:center;
-    padding:120px 20px;
+    justify-content:center;
+    position:relative;
+    padding:80px 20px;
 }
 
+/* HERO */
 .hero h1{
-    font-size:clamp(40px,8vw,90px);
+    font-size:clamp(40px,7vw,90px);
+    text-align:center;
     line-height:1;
 }
-
 .hero p{
-    max-width:700px;
     margin-top:20px;
+    text-align:center;
+    max-width:700px;
     color:var(--muted);
 }
 
-/* SECTION */
-.section{
-    padding:120px 20px;
-    max-width:1200px;
-    margin:auto;
-}
-
-.sec-title{
-    font-size:clamp(28px,5vw,56px);
-    margin-bottom:40px;
+/* SECTION TITLE */
+.title{
+    font-size:clamp(30px,5vw,64px);
+    text-align:center;
 }
 
 /* GRID */
@@ -87,63 +81,26 @@ body{
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:24px;
+    max-width:1100px;
+    margin:auto;
 }
 
 .card{
-    background:var(--card);
+    background:rgba(255,255,255,0.03);
     border:1px solid var(--border);
     border-radius:24px;
     overflow:hidden;
-    transition:0.6s;
-    transform:translateY(40px);
-    opacity:0;
-}
-
-.card.active{
-    transform:translateY(0);
-    opacity:1;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    border-color:rgba(255,255,255,0.2);
 }
 
 .card img{
     width:100%;
     height:260px;
     object-fit:cover;
-    transition:0.6s;
 }
 
-.card:hover img{
-    transform:scale(1.05);
-}
+/* ACCENT */
+.accent{color:var(--accent);font-style:italic;font-family:"Playfair Display";}
 
-/* REVEAL */
-.reveal{
-    opacity:0;
-    transform:translateY(40px);
-    filter:blur(10px);
-    transition:1s cubic-bezier(0.16,1,0.3,1);
-}
-
-.reveal.active{
-    opacity:1;
-    transform:translateY(0);
-    filter:blur(0);
-}
-
-/* BUTTON */
-.btn{
-    padding:12px 24px;
-    border-radius:999px;
-    border:1px solid var(--border);
-    text-decoration:none;
-    color:#fff;
-}
-
-/* MOBILE */
 @media(max-width:768px){
     .grid{grid-template-columns:1fr;}
 }
@@ -155,174 +112,109 @@ body{
 <!-- NAV -->
 <div class="nav">
     <div>Allah Nawaz</div>
-    <div style="display:flex;gap:12px;">
-        <a href="#work" class="btn">Work</a>
-        <a href="#behance" class="btn">Behance</a>
-    </div>
+    <div>Product Designer</div>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="reveal">
-        <h1>Product Designer<br><span class="accent-font">for High-Impact Systems</span></h1>
-        <p>Designing SaaS, AI dashboards and scalable digital products with clarity, speed, and conversion focus.</p>
+<!-- HERO (PINNED) -->
+<section class="panel hero">
+    <div>
+        <h1>Designing Systems<br><span class="accent">that Scale</span></h1>
+        <p>SaaS • AI Dashboards • High-conversion product experiences built with precision.</p>
     </div>
 </section>
 
-<!-- WORK -->
-<section class="section" id="work">
-    <h2 class="sec-title reveal">Selected Work</h2>
+<!-- WORK (PINNED CHAPTER) -->
+<section class="panel">
+    <div>
+        <h2 class="title">Selected Work</h2>
 
-    <div class="grid">
+        <div class="grid" style="margin-top:40px;">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca">
+                <div style="padding:20px;">GoRook Emergency UX</div>
+            </div>
 
-        <div class="card reveal">
-            <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca">
-            <div style="padding:20px;">
-                <h3>GoRook Emergency App</h3>
-                <p style="color:var(--muted);margin-top:10px;">Fast-response UX for critical situations.</p>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995">
+                <div style="padding:20px;">AI SaaS Dashboard</div>
             </div>
         </div>
-
-        <div class="card reveal">
-            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995">
-            <div style="padding:20px;">
-                <h3>AI SaaS Dashboard</h3>
-                <p style="color:var(--muted);margin-top:10px;">Data-driven analytics platform UI.</p>
-            </div>
-        </div>
-
     </div>
 </section>
 
-<!-- BEHANCE -->
-<section class="section" id="behance">
-    <h2 class="sec-title reveal">Behance Projects</h2>
+<!-- BEHANCE (PINNED CHAPTER) -->
+<section class="panel">
+    <div>
+        <h2 class="title">Behance Projects</h2>
 
-    <div class="grid">
-
-        <a href="https://www.behance.net/allahnawaz175" target="_blank" class="card reveal">
+        <div class="card" style="max-width:900px;margin-top:40px;">
             <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d">
             <div style="padding:20px;">
-                <h3>Full Portfolio on Behance</h3>
-                <p style="color:var(--muted);margin-top:10px;">Click to explore all live case studies.</p>
+                View full portfolio on Behance → allahnawaz175
             </div>
-        </a>
-
+        </div>
     </div>
 </section>
 
-<!-- JS -->
+<!-- FINAL CTA (PINNED) -->
+<section class="panel">
+    <div style="text-align:center;">
+        <h2 class="title">Let’s build something<br><span class="accent">extraordinary</span></h2>
+    </div>
+</section>
+
 <script>
-lucide.createIcons();
+gsap.registerPlugin(ScrollTrigger);
 
-const observer = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-        if(e.isIntersecting){
-            e.target.classList.add("active");
-        }
-    });
-},{threshold:0.15});
+/* PIN HERO */
+gsap.to(".hero", {
+    scrollTrigger:{
+        trigger:".hero",
+        start:"top top",
+        end:"bottom top",
+        pin:true,
+        scrub:1
+    },
+    scale:0.9,
+    opacity:0
+});
 
-document.querySelectorAll(".reveal, .card").forEach(el=>{
-    observer.observe(el);
+/* PIN WORK */
+gsap.to(".panel:nth-of-type(2)", {
+    scrollTrigger:{
+        trigger:".panel:nth-of-type(2)",
+        start:"top top",
+        end:"bottom top",
+        pin:true,
+        scrub:1
+    }
+});
+
+/* PIN BEHANCE */
+gsap.to(".panel:nth-of-type(3)", {
+    scrollTrigger:{
+        trigger:".panel:nth-of-type(3)",
+        start:"top top",
+        end:"bottom top",
+        pin:true,
+        scrub:1
+    }
+});
+
+/* FINAL CTA ZOOM */
+gsap.from(".panel:last-child", {
+    scrollTrigger:{
+        trigger:".panel:last-child",
+        start:"top center",
+        scrub:1
+    },
+    scale:0.8,
+    opacity:0
 });
 </script>
 
 </body>
-</html>rid-template-columns: 1fr; }
-            .nav-links { display: none; }
-        }
-    </style>
-</head>
-<body>
-    <div class="grain"></div>
-
-    <div class="nav-wrap">
-        <nav class="nav">
-            <a href="#" class="nav-logo">Allah Nawaz</a>
-            <div class="nav-links">
-                <a href="#work">Work</a>
-                <a href="#process">Process</a>
-                <a href="#credentials">Credentials</a>
-                <a href="mailto:allahnawazmalik175@gmail.com">Contact</a>
-            </div>
-            <a href="tel:+923055742436" class="btn btn-white" style="padding: 8px 16px; font-size: 12px;">Let's Talk</a>
-        </nav>
-    </div>
-
-    <section class="hero">
-        <div class="reveal">
-            <div class="badge"><div class="dot"></div> Open for New Opportunities</div>
-            <h1 class="hero-title">Strategic Designer for <br><span class="accent-font">High-Growth</span> Platforms.</h1>
-            <p class="hero-sub">Leading end-to-end design for SaaS, B2B, and high-conversion e-commerce. Currently scaling products at <span style="color: #fff; font-weight: 600;">Prime Estimate</span>.</p>
-            <div style="display: flex; gap: 12px; justify-content: center;">
-                <a href="#work" class="btn btn-white">View Projects <i data-lucide="arrow-down-right"></i></a>
-                <a href="https://behance.net/allahnawaz175" class="btn btn-outline" target="_blank">Behance</a>
-            </div>
-        </div>
-    </section>
-
-    <div class="trust-bar">
-        <div class="logo-track">
-            <div class="logo-item"><i data-lucide="zap"></i> PRIME ESTIMATE</div>
-            <div class="logo-item"><i data-lucide="shield"></i> GOROOK</div>
-            <div class="logo-item"><i data-lucide="cpu"></i> CONECTLY</div>
-            <div class="logo-item"><i data-lucide="leaf"></i> ALPINE SHILAJEET</div>
-            <div class="logo-item"><i data-lucide="trending-up"></i> PROFITUNED</div>
-            <!-- Duplicate for infinite effect -->
-            <div class="logo-item"><i data-lucide="zap"></i> PRIME ESTIMATE</div>
-            <div class="logo-item"><i data-lucide="shield"></i> GOROOK</div>
-            <div class="logo-item"><i data-lucide="cpu"></i> CONECTLY</div>
-            <div class="logo-item"><i data-lucide="leaf"></i> ALPINE SHILAJEET</div>
-            <div class="logo-item"><i data-lucide="trending-up"></i> PROFITUNED</div>
-        </div>
-    </div>
-
-    <section class="section" id="work">
-        <div class="sec-head reveal">
-            <span class="sec-tag">Selected Case Studies</span>
-            <h2 class="sec-title">Solving Complex Problems <br>with <span class="accent-font">Clean Design.</span></h2>
-        </div>
-        <div class="proj-grid">
-            <div class="proj-card reveal">
-                <div class="proj-img-wrap"><img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&q=80&w=1200" alt="GoRook"></div>
-                <div class="proj-content">
-                    <span class="proj-meta">Mobile UX • Emergency</span>
-                    <h3>GoRook Emergency</h3>
-                    <p style="margin-top: 10px; font-size: 14px;">Designed a high-stakes mobile interface focused on speed and clarity for users in distress.</p>
-                </div>
-            </div>
-            <div class="proj-card reveal">
-                <div class="proj-img-wrap"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200" alt="AI Dashboard"></div>
-                <div class="proj-content">
-                    <span class="proj-meta">SaaS • AI</span>
-                    <h3>AI Creator Dashboard</h3>
-                    <p style="margin-top: 10px; font-size: 14px;">Simplifying creator discovery and ROI tracking for marketing teams via data-rich dashboards.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="process">
-        <div class="sec-head reveal">
-            <span class="sec-tag">The Blueprint</span>
-            <h2 class="sec-title">A Data-Driven <span class="accent-font">Design Process.</span></h2>
-            <p style="margin-top: 20px; max-width: 600px;">My approach combines user psychology with technical feasibility to ensure every pixel serves a business goal.</p>
-        </div>
-        
-        <div class="process-row">
-            <div class="process-item reveal">
-                <div class="process-number">01</div>
-                <i data-lucide="microscope" style="color: var(--accent);"></i>
-                <h3>Discovery</h3>
-                <p>Auditing existing friction via data tools and stakeholder interviews.</p>
-                <ul class="process-list">
-                    <li><i data-lucide="check-circle"></i> Hotjar Heatmaps</li>
-                    <li><i data-lucide="check-circle"></i> User Interviews</li>
-                    <li><i data-lucide="check-circle"></i> Competitor Audit</li>
-                </ul>
-            </div>
-            <div class="process-item reveal" style="transition-delay: 0.1s;">
+</html>            <div class="process-item reveal" style="transition-delay: 0.1s;">
                 <div class="process-number">02</div>
                 <i data-lucide="git-branch" style="color: var(--accent);"></i>
                 <h3>Strategy</h3>
@@ -501,5 +393,3 @@ document.querySelectorAll(".reveal, .card").forEach(el=>{
     </script>
 </body>
 </html>
-
-```

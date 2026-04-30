@@ -1,171 +1,323 @@
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Allah Nawaz | Senior Product Designer</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons (Premium Icon Set) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Premium Fonts: Cabinet Grotesk (Headings) & Satoshi (Body) -->
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,500&f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Cabinet Grotesk', 'sans-serif'],
+                        body: ['Satoshi', 'sans-serif'],
+                    },
+                    colors: {
+                        neutral: {
+                            950: '#050505',
+                            900: '#0a0a0a',
+                            800: '#111111',
+                            400: '#888888',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
     <style>
-        :root {
-            --bg: #0A0A0A;
-            --surface: #141414;
-            --surface-hover: #1C1C1C;
-            --fg: #F5F5F5;
-            --muted: #888888;
-            --border: rgba(255, 255, 255, 0.08);
-            --accent: #E5E5E5;
-            --ease: cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
-
         body {
-            background: var(--bg);
-            color: var(--fg);
-            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Satoshi', sans-serif;
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
         }
 
-        /* Custom Cursor */
-        .cursor { width: 6px; height: 6px; background: #fff; border-radius: 50%; position: fixed; pointer-events: none; z-index: 10000; }
-        .cursor-follower { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.15s var(--ease); }
-
-        /* Nav */
-        .nav {
-            position: fixed; top: 32px; left: 50%; transform: translateX(-50%);
-            width: 90%; max-width: 1000px; padding: 12px 24px;
-            display: flex; justify-content: space-between; align-items: center;
-            background: rgba(20, 20, 20, 0.7); border: 1px solid var(--border);
-            backdrop-filter: blur(20px); border-radius: 100px; z-index: 1000;
+        /* Text Selection */
+        ::selection {
+            background-color: #ffffff;
+            color: #000000;
         }
-        .nav-brand { font-weight: 700; letter-spacing: -1px; font-size: 1.1rem; }
-        .nav-links { display: flex; gap: 24px; }
-        .nav a { color: var(--fg); text-decoration: none; font-size: 0.8rem; opacity: 0.5; transition: 0.3s; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
-        .nav a:hover { opacity: 1; }
 
-        /* Hero */
-        .hero { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 5%; }
-        .hero h1 { font-size: clamp(3rem, 10vw, 7rem); font-weight: 700; letter-spacing: -4px; line-height: 0.9; margin-bottom: 24px; }
-        .hero p { color: var(--muted); font-size: 1.2rem; max-width: 600px; margin-bottom: 40px; }
-        .accent { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; color: var(--accent); }
-
-        /* Marquee Logos */
-        .marquee { width: 100%; overflow: hidden; white-space: nowrap; padding: 60px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; }
-        .marquee-content { display: inline-flex; animation: scroll 30s linear infinite; gap: 80px; align-items: center; }
-        .marquee-content span { font-size: 1.5rem; font-weight: 700; color: var(--muted); opacity: 0.5; letter-spacing: -1px; filter: grayscale(1); }
-        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-        /* Layout */
-        .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 100px 5%; }
-        .section-label { color: var(--muted); font-size: 0.7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; display: block; }
-        .title { font-size: clamp(2rem, 5vw, 4rem); font-weight: 700; letter-spacing: -2px; margin-bottom: 60px; }
-
-        /* AI Strategy Tool */
-        .ai-tool { background: var(--surface); border: 1px solid var(--border); border-radius: 32px; padding: 56px; margin-bottom: 80px; position: relative; overflow: hidden; }
-        .ai-tool::before { content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%); pointer-events: none; }
-        .ai-textarea { width: 100%; background: #000; border: 1px solid var(--border); border-radius: 16px; padding: 24px; color: #fff; font-family: inherit; font-size: 1.1rem; resize: none; margin-bottom: 24px; transition: 0.3s; }
-        .ai-textarea:focus { outline: none; border-color: #444; }
-        .ai-btn { background: #fff; color: #000; border: none; padding: 16px 32px; border-radius: 12px; font-weight: 700; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 10px; }
-        .ai-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
-
-        /* Design Process */
-        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; }
-        .process-step { position: relative; }
-        .step-num { font-size: 0.7rem; font-weight: 700; color: var(--muted); margin-bottom: 16px; display: block; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
-        .process-step h4 { font-size: 1.2rem; margin-bottom: 12px; }
-        .process-step p { font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
-
-        /* Services */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-        .service-card { background: var(--surface); border: 1px solid var(--border); padding: 40px; border-radius: 24px; transition: 0.3s; }
-        .service-card:hover { border-color: rgba(255,255,255,0.2); }
-        .service-card i { color: var(--muted); margin-bottom: 24px; display: block; }
-        .service-card h4 { font-size: 1.5rem; margin-bottom: 16px; }
-
-        /* Tools Expert */
-        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; }
-        .tool-box { background: var(--surface); border: 1px solid var(--border); padding: 24px; border-radius: 16px; text-align: center; }
-        .tool-box p { font-weight: 600; font-size: 0.85rem; }
-
-        /* Testimonials */
-        .testimonial-card { background: var(--surface); border: 1px solid var(--border); padding: 48px; border-radius: 32px; position: relative; max-width: 800px; margin: 0 auto; text-align: center; }
-        .testimonial-text { font-size: 1.5rem; font-style: italic; color: var(--fg); margin-bottom: 32px; font-family: 'Playfair Display', serif; }
-        .testimonial-author { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-        .author-name { font-weight: 700; }
-        .author-title { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
-
-        /* Work Grid */
-        .work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 40px; }
-        .work-card { background: var(--surface); border: 1px solid var(--border); border-radius: 32px; padding: 48px; transition: 0.4s var(--ease); display: flex; flex-direction: column; justify-content: space-between; min-height: 400px; }
-        .work-card:hover { transform: translateY(-8px); border-color: rgba(255,255,255,0.2); }
-
-        .spinner { width: 18px; height: 18px; border: 2px solid rgba(0,0,0,0.1); border-top-color: #000; border-radius: 50%; animation: spin 0.8s linear infinite; display: none; }
-        @keyframes spin { to { transform: rotate(360deg); } }
-
-        @media (max-width: 768px) {
-            .work-grid, .services-grid { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
+        /* Cinematic Noise Overlay */
+        .noise-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
+
+        /* Ambient Glows */
+        .ambient-glow {
+            position: fixed;
+            width: 800px; height: 800px;
+            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .glow-1 { top: -20%; left: -10%; }
+        .glow-2 { bottom: -20%; right: -10%; background: radial-gradient(circle, rgba(56, 189, 248, 0.02) 0%, rgba(0,0,0,0) 70%); }
+
+        /* Smooth Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Infinite Marquee */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: fit-content;
+            animation: marquee 35s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        /* Hide details marker */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #222; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #444; }
     </style>
 </head>
-<body>
+<body class="antialiased selection:bg-white selection:text-black">
 
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+    <div class="noise-overlay"></div>
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
 
-    <nav class="nav">
-        <div class="nav-brand">AN<span style="opacity: 0.3">®</span></div>
-        <div class="nav-links">
-            <a href="#work">Work</a>
-            <a href="#services">Services</a>
-            <a href="#process">Process</a>
-            <a href="#strategy">AI tool</a>
-        </div>
-        <a href="mailto:allahnawazmalik175@gmail.com" style="background: #fff; color: #000; padding: 8px 20px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 0.75rem;">HIRE ME</a>
-    </nav>
-
-    <div id="smooth-wrapper">
-        <div id="smooth-content">
-
-            <!-- Hero -->
-            <section class="hero">
-                <span class="section-label">Senior Product Designer</span>
-                <h1>Crafting <span class="accent">Scalable</span> <br> Digital Systems</h1>
-                <p>Strategic Design for B2B SaaS & Complex Platforms. Based in Islamabad, shipping globally.</p>
-            </section>
-
-            <!-- Logo Marquee -->
-            <div class="marquee">
-                <div class="marquee-content">
-                    <span>PRIME ESTIMATE</span>
-                    <span>GO ROOK</span>
-                    <span>PROFITUNED</span>
-                    <span>CONECTLY</span>
-                    <span>AI INFLUENCER</span>
-                    <span>PRIME ESTIMATE</span>
-                    <span>GO ROOK</span>
-                    <span>PROFITUNED</span>
-                    <span>CONECTLY</span>
-                    <span>AI INFLUENCER</span>
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-40 transition-all duration-500 py-6 px-6 lg:px-12 border-b border-transparent">
+        <div class="max-w-[1400px] mx-auto flex justify-between items-center">
+            <a href="#" class="font-display font-bold text-2xl tracking-tight flex items-center gap-2">
+                <i class="ph-fill ph-square-logo"></i>
+                AN.
+            </a>
+            
+            <div class="hidden md:flex items-center gap-10">
+                <a href="#work" class="text-xs font-bold uppercase tracking-[0.2em] text-neutral-400 hover:text-white transition-colors">Work</a>
+                <a href="#about" class="text-xs font-bold uppercase tracking-[0.2em] text-neutral-400 hover:text-white transition-colors">About</a>
+                <a href="#experience" class="text-xs font-bold uppercase tracking-[0.2em] text-neutral-400 hover:text-white transition-colors">Experience</a>
+                <div class="flex items-center gap-4 ml-4 border-l border-white/10 pl-6">
+                    <a href="https://linkedin.com/in/your-profile" target="_blank" class="text-neutral-500 hover:text-white transition-colors"><i class="ph ph-linkedin-logo text-lg"></i></a>
+                    <a href="https://behance.net/allahnawaz175" target="_blank" class="text-neutral-500 hover:text-white transition-colors"><i class="ph ph-behance-logo text-lg"></i></a>
                 </div>
             </div>
 
-            <!-- Achievements (Stats) -->
-            <section class="container">
-                <div style="display: flex; gap: 80px; flex-wrap: wrap; justify-content: center;">
-                    <div style="text-align: center;"><h4 style="font-size: 3rem; font-weight: 700;">8+</h4><p class="section-label">Global Clients</p></div>
-                    <div style="text-align: center;"><h4 style="font-size: 3rem; font-weight: 700;">30%</h4><p class="section-label">Handoff Efficiency</p></div>
+            <a href="mailto:allahnawazmalik175@gmail.com" class="group flex items-center gap-2 px-6 py-2.5 bg-white text-black rounded-full font-bold text-xs uppercase tracking-widest hover:bg-neutral-200 transition-all hover:scale-105 duration-300">
+                Let's Talk <i class="ph ph-arrow-up-right text-lg group-hover:rotate-45 transition-transform"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 z-10">
+        <div class="reveal max-w-5xl mx-auto">
+            <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-10">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-neutral-300">Available for Opportunities</span>
+            </div>
+
+            <h1 class="font-display text-[4rem] md:text-[7rem] lg:text-[9rem] leading-[0.9] tracking-[-0.02em] font-extrabold mb-8">
+                Strategic Product <br> 
+                <span class="text-neutral-500 italic font-medium">Design.</span>
+            </h1>
+
+            <p class="font-body text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto leading-relaxed mb-16">
+                Translating complex SaaS & B2B problems into human-centric solutions. Based in Pakistan, designing globally.
+            </p>
+
+            <div class="flex items-center justify-center gap-12">
+                <div class="flex flex-col items-center gap-4 text-neutral-500">
+                    <span class="text-[10px] font-bold uppercase tracking-[0.3em]">Scroll Down</span>
+                    <div class="w-px h-16 bg-gradient-to-b from-neutral-500 to-transparent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Marquee -->
+    <section class="py-12 border-y border-white/5 bg-neutral-900/50 backdrop-blur-sm z-10 relative overflow-hidden">
+        <div class="animate-marquee flex items-center">
+            <div class="flex items-center gap-16 px-8 text-neutral-500 hover:text-neutral-300 transition-colors">
+                <span class="font-display font-bold text-2xl tracking-widest uppercase flex items-center gap-3"><i class="ph-fill ph-buildings"></i> Prime Estimate</span>
+                <span class="font-display font-bold text-2xl tracking-widest uppercase flex items-center gap-3"><i class="ph-fill ph-cpu"></i> T-Tech Solutions</span>
+                <span class="font-display font-bold text-2xl tracking-widest uppercase flex items-center gap-3"><i class="ph-fill ph-chart-line-up"></i> Profituned</span>
+                <span class="font-display font-bold text-2xl tracking-widest uppercase flex items-center gap-3"><i class="ph-fill ph-users-three"></i> Design Peeps</span>
+                <span class="font-display font-bold text-2xl tracking-widest uppercase flex items-center gap-3"><i class="ph-fill ph-shopping-cart"></i> Giga E-commerce</span>
+                <span class="font-display font-bold text-2xl tracking-widest uppercase flex items-center gap-3"><i class="ph-fill ph-rocket"></i> ATA Optimize</span>
+            </div>
+            <div class="flex items-center gap-16 px-8 text-neutral-500 hover:text-neutral-300 transition-colors">
+                <span class="font-display font-bold text-2xl tracking-widest uppercase flex items-center gap-3"><i class="ph-fill ph-buildings"></i> Prime Estimate</span>
+                <span class="font-display font-bold text-2xl tracking-widest uppercase flex items-center gap-3"><i class="ph-fill ph-cpu"></i> T-Tech Solutions</span>
+                <span class="font-display font-bold text-2xl tracking-widest uppercase flex items-center gap-3"><i class="ph-fill ph-chart-line-up"></i> Profituned</span>
+                <span class="font-display font-bold text-2xl tracking-widest uppercase flex items-center gap-3"><i class="ph-fill ph-users-three"></i> Design Peeps</span>
+                <span class="font-display font-bold text-2xl tracking-widest uppercase flex items-center gap-3"><i class="ph-fill ph-shopping-cart"></i> Giga E-commerce</span>
+                <span class="font-display font-bold text-2xl tracking-widest uppercase flex items-center gap-3"><i class="ph-fill ph-rocket"></i> ATA Optimize</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (Premium Design) -->
+    <section id="about" class="py-32 px-6 lg:px-12 bg-neutral-950 border-t border-white/5 z-10 relative">
+        <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+            <div class="reveal">
+                <div class="text-xs font-bold uppercase tracking-[0.3em] text-neutral-500 mb-8">01 — The Story</div>
+                <h2 class="font-display text-5xl md:text-6xl font-bold tracking-tight mb-10 leading-tight">
+                    Beyond pixels, <br>it's about <span class="text-neutral-500 italic font-medium">purpose.</span>
+                </h2>
+                <div class="aspect-[16/9] md:aspect-square w-full bg-neutral-900 rounded-[2.5rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 relative group">
+                   <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200" alt="Office Space" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity">
+                   <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                </div>
+            </div>
+
+            <div class="reveal lg:pt-32 space-y-12">
+                <p class="font-body text-xl md:text-2xl text-neutral-300 leading-relaxed font-light">
+                    My name is <span class="font-bold text-white">Allah Nawaz</span>, and for the past 2+ years, I’ve been crafting digital experiences that combine raw visual power with data-driven strategy.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-white/10">
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-neutral-500 mb-4">Philosophy</h4>
+                        <p class="text-neutral-400 text-sm leading-relaxed">
+                            I believe in "Invisible Design"—interfaces so intuitive they disappear, leaving only the user's objective and a feeling of effortless success.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-[0.2em] text-neutral-500 mb-4">Mission</h4>
+                        <p class="text-neutral-400 text-sm leading-relaxed">
+                            To help scaling startups and established enterprises turn complex software into elegant, highly-convertible product ecosystems.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-sm">
+                    <h4 class="font-display text-lg font-bold mb-4">What I bring to the table:</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-sm text-neutral-400">
+                            <i class="ph ph-check-circle text-emerald-400 text-lg"></i>
+                            <span>Deep expertise in SaaS Information Architecture & Navigation.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-neutral-400">
+                            <i class="ph ph-check-circle text-emerald-400 text-lg"></i>
+                            <span>End-to-end Figma System development for rapid dev handoff.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-neutral-400">
+                            <i class="ph ph-check-circle text-emerald-400 text-lg"></i>
+                            <span>A/B testing mindset focused on measurable business ROI.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selected Work -->
+    <section id="work" class="py-32 px-6 lg:px-12 max-w-[1600px] mx-auto z-10 relative">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+            <div class="reveal">
+                <h2 class="font-display text-5xl md:text-7xl font-bold tracking-tight mb-4">Selected Work</h2>
+                <p class="text-neutral-400 font-body text-lg">Case studies demonstrating product thinking and visual precision.</p>
+            </div>
+            <a href="https://behance.net/allahnawaz175" target="_blank" class="reveal flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] hover:text-emerald-400 transition-colors pb-2 border-b border-white/20 hover:border-emerald-400">
+                View Full Archive <i class="ph ph-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            <!-- Project 1 -->
+            <div class="reveal group relative">
+                <div class="aspect-[4/3] rounded-[2.5rem] overflow-hidden bg-neutral-900 relative">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" alt="GoRook" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-[1.5s] ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-10">
+                        <div class="translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                            <a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full font-bold text-sm hover:scale-105 transition-transform">
+                                Read Case Study <i class="ph ph-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-between items-start">
+                    <div>
+                        <h3 class="font-display text-3xl font-bold mb-2">GoRook</h3>
+                        <p class="text-neutral-400 max-w-sm">Emergency Assistance Mobile UX focused on speed and clarity.</p>
+                    </div>
+                    <span class="px-4 py-2 border border-white/10 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-neutral-400">Mobile App</span>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="reveal group relative mt-0 md:mt-24">
+                <div class="aspect-[4/3] rounded-[2.5rem] overflow-hidden bg-neutral-900 relative">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200" alt="AI Influencer Platform" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-[1.5s] ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-10">
+                        <div class="translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                            <a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full font-bold text-sm hover:scale-105 transition-transform">
+                                Read Case Study <i class="ph ph-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-between items-start">
+                    <div>
+                        <h3 class="font-display text-3xl font-bold mb-2">Influencer Platform</h3>
+                        <p class="text-neutral-400 max-w-sm">Comprehensive SaaS dashboard simplifying ROI tracking.</p>
+                    </div>
+                    <span class="px-4 py-2 border border-white/10 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase text-neutral-400">SaaS Web</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-32 px-6 lg:px-12 border-t border-white/5 bg-neutral-950 z-10 relative">
+        <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-20">
+            <div>
+                <h2 class="reveal font-display text-4xl md:text-5xl font-bold mb-6">Professional <br><span class="text-neutral-500 italic font-medium">Experience.</span></h2>
+                <p class="reveal text-neutral-400 leading-relaxed mb-16 max-w-md">Leading end-to-end design for SaaS, B2B, and mobile platforms. Bridging user needs and engineering constraints.</p>
+                <h3 class="reveal font-display text-2xl font-bold mb-8">Technical Arsenal</h3>
+                <div class="reveal flex flex-wrap gap-3">
+                    <span class="px-5 py-2.5 bg-neutral-900 border border-white/10 rounded-full text-sm font-medium flex items-center gap-2"><i class="ph-fill ph-figma-logo text-emerald-400"></i> Figma (Adv)</span>
+                    <span class="px-5 py-2.5 bg-neutral-900 border border-white/10 rounded-full text-sm font-medium flex items-center gap-2"><i class="ph-fill ph-frame-corners text-emerald-400"></i> Framer</span>
+                    <span class="px-5 py-2.5 bg-neutral-900 border border-white/10 rounded-full text-sm font-medium flex items-center gap-2"><i class="ph-fill ph-cube text-emerald-400"></i> Spline 3D</span>
+                    <span class="px-5 v style="text-align: center;"><h4 style="font-size: 3rem; font-weight: 700;">30%</h4><p class="section-label">Handoff Efficiency</p></div>
                     <div style="text-align: center;"><h4 style="font-size: 3rem; font-weight: 700;">100%</h4><p class="section-label">Delivery Rate</p></div>
                 </div>
             </section>

@@ -1,40 +1,211 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Allah Nawaz | Senior Product Designer</title>
-    
-    <!-- GitHub Pages Optimization: No external dependencies other than CDNs -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,500&f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        display: ['Cabinet Grotesk', 'sans-serif'],
-                        body: ['Satoshi', 'sans-serif'],
-                    },
-                    colors: {
-                        neutral: {
-                            950: '#050505',
-                            900: '#0a0a0a',
-                            800: '#111111',
-                            400: '#888888',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+<title>Allah Nawaz | Product Designer</title>
 
-    <style>
-        body {
-            background-color: #050505;
-            color: #ffffff;
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Fonts -->
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,500&f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#050505;
+  --text:#fff;
+  --muted:rgba(255,255,255,0.6);
+  --glass:rgba(255,255,255,0.04);
+  --stroke:rgba(255,255,255,0.08);
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Satoshi',sans-serif;
+  overflow-x:hidden;
+}
+
+.font-display{font-family:'Cabinet Grotesk',sans-serif;}
+
+::selection{
+  background:white;
+  color:black;
+}
+
+/* FRAMER-LIKE REVEAL */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* GLASS */
+.glass{
+  background:var(--glass);
+  border:1px solid var(--stroke);
+  backdrop-filter:blur(12px);
+  border-radius:24px;
+}
+
+/* HERO TEXT */
+.hero-title{
+  font-size:clamp(40px,8vw,120px);
+  line-height:0.9;
+  letter-spacing:-0.03em;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full px-6 py-5 z-50 bg-black/40 backdrop-blur-md border-b border-white/5 flex justify-between items-center">
+<h1 class="font-display font-bold">AN.</h1>
+
+<div class="hidden md:flex gap-8 text-sm text-white/60">
+<a href="#work">Work</a>
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+</div>
+
+<a href="mailto:hello@allahnawaz.design"
+class="px-5 py-2 bg-white text-black rounded-full text-xs font-bold">
+Hire Me
+</a>
+</nav>
+
+<!-- HERO -->
+<section class="h-screen flex items-center justify-center text-center px-6">
+
+<div class="reveal max-w-4xl">
+
+<span class="px-4 py-2 glass text-xs">
+Available for Product Roles
+</span>
+
+<h1 class="font-display hero-title mt-10">
+Strategic<br>
+Product Designer
+</h1>
+
+<p class="text-white/50 mt-8 max-w-xl mx-auto">
+I design SaaS products, UX systems & scalable digital experiences.
+</p>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-40 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+<div class="reveal">
+<h2 class="font-display text-5xl mb-6">About</h2>
+
+<p class="text-white/60 leading-relaxed">
+I’m Allah Nawaz — a Product Designer focused on SaaS UX, systems thinking, and scalable design architecture.
+</p>
+
+<div class="mt-8 text-white/40 text-sm space-y-2">
+<p>✔ SaaS UX Design</p>
+<p>✔ Design Systems (Figma)</p>
+<p>✔ Conversion-focused UI</p>
+</div>
+</div>
+
+<div class="reveal glass h-[420px]"></div>
+
+</section>
+
+<!-- WORK -->
+<section id="work" class="py-40 px-6 max-w-6xl mx-auto">
+
+<h2 class="font-display text-5xl mb-16 reveal">Selected Work</h2>
+
+<div class="grid md:grid-cols-2 gap-10">
+
+<div class="glass p-8 reveal hover:scale-[1.02] transition duration-500">
+<h3 class="font-display text-2xl">GoRook App</h3>
+<p class="text-white/50 text-sm mt-2">Emergency UX System Design</p>
+</div>
+
+<div class="glass p-8 reveal hover:scale-[1.02] transition duration-500">
+<h3 class="font-display text-2xl">AI SaaS Dashboard</h3>
+<p class="text-white/50 text-sm mt-2">Data-driven UX System</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="py-40 px-6 max-w-6xl mx-auto">
+
+<h2 class="font-display text-5xl mb-16 reveal">Experience</h2>
+
+<div class="space-y-10 border-l border-white/10 pl-8">
+
+<div class="reveal">
+<h3 class="font-bold">Product Designer — Prime Estimate</h3>
+<p class="text-white/40 text-sm">2025 - Present</p>
+</div>
+
+<div class="reveal">
+<h3 class="font-bold">UI/UX Designer — T-Tech Solutions</h3>
+<p class="text-white/40 text-sm">2024 - 2025</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="py-40 text-center px-6">
+
+<div class="reveal">
+
+<h2 class="font-display text-6xl">
+Let’s Build Something<br>Iconic
+</h2>
+
+<a href="mailto:hello@allahnawaz.design"
+class="inline-block mt-10 px-10 py-5 bg-white text-black rounded-full font-bold">
+Contact Me
+</a>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="py-10 text-center text-white/30 text-xs border-t border-white/5">
+© 2026 Allah Nawaz — Product Designer
+</footer>
+
+<!-- REVEAL SCRIPT -->
+<script>
+const items=document.querySelectorAll('.reveal');
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('active');
+}
+});
+});
+
+items.forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>            color: #ffffff;
             font-family: 'Satoshi', sans-serif;
             overflow-x: hidden;
         }
